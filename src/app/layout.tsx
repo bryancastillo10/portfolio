@@ -5,6 +5,8 @@ import "./globals.css";
 import Navbar from "@/components/navbar";
 import Hero from "@/components/hero/Hero";
 import HeroContainer from "@/components/container/HeroContainer";
+import { ThemeContextProvider } from "@/context/ThemeContext";
+import ThemeProvider from "@/provider/ThemeProvider";
 
 const plusJakartaSans = Plus_Jakarta_Sans({ subsets: ["latin"] });
 
@@ -26,11 +28,15 @@ export default function RootLayout({
         <link rel="icon" href="/logo.ico" />
       </head>
       <body className={`${openSans.className} ${plusJakartaSans.className}`}>
-        <HeroContainer>
-          <Navbar />
-          <Hero />
-        </HeroContainer>
-        {children}
+        <ThemeContextProvider>
+          <ThemeProvider>
+            <HeroContainer>
+              <Navbar />
+              <Hero />
+            </HeroContainer>
+            {children}
+          </ThemeProvider>
+        </ThemeContextProvider>
       </body>
     </html>
   );
