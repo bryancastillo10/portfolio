@@ -9,8 +9,8 @@ const MobileMenu = ({ isOpen }: MobileMenuProps) => {
   return (
     <div
       className={`absolute top-[96px] right-0 min-h-[40vh] w-[300px] border-2 
-      bg-neutral-light rounded-lg transform transition-transform duration-300 ${
-        isOpen ? "translate-x-0 opacity-1" : "translate-x-full"
+      bg-secondary/80 rounded-lg transform transition-transform duration-300 ${
+        isOpen ? "translate-x-0 opacity-1" : "translate-x-full opacity-0"
       }`}
     >
       <div className="p-4">

@@ -16,10 +16,10 @@ const Navbar = () => {
   }, [isOpenMenu]);
 
   return (
-    <nav className="w-full bg-neutral-light/60">
+    <nav className="w-full bg-secondary/60 ">
       <div className="container flex relative justify-between items-center md:max-w-[80%] mx-auto p-4">
         {/* Logo */}
-        <div className="relative size-16 bg-secondary/80 rounded-full">
+        <div className="relative size-16 bg-primary/75 rounded-full">
           <Image src={NavLogo} alt="portfolio-logo" className="p-1" fill />
         </div>
 

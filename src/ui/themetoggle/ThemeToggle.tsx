@@ -1,5 +1,5 @@
 "use client";
-import { useLayoutEffect, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import "./themeToggle.modules.css";
 
@@ -9,10 +9,8 @@ import { useThemeContext } from "@/context/useContext";
 const ThemeToggle = () => {
   const [mounted, setMounted] = useState<boolean>(false);
   const { theme, handleTheme } = useThemeContext();
-  const useIsomorphicLayoutEffect =
-    typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
-  useIsomorphicLayoutEffect(() => {
+  useEffect(() => {
     setMounted(true);
   }, []);
   if (!mounted) return null;

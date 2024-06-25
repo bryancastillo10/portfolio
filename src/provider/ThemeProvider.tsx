@@ -7,7 +7,7 @@ const ThemeProvider = ({ children }: ContextProviderTypes) => {
   const { theme } = useThemeContext();
 
   return (
-    <div className={`${theme ? "text-accent" : " text-primary"} `}>
+    <div className={`${theme ? "text-accent bg-primary" : " text-primary bg-secondary"} `}>
       {children}
     </div>
   );

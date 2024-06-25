@@ -1,10 +1,16 @@
+"use client";
+import { useThemeContext } from "@/context/useContext";
 import HeroBorder from "./HeroBorder";
+
 const Hero = () => {
+  const { theme } = useThemeContext();
+
   return (
     <section>
       <article className="md:max-w-[80%] mx-auto container">
         <div className="mt-20">
-          <div className="bg-neutral-light/80 text-primary rounded-xl md:max-w-[45%]">
+          <div className={`${theme ? "bg-primary text-secondary" : "bg-secondary/80 text-primary"} 
+                           ease-in-out duration-500  rounded-xl md:max-w-[45%]`}>
             <div className=" p-4 flex flex-col gap-4 text-center md:text-left">
               <h1 className="font-bold text-2xl lg:text-5xl tracking-wider">
                 Bryan Castillo

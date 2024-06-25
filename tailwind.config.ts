@@ -9,13 +9,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "rgba(var(--text-color))",
-        secondary: "rgba(var(--bg-color))",
-        accent: "rgba(var(--accent))",
-        "neutral-light": "rgba(var(--neutral-light))",
-        "neutral-black": "rgba(var(--neutral-black))",
+        primary: "rgba(var(--dark-blue))",
+        secondary: "rgba(var(--salt-white))",
+        accent: "rgba(var(--mint-green))",
+        lightgray: "rgba(var(--light-gray))",
+        charcoal: "rgba(var(--charcoal-black))",
       },
-      screen: {
+      screens: {
         sm: "480px",
         md: "768px",
         lg: "976px",
@@ -24,6 +24,6 @@ const config: Config = {
     },
   },
   plugins: [],
-  darkMode: "class",
+
 };
 export default config;
