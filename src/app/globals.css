@@ -2,32 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Light Mode */
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  /* Primary color: Dark Blue */
+  --text-color: 0, 28, 85;
+
+  /* Secondary color: Salt */
+  --bg-color: 249, 238, 231;
+
+  /* Accent color: Mint green */
+  --accent: 74 202 155;
+
+  /* Light color: Light Gray-2 */
+  --neutral-light: 237, 239, 242;
+
+  /* Black color: Charcoal Black */
+  --neutral-black: 17, 16, 0;
 }
 
-@media (prefers-color-scheme: dark) {
+/* Dark Mode */
+/* @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --text-color: 137, 192, 179;
+    --bg-color: 7, 20, 40;
+    --accent: 242, 242, 242;
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+} */
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .text-link {
+    @apply text-blue-950 leading-loose relative before:content-[''] 
+    before:w-0 before:h-1 before:bg-blue-950  before:absolute before:bottom-[-0.3rem] 
+    before:transition-[width] before:duration-[0.4s,left] before:delay-[0.4s] 
+    before:rounded-sm before:left-[0.4] hover:before:w-full hover:before:left-0;
   }
 }
