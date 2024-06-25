@@ -2,29 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Light Mode */
+@layer base{
 :root {
   /* Primary color: Dark Blue */
-  --text-color: 0, 28, 85;
+  --dark-blue: 0, 28, 85;
 
   /* Secondary color: Salt */
-  --bg-color: 249, 238, 231;
+  --salt-white: 249, 238, 231;
 
   /* Accent color: Mint green */
-  --accent: 74 202 155;
+  --mint-green: 74 202 155;
 
   /* Light color: Light Gray-2 */
-  --neutral-light: 237, 239, 242;
+  --light-gray: 237, 239, 242;
 
   /* Black color: Charcoal Black */
-  --neutral-black: 17, 16, 0;
+  --charcoal-black: 17, 16, 0;
 }
+}
+
 
 /* Dark Mode */
 /* @media (prefers-color-scheme: dark) {
   :root {
     --text-color: 137, 192, 179;
-    --bg-color: 7, 20, 40;
+    --bg-color: 0, 28, 85;
     --accent: 242, 242, 242;
   }
 } */
