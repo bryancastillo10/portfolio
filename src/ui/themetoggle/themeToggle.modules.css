@@ -64,6 +64,7 @@ input:checked + .slider:before {
 
 .slider .sun-icon {
   top: 0;
+  color: #001c55;
   left: 4px;
   margin-bottom: 5px;
 }

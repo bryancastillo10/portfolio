@@ -20,7 +20,7 @@ const ThemeToggle = () => {
       <input type="checkbox" checked={theme} onChange={handleTheme} />
       <span className="slider">
         {theme ? (
-          <BiSun className="icon sun-icon text-white" />
+          <BiSun className="icon sun-icon" />
         ) : (
           <BiMoon className="icon moon-icon" />
         )}

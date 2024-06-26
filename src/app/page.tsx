@@ -1,9 +1,9 @@
-import Image from "next/image";
+import About from "@/components/about/About";
 
 export default function Home() {
   return (
-    <main className="">
-      <h1>Content Here</h1>
+    <main className="bg-accent">
+      <About />
       <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est molestias
         alias dolor, suscipit accusantium quam fuga quaerat modi, sapiente
