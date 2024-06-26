@@ -15,9 +15,9 @@ const About = () => {
       <div className="max-w-[80%] mx-auto">
         <div className="flex flex-col-reverse lg:flex-row gap-x-24">
           <article className="flex flex-col my-10 md:my-20">
-            <div className="mt-40">
+            <div className="mt-24 md:mt-40">
               <h1 className="font-bold text-4xl lg:text-5xl tracking-wider
-                text-center md:text-left
+                text-center md:text-left 
                 ">
                   About Bryan
                 </h1>
@@ -32,7 +32,7 @@ const About = () => {
                 software applications due to his resourcefulness and perseverance in his 
                 career development."
               />
-              <div className="flex justify-start items-center gap-8 lg:mt-20">
+              <div className="flex flex-col xl:flex-row justify-start items-center gap-8 lg:mt-20">
                 <Button
                   type="button"
                   variant="primary"
@@ -48,7 +48,7 @@ const About = () => {
               </div>
             </div> 
           </article>
-          <article className="flex items-center relative my-20 md:my-0">
+          <article className="flex items-center relative my-20 md:my-0 md:mb-8">
 
             {/* Cyan Hexagon */}
             <Image className="absolute right-0 top-[-30%] md:top-[-12%] 

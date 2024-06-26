@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Open_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans} from "next/font/google";
 import "./globals.css";
 
 import Navbar from "@/components/navbar";
@@ -8,9 +8,11 @@ import HeroContainer from "@/components/container/HeroContainer";
 import { ThemeContextProvider } from "@/context/ThemeContext";
 import ThemeProvider from "@/provider/ThemeProvider";
 
-const plusJakartaSans = Plus_Jakarta_Sans({ subsets: ["latin"] });
-
-const openSans = Open_Sans({ subsets: ["latin"] });
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight:"500",
+  variable: "--font-plus-jakarta-sans"
+});
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -23,11 +25,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en"
+      className={`${plusJakartaSans.className} `}
+      suppressHydrationWarning>
       <head>
         <link rel="icon" href="/logo.ico" />
       </head>
-      <body className={`${openSans.className} ${plusJakartaSans.className}`}>
+      <body>
         <ThemeContextProvider>
           <ThemeProvider>
             <HeroContainer>

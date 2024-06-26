@@ -16,7 +16,7 @@ const Navbar = () => {
   }, [isOpenMenu]);
 
   return (
-    <nav className="w-full bg-secondary/60 ">
+    <nav className="sticky top-0 z-50 w-full bg-secondary/60 ">
       <div className="container flex relative justify-between items-center max-w-full md:max-w-[80%] mx-auto p-4">
         {/* Logo */}
         <div className="relative size-16 bg-primary/75 rounded-full">
@@ -26,7 +26,7 @@ const Navbar = () => {
         {/* Nav Right Side */}
         <div className="flex flex-row-reverse md:flex-row items-center space-x-6">
           {/* Desktop */}
-          <div className="hidden md:flex gap-4 items-center text-xl font-bold">
+          <div className="hidden md:flex gap-4 items-center text-xl font-bold tracking-wider">
             {navLinks.map((nav) => (
               <ul key={nav.id}>
                 <li className="text-link cursor-pointer">{nav.title}</li>

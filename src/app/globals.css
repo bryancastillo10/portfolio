@@ -18,21 +18,23 @@
 
   /* Black color: Charcoal Black */
   --charcoal-black: 17, 16, 0;
+
+.text-standard{
+  font-family: var(--font-plus-jakarta-sans);
+  font-weight: 500;
 }
+
+.text-decorative{
+  font-family:var(--font-advent-pro);
+  font-weight:400;
+}
+}
+
 body{
   @apply overflow-x-hidden;
 }
 }
 
-
-/* Dark Mode */
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --text-color: 137, 192, 179;
-    --bg-color: 0, 28, 85;
-    --accent: 242, 242, 242;
-  }
-} */
 
 @layer utilities {
   .text-link {

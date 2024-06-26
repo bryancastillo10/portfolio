@@ -6,7 +6,7 @@ interface AboutContentProps{
 const AboutContent = ({paragraph}:AboutContentProps) => {
   return (
     <div className="max-w-full md:max-w-[90%] font-medium text-[22px] md:text-[24px] 
-      my-20 md:my-10
+      my-16 md:my-10 
      text-center md:text-left
     ">
       {paragraph}
