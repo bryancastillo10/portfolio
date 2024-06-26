@@ -10,7 +10,7 @@ const HeroBorder = () => {
 <rect width="1472" height="484" fill="white"/>
 </clipPath>
 </defs>
-</svg>
+  </svg>
   );
 };
 
