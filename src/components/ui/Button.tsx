@@ -12,9 +12,9 @@ const Button = ({type,variant,action,actionLabel}:ButtonProps) => {
       <button
           type={type}
           onClick={action}
-          className={`px-8 py-2 rounded-xl text-lg md:text-2xl min-w-fit
-            ${variant === "primary" ? "bg-primary text-accent" : 
-              variant === "outline" ? "bg-secondary text-primary" :
+          className={`px-8 py-2 rounded-xl text-lg md:text-2xl min-w-fit transition-all duration-500 ease-out
+            ${variant === "primary" ? "bg-primary text-accent hover:bg-secondary hover:text-charcoal hover:scale-110" : 
+              variant === "outline" ? "bg-secondary text-primary hover:bg-primary hover:text-white hover:scale-110" :
                   "bg-black text-white"
             }
             `}
