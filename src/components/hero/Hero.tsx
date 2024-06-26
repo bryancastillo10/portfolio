@@ -18,12 +18,12 @@ const Hero = () => {
             } 
                            ease-in-out duration-500  rounded-xl md:max-w-[80%] lg:max-w-[45%]`}
           >
-            <div className=" md:p-4 flex flex-col gap-4 text-center md:text-left">
-              <h1 className="font-bold text-5xl lg:text-7xl tracking-wider">
+            <div className="p-2 md:p-4 flex flex-col gap-4 text-center md:text-left">
+              <h1 className="font-bold text-5xl lg:text-7xl leading-tight tracking-wider">
                 Bryan Castillo
               </h1>
               <div className="min-w-fit md:max-w-full mx-auto py-4">
-                <p className="md:font-medium leading-sm text-left
+                <p className="md:font-medium leading-sm md:text-left
                text-xl md:text-2xl
               ">
                 Crafting creative and innovative solutions from &nbsp;
