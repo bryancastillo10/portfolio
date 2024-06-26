@@ -21,6 +21,9 @@ const config: Config = {
         lg: "976px",
         xl: "1440px",
       },
+      animation: {
+        "spin-slow": "spin 8s linear infinite",
+      }
     },
   },
   plugins: [],

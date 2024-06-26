@@ -1,9 +1,13 @@
 import About from "@/components/about/About";
-
+import AboutBorder from "@/components/about/AboutBorder";
 export default function Home() {
   return (
-    <main className="bg-accent pt-10">
+    <main>
       <About />
+      <div className="bg-secondary">
+      <div className="w-full md:min-h-auto">
+          <AboutBorder/>
+      </div>
       <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est molestias
         alias dolor, suscipit accusantium quam fuga quaerat modi, sapiente
@@ -11,7 +15,8 @@ export default function Home() {
         deleniti exercitationem. Possimus labore et nulla perspiciatis corrupti
         alias doloribus vitae ipsa nemo iusto qui repellendus tenetur, beatae
         voluptas voluptatem.
-      </p>
+        </p>
+      </div>
     </main>
   );
 }
