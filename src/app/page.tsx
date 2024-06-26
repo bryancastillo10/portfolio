@@ -2,7 +2,7 @@ import About from "@/components/about/About";
 
 export default function Home() {
   return (
-    <main className="bg-accent">
+    <main className="bg-accent pt-10">
       <About />
       <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est molestias

@@ -8,18 +8,17 @@ const TextAnimation = () => {
         1000,
         "Biological Engineer",
         1000,
-        "Environmental Engineer",
+        "Envi. Engineer",
         1000,
         "Chemist",
         3000,
       ]}
       wrapper="span"
-      speed={50}
+      speed={70}
       style={{
         textAlign: "center",
         fontWeight: "500",
         fontFamily: "monospace",
-        fontSize: "20px",
       }}
       repeat={Infinity}
     />
