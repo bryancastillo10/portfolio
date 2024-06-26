@@ -37,7 +37,7 @@ const Hero = () => {
             <div
               className={`max-w-[90%] mx-auto md:mx-0 md:max-w-[320px] lg:max-w-[450px]
                  md:ml-auto rounded-xl   
-              p-4 ease-in-out duration-500 text-base md:text-2xl lg:text-4xl
+              p-4 ease-in-out duration-500 text-[20px] md:text-2xl lg:text-4xl
             ${theme ? "bg-secondary text-primary" : "bg-primary text-accent"}
             `}
             >
