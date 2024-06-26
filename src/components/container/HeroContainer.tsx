@@ -14,7 +14,7 @@ const HeroContainer = ({ children }: HeroContainerProps) => {
     backgroundPosition: "center",
   };
   return (
-    <div className="min-h-[70vh] w-full" style={backgroundStyle}>
+    <div className="min-h-[50vh] w-full" style={backgroundStyle}>
       {children}
     </div>
   );
