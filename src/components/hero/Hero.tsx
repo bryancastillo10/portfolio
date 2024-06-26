@@ -8,31 +8,36 @@ const Hero = () => {
 
   return (
     <section>
-      <article className="md:max-w-[80%] mx-auto md:h-auto container">
-        <div className="mt-20">
+      <article className="max-w-[80%] mx-auto md:h-auto container">
+        <div className="mt-20 lg:mt-40">
           <div
             className={`${
               theme
                 ? "bg-primary text-secondary"
                 : "bg-secondary/80 text-primary"
             } 
-                           ease-in-out duration-500  rounded-xl md:max-w-[45%]`}
+                           ease-in-out duration-500  rounded-xl md:max-w-[80%] lg:max-w-[45%]`}
           >
-            <div className=" p-4 flex flex-col gap-4 text-center md:text-left">
-              <h1 className="font-bold text-2xl lg:text-5xl tracking-wider">
+            <div className=" md:p-4 flex flex-col gap-4 text-center md:text-left">
+              <h1 className="font-bold text-5xl lg:text-7xl tracking-wider">
                 Bryan Castillo
               </h1>
-              <p className="md:font-light leading-none md:leading-sm text-[20px] max-w-[75%] md:max-w-full mx-auto">
+              <div className="min-w-fit md:max-w-full mx-auto py-4">
+                <p className="md:font-medium leading-sm text-left
+               text-xl md:text-2xl
+              ">
                 Crafting creative and innovative solutions from &nbsp;
                 <span className="font-bold">science</span> to &nbsp;
                 <span className="font-bold">software development</span>
-              </p>
+                </p>
+              </div>
             </div>
           </div>
-          <div className="mt-14">
+          <div className="mt-20">
             <div
-              className={`max-w-[60%] mx-auto md:mx-0 md:max-w-[290px] md:ml-auto rounded-xl   
-              p-4 ease-in-out duration-500 
+              className={`max-w-[90%] mx-auto md:mx-0 md:max-w-[320px] lg:max-w-[450px]
+                 md:ml-auto rounded-xl   
+              p-4 ease-in-out duration-500 text-base md:text-2xl lg:text-4xl
             ${theme ? "bg-secondary text-primary" : "bg-primary text-accent"}
             `}
             >
@@ -41,8 +46,8 @@ const Hero = () => {
           </div>
         </div>
       </article>
-      <div className="w-full min-h-auto">
-        <HeroBorder />
+      <div className="w-full md:min-h-auto">
+          <HeroBorder />
       </div>
     </section>
   );
