@@ -19,15 +19,6 @@
   /* Black color: Charcoal Black */
   --charcoal-black: 17, 16, 0;
 
-.text-standard{
-  font-family: var(--font-plus-jakarta-sans);
-  font-weight: 500;
-}
-
-.text-decorative{
-  font-family:var(--font-advent-pro);
-  font-weight:400;
-}
 }
 
 body{

@@ -1,5 +1,6 @@
 "use client";
 import { useThemeContext } from "@/context/useContext";
+import { adventPro } from "@/utils/font";
 import HeroBorder from "./HeroBorder";
 import TextAnimation from "./TextAnimation";
 
@@ -19,7 +20,7 @@ const Hero = () => {
                            ease-in-out duration-500  rounded-xl md:max-w-[80%] lg:max-w-[45%]`}
           >
             <div className="p-2 md:p-4 flex flex-col gap-4 text-center md:text-left">
-              <h1 className="font-bold text-5xl lg:text-7xl leading-tight tracking-wider">
+              <h1 className={`font-bold text-5xl lg:text-7xl leading-tight tracking-wider ${adventPro.className}`}>
                 Bryan Castillo
               </h1>
               <div className="min-w-fit md:max-w-full mx-auto py-4">
