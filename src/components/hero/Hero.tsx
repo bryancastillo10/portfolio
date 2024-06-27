@@ -1,7 +1,7 @@
 "use client";
 import { useThemeContext } from "@/context/useContext";
 import { adventPro } from "@/utils/font";
-import HeroBorder from "./HeroBorder";
+import WaveUp from "../ui/WaveUp";
 import TextAnimation from "./TextAnimation";
 
 const Hero = () => {
@@ -48,7 +48,7 @@ const Hero = () => {
         </div>
       </article>
       <div className="w-full md:min-h-auto">
-          <HeroBorder />
+          <WaveUp/>
       </div>
     </section>
   );

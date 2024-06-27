@@ -1,12 +1,12 @@
 import About from "@/components/about/About";
-import AboutBorder from "@/components/about/AboutBorder";
+import WaveDown from "@/components/ui/WaveDown";
 export default function Home() {
   return (
     <main>
       <About />
       <div className="bg-secondary">
       <div className="w-full md:min-h-auto">
-          <AboutBorder/>
+          <WaveDown/>
       </div>
       <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est molestias
