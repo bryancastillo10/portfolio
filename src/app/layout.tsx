@@ -1,18 +1,12 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans} from "next/font/google";
 import "./globals.css";
+import { plusJakartaSans } from "../utils/font";
 
 import Navbar from "@/components/navbar";
 import Hero from "@/components/hero/Hero";
 import HeroContainer from "@/components/container/HeroContainer";
 import { ThemeContextProvider } from "@/context/ThemeContext";
 import ThemeProvider from "@/provider/ThemeProvider";
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight:"500",
-  variable: "--font-plus-jakarta-sans"
-});
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -26,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en"
-      className={`${plusJakartaSans.className} `}
+      className={plusJakartaSans.className}
       suppressHydrationWarning>
       <head>
         <link rel="icon" href="/logo.ico" />
