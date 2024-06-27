@@ -1,13 +1,13 @@
 "use client";
 import AboutContent from "./AboutContent";
 import Image from "next/image";
-import Button from "../ui/Button";
+import Button from "../../ui/button/Button";
+import Headers from "../ui/Headers";
 
 import gradPic from "../../../public/images/AboutPic.png"
 import carbonHexagon from "../../../public/icons/carbon-hexagon.svg";
 import cyanHexagon from "../../../public/icons/cyan-hexagon.svg";
 import darkBlueHexagon from "../../../public/icons/darkblue-hexagon.svg";
-import { adventPro } from "@/utils/font";
 
 
 const About = () => {
@@ -17,10 +17,7 @@ const About = () => {
         <div className="flex flex-col-reverse lg:flex-row gap-x-24">
           <article className="flex flex-col my-10 md:my-20">
             <div className="mt-24 md:mt-40">
-              <h1 className={`font-bold text-4xl lg:text-5xl tracking-wider
-                text-center md:text-left ${adventPro.className}`}>
-                  About Bryan
-                </h1>
+              <Headers>About Bryan</Headers>
             </div>
             <div className="my-0 lg:my-1">
               <AboutContent
