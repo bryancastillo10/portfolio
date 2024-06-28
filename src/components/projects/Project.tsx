@@ -21,6 +21,10 @@ const Project = () => {
                 </div>
               ))}
             </div>
+            <div className="">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis,
+              provident.
+            </div>
           </div>
         </div>
       </div>

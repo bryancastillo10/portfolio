@@ -1,6 +1,6 @@
 "use client";
 import "./book.modules.css";
-
+import { adventPro } from "@/utils/font";
 import Hexagon from "@/components/ui/Hexagon";
 import { useThemeContext } from "@/context/useContext";
 
@@ -21,7 +21,9 @@ const BookCover = ({ title, subtitle, frontDescription, theme }: BookProps) => {
           height="100"
         />
         <div className="flex flex-col items-center text-center">
-          <h1 className="book-title">{title}</h1>
+          <h1 className={`book-title ${adventPro.className} tracking-wider`}>
+            {title}
+          </h1>
           <h1 className="book-subtitle">{subtitle}</h1>
         </div>
       </div>
@@ -30,7 +32,7 @@ const BookCover = ({ title, subtitle, frontDescription, theme }: BookProps) => {
   );
 };
 
-// Parent Book
+// Parent Component
 const Book = ({ title, subtitle, frontDescription }: BookProps) => {
   const { theme } = useThemeContext();
   return (
@@ -39,7 +41,7 @@ const Book = ({ title, subtitle, frontDescription }: BookProps) => {
 
       <div
         className={`cover duration-500 ease-in-out ${
-          theme ? "bg-accent" : "bg-primary"
+          theme ? "bg-accent text-primary" : "bg-primary "
         }`}
       >
         <BookCover
