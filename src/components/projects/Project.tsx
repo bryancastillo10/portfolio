@@ -1,26 +1,31 @@
 import Headers from "../ui/Headers";
 import Book from "../../ui/bookcards/Book";
+import { projectDetails } from "@/constants/projectDetails";
 
 const Project = () => {
   return (
-    <section className="">
-      <div className="max-w-[80%] mx-auto">
+    <section className="max-w-[80%] mx-auto ">
+      <div className="mt-40 md:mt-10">
         <div className="py-4">
-          <div className="flex flex-col gap-x-24 md:my-28">
+          <div className="flex flex-col md:my-28">
             <Headers>Top Projects</Headers>
 
-            <div className="my-20 grid grid-cols-2 gap-20">
-              <Book />
-              <Book />
-              <Book />
-              <Book/>
+            <div className="my-20 grid grid-cols-1 md:grid-cols-2 gap-20 place-content-between">
+              {projectDetails.map((project) => (
+                <div key={project.id}>
+                  <Book
+                    title={project.title}
+                    subtitle={project.subtitle}
+                    frontDescription={project.frontPageDescription}
+                  />
+                </div>
+              ))}
             </div>
-
           </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default Project;
