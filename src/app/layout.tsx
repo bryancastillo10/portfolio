@@ -19,21 +19,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en"
+    <html
+      lang="en"
       className={plusJakartaSans.className}
-      suppressHydrationWarning>
+      suppressHydrationWarning
+    >
       <head>
         <link rel="icon" href="/logo.ico" />
       </head>
       <body>
         <ThemeContextProvider>
-          <ThemeProvider>
-            <HeroContainer>
-              <Navbar />
-              <Hero />
-            </HeroContainer>
-            {children}
-          </ThemeProvider>
+          <ThemeProvider>{children}</ThemeProvider>
         </ThemeContextProvider>
       </body>
     </html>
