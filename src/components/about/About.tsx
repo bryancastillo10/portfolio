@@ -5,11 +5,9 @@ import AboutContent from "./AboutContent";
 import Image from "next/image";
 import Button from "../../ui/button/Button";
 import Headers from "../ui/Headers";
+import Hexagon from "../ui/Hexagon";
 
 import gradPic from "../../../public/images/AboutPic.png";
-import carbonHexagon from "../../../public/icons/carbon-hexagon.svg";
-import cyanHexagon from "../../../public/icons/cyan-hexagon.svg";
-import darkBlueHexagon from "../../../public/icons/darkblue-hexagon.svg";
 
 const About = () => {
   const router = useRouter();
@@ -48,34 +46,34 @@ const About = () => {
             </div>
           </article>
           <article className="flex items-center relative my-20 md:my-0 md:mb-8">
-            {/* Cyan Hexagon */}
-            <Image
+            {/* Cyan Hexagon #119DA4 */}
+            <div
               className="absolute right-0 top-[-30%] md:top-[-12%] 
-            md:right-8 lg:top-20 lg:right-0 z-10 size-[120px] md:size-[150px] animate-spin-slow"
-              src={cyanHexagon}
-              alt="cyan-hex"
-            />
+            md:right-8 lg:top-[5%] lg:right-0 z-10 size-[120px] md:size-[150px] animate-spin-slow"
+            >
+              <Hexagon fillColor="#119DA4" width="150" height="130" />
+            </div>
 
             {/* About Picture */}
-            <div className="relative size-[340px] md:size-[500px]">
+            <div className="relative size-[340px] md:size-[500px] max-w-full mx-auto">
               <Image src={gradPic} alt="about-pic" fill />
             </div>
 
-            {/* Carbon Hexagon */}
-            <Image
+            {/* Carbon Hexagon #111000 */}
+            <div
               className="absolute left-[-20px] bottom-[-30%] md:bottom-[-15%] animate-spin-slow
             lg:bottom-[10%] size-[120px] md:size-[150px]"
-              src={carbonHexagon}
-              alt="carbon-hex"
-            />
+            >
+              <Hexagon fillColor="#111000" width="150" height="130" />
+            </div>
 
-            {/* Dark Blue Hexagon */}
-            <Image
+            {/* Dark Blue Hexagon #001C55 */}
+            <div
               className="absolute right-[20%] md:right-[30%] lg:right-[40%] bottom-[-40%] md:bottom-[-30%] animate-spin-slow
             lg:bottom-[-1%] size-[120px] md:size-[150px]"
-              src={darkBlueHexagon}
-              alt="darkblue-hex"
-            />
+            >
+              <Hexagon fillColor="#001C55" width="150" height="130" />
+            </div>
           </article>
         </div>
       </div>
