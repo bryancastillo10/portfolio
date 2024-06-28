@@ -1,16 +1,18 @@
 "use client";
+
+import { useRouter } from "next/navigation";
 import AboutContent from "./AboutContent";
 import Image from "next/image";
 import Button from "../../ui/button/Button";
 import Headers from "../ui/Headers";
 
-import gradPic from "../../../public/images/AboutPic.png"
+import gradPic from "../../../public/images/AboutPic.png";
 import carbonHexagon from "../../../public/icons/carbon-hexagon.svg";
 import cyanHexagon from "../../../public/icons/cyan-hexagon.svg";
 import darkBlueHexagon from "../../../public/icons/darkblue-hexagon.svg";
 
-
 const About = () => {
+  const router = useRouter();
   return (
     <section className="bg-accent pt-10">
       <div className="max-w-[80%] mx-auto">
@@ -33,41 +35,50 @@ const About = () => {
                 <Button
                   type="button"
                   variant="primary"
-                  action={() => {}}
+                  action={() => router.push("/about")}
                   actionLabel="Read More..."
                 />
                 <Button
                   type="button"
                   variant="outline"
-                  action={() => { }}
+                  action={() => {}}
                   actionLabel="Check Projects"
                 />
               </div>
-            </div> 
+            </div>
           </article>
           <article className="flex items-center relative my-20 md:my-0 md:mb-8">
-
             {/* Cyan Hexagon */}
-            <Image className="absolute right-0 top-[-30%] md:top-[-12%] 
+            <Image
+              className="absolute right-0 top-[-30%] md:top-[-12%] 
             md:right-8 lg:top-20 lg:right-0 z-10 size-[120px] md:size-[150px] animate-spin-slow"
-                src={cyanHexagon} alt="cyan-hex"/>
-            
-            
+              src={cyanHexagon}
+              alt="cyan-hex"
+            />
+
             {/* About Picture */}
             <div className="relative size-[340px] md:size-[500px]">
               <Image src={gradPic} alt="about-pic" fill />
             </div>
 
             {/* Carbon Hexagon */}
-            <Image className="absolute left-[-20px] bottom-[-30%] md:bottom-[-15%] animate-spin-slow
-            lg:bottom-[10%] size-[120px] md:size-[150px]" src={carbonHexagon} alt="carbon-hex" />
-            
+            <Image
+              className="absolute left-[-20px] bottom-[-30%] md:bottom-[-15%] animate-spin-slow
+            lg:bottom-[10%] size-[120px] md:size-[150px]"
+              src={carbonHexagon}
+              alt="carbon-hex"
+            />
+
             {/* Dark Blue Hexagon */}
-            <Image className="absolute right-[20%] md:right-[30%] lg:right-[40%] bottom-[-40%] md:bottom-[-30%] animate-spin-slow
-            lg:bottom-[-1%] size-[120px] md:size-[150px]" src={darkBlueHexagon} alt="darkblue-hex" />
+            <Image
+              className="absolute right-[20%] md:right-[30%] lg:right-[40%] bottom-[-40%] md:bottom-[-30%] animate-spin-slow
+            lg:bottom-[-1%] size-[120px] md:size-[150px]"
+              src={darkBlueHexagon}
+              alt="darkblue-hex"
+            />
           </article>
         </div>
-      </div> 
+      </div>
     </section>
   );
 };
