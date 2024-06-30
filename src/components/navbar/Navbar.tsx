@@ -16,7 +16,7 @@ const Navbar = () => {
   }, [isOpenMenu]);
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-secondary/60 ">
+    <nav className="fixed top-0 z-50 w-full bg-secondary/60 ">
       <div className="container flex relative justify-between items-center max-w-full md:max-w-[80%] mx-auto p-4">
         {/* Logo */}
         <div className="relative size-16 bg-primary/75 rounded-full">

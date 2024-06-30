@@ -3,8 +3,6 @@ import "./globals.css";
 import { plusJakartaSans } from "../utils/font";
 
 import Navbar from "@/components/navbar";
-import Hero from "@/components/hero/Hero";
-import HeroContainer from "@/components/container/HeroContainer";
 import { ThemeContextProvider } from "@/context/ThemeContext";
 import ThemeProvider from "@/provider/ThemeProvider";
 
@@ -29,7 +27,10 @@ export default function RootLayout({
       </head>
       <body>
         <ThemeContextProvider>
-          <ThemeProvider>{children}</ThemeProvider>
+          <ThemeProvider>
+            <Navbar />
+            {children}
+          </ThemeProvider>
         </ThemeContextProvider>
       </body>
     </html>

@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import AboutContent from "./AboutContent";
 import Image from "next/image";
-import Button from "../../ui/button/Button";
+import Button from "../ui/Button";
 import Headers from "../ui/Headers";
 import Hexagon from "../ui/Hexagon";
 
