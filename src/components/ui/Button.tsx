@@ -8,6 +8,7 @@ interface ButtonProps {
 
 
 const Button = ({type,variant,action,actionLabel}:ButtonProps) => {
+  
   return (
       <button
           type={type}

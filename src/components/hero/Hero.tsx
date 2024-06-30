@@ -9,8 +9,8 @@ const Hero = () => {
 
   return (
     <section>
-      <article className="max-w-[80%] mx-auto md:h-auto container">
-        <div className="mt-20 lg:mt-40">
+      <article className="max-w-[80%]  mx-auto container">
+        <div className="pt-30 lg:pt-60">
           <div
             className={`${
               theme
