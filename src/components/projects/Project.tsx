@@ -17,6 +17,11 @@ const Project = () => {
                     title={project.title}
                     subtitle={project.subtitle}
                     frontDescription={project.frontPageDescription}
+                    backDescription={project.backPageDescription}
+                    image={project.image}
+                    language={project.language}
+                    techStack={project.techStack}
+                    repository={project.repository}
                   />
                 </div>
               ))}
