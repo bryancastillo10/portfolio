@@ -1,5 +1,6 @@
 "use client";
 import "./book.modules.css";
+import Image,{ StaticImageData }from "next/image";
 import { adventPro } from "@/utils/font";
 import Hexagon from "@/components/ui/Hexagon";
 import { useThemeContext } from "@/context/useContext";
@@ -9,6 +10,11 @@ interface BookProps {
   title: string;
   subtitle: string;
   frontDescription: string;
+  backDescription?: string;
+  image?: StaticImageData;
+  language?: string[];
+  techStack?: string[];
+  repository?: string;
 }
 
 const BookCover = ({ title, subtitle, frontDescription, theme }: BookProps) => {
@@ -33,12 +39,25 @@ const BookCover = ({ title, subtitle, frontDescription, theme }: BookProps) => {
 };
 
 // Parent Component
-const Book = ({ title, subtitle, frontDescription }: BookProps) => {
+const Book = ({
+  title,
+  subtitle,
+  frontDescription,
+  backDescription,
+  image,
+  language,
+  techStack,
+  repository
+}: BookProps) => {
   const { theme } = useThemeContext();
+  if (image == undefined) return "";
   return (
     <div className="book">
-      <p>Project Info</p>
+      <div className="">
+      <Image src={image} alt="project-image" width={200} height={250} />
+          <p className="text-sm">{backDescription}</p>
 
+      </div>
       <div
         className={`cover duration-500 ease-in-out ${
           theme ? "bg-accent text-primary" : "bg-primary "
