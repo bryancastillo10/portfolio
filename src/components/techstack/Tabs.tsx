@@ -2,7 +2,7 @@
 import { useState } from "react";
 import "./tabs.modules.css";
 
-import TabMenu from "../ui/TabMenu";
+// import TabMenu from "../ui/TabMenu";
 import TabPanel from "../ui/TabPanel";
 
 const Tabs = () => {
@@ -11,38 +11,55 @@ const Tabs = () => {
   const sampleArray = [
     {
       id: 1,
-      name: "Language",
+      category: "Language",
     },
     {
       id: 2,
-      name: "Dev Tools",
+      category: "Dev Tools",
     },
     {
       id: 3,
-      name: "Web Frontend",
+      category: "Web Frontend",
     },
     {
       id: 4,
-      name: "Web Backend",
+      category: "Web Backend",
     },
   ];
 
-  const handleTabChange = (tabNumber: number) => {
-    setSelectedTab(tabNumber);
-  };
+
+
+  const tabTitles = <>
+    {sampleArray.map((sample) => {
+      return <button
+        key={sample.id}
+        onClick={()=> setSelectedTab(sample.id)}
+        className={`${selectedTab === sample.id ? "tab-title tab-title-active":"tab-title"}`}
+      >
+        {sample.category}
+      </button>
+    })}
+  </>
+
+  const tabContent = <>
+    {sampleArray.map((sample) => {
+      return <div
+        style={selectedTab === sample.id ? {} : {display:'none'}}
+        key={sample.id}>
+        <TabPanel title={sample.category} />
+    </div>
+  })}
+  </>
 
   return (
-    <div className="flex flex-wrap text-base text-secondary shadow-sm py-8 px-3">
-      {sampleArray.map((sample) => (
-        <div key={sample.id}>
-          <TabMenu
-            name={sample.name}
-            checked={selectedTab === sample.id}
-            onChange={() => handleTabChange(sample.id)}
-          />
-          {selectedTab === sample.id && <TabPanel title={sample.name} />}
-        </div>
-      ))}
+    <div className="tab-container">
+      <div className="flex gap-1">
+        {tabTitles}
+      </div>
+      <div className="p-2 bg-primary text-secondary">
+      {tabContent}
+      </div>
+      
     </div>
   );
 };
