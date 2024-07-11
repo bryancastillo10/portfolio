@@ -75,18 +75,3 @@
     transform: rotatey(-80deg);
   }
 }
-
-/* Tech Stack Tabs */
-.tab-menu {
-  @apply absolute opacity-0;
-}
-.tab-menu:checked + .label + .panel {
-  @apply block;
-}
-.tab-menu:focus + .label {
-  @apply z-[1];
-}
-.tab-menu:checked + .label {
-  @apply text-[#f9eee7];
-  background: rgb(0, 28, 85);
-}
