@@ -1,6 +1,7 @@
 import Headers from "../ui/Headers";
-import Book from "../../ui/bookcards/Book";
+import ProjectCard from "@/ui/bookcards/ProjectCard";
 import { projectDetails } from "@/constants/projectDetails";
+import Button from "../ui/Button";
 
 const Project = () => {
   return (
@@ -13,7 +14,7 @@ const Project = () => {
             <div className="my-20 grid grid-cols-1 lg:grid-cols-2 gap-20 mx-auto lg:mx-0 lg:place-content-between">
               {projectDetails.map((project) => (
                 <div key={project.id}>
-                  <Book
+                  <ProjectCard
                     title={project.title}
                     subtitle={project.subtitle}
                     frontDescription={project.frontPageDescription}
@@ -26,9 +27,13 @@ const Project = () => {
                 </div>
               ))}
             </div>
-            <div className="">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis,
-              provident.
+            <div className="text-center">
+              <Button
+                type="button"
+                variant="primary"
+                action={() => {}}
+                actionLabel="More Project Info"
+              />
             </div>
           </div>
         </div>

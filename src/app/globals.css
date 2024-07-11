@@ -2,30 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-:root {
-  /* Primary color: Dark Blue */
-  --dark-blue: 0, 28, 85;
+@layer base {
+  :root {
+    /* Primary color: Dark Blue */
+    --dark-blue: 0, 28, 85;
 
-  /* Secondary color: Salt */
-  --salt-white: 249, 238, 231;
+    /* Secondary color: Salt */
+    --salt-white: 249, 238, 231;
 
-  /* Accent color: Mint green */
-  --mint-green: 74 202 155;
+    /* Accent color: Mint green */
+    --mint-green: 74 202 155;
 
-  /* Light color: Light Gray-2 */
-  --light-gray: 237, 239, 242;
+    /* Light color: Light Gray-2 */
+    --light-gray: 237, 239, 242;
 
-  /* Black color: Charcoal Black */
-  --charcoal-black: 17, 16, 0;
+    /* Black color: Charcoal Black */
+    --charcoal-black: 17, 16, 0;
+  }
 
+  body {
+    @apply overflow-x-hidden;
+  }
 }
-
-body{
-  @apply overflow-x-hidden;
-}
-}
-
 
 @layer utilities {
   .text-link {
@@ -33,5 +31,47 @@ body{
     before:w-0 before:h-1 before:bg-blue-950  before:absolute before:bottom-[-0.3rem] 
     before:transition-[width] before:duration-[0.4s,left] before:delay-[0.4s] 
     before:rounded-sm before:left-[0.4] hover:before:w-full hover:before:left-0;
+  }
+  .tech-block {
+    @apply flex gap-1 items-center min-w-[300px] h-[35px] mx-auto;
+  }
+}
+
+/* Project Card Component */
+@layer components {
+  .card {
+    @apply relative w-[400px] h-[500px] bg-[#f9eee7] text-[#001c55] shadow-[1px_1px_12px_#000] flex items-center justify-center rounded-[10px];
+    -webkit-box-shadow: 1px 1px 12px #000;
+    -webkit-transform: preserve-3d;
+    -ms-transform: preserve-3d;
+    transform: preserve-3d;
+    -webkit-perspective: 2000px;
+    perspective: 2000px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+  }
+  .cover {
+    @apply absolute inset-0 text-[#f9eee7] w-full h-full cursor-grab transition-all duration-[0.5s] origin-[0] shadow-[1px_1px_8px_#000] items-center justify-center rounded-[10px] top-0;
+    -webkit-transition: all 0.5s;
+    -webkit-transform-origin: 0;
+    -ms-transform-origin: 0;
+    -webkit-box-shadow: 1px 1px 8px #000;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+  }
+  .card:hover .cover {
+    @apply transition-all duration-[0.5s];
+    -webkit-transition: all 0.5s;
+    -webkit-transform: rotatey(-80deg);
+    -ms-transform: rotatey(-80deg);
+    transform: rotatey(-80deg);
   }
 }
