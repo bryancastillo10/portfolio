@@ -4,7 +4,7 @@ const TextAnimation = () => {
   return (
     <TypeAnimation
       sequence={[
-        "Full Stack Developer",
+        "Software Developer",
         1000,
         "Biological Engineer",
         1000,

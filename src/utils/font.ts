@@ -8,7 +8,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 const adventPro = Advent_Pro({
   subsets: ["latin"],
-  weight: "700",
+  weight: ["400", "700"],
   variable: "--font-advent-pro",
 });
 

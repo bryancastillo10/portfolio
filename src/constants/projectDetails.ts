@@ -13,8 +13,8 @@ interface projectDetailsProps {
   image: StaticImageData;
   language: string[];
   techStack: string[];
-  repository:string;
-  demo:string;
+  repository: string;
+  demo: string;
 }
 
 export const projectDetails: projectDetailsProps[] = [
@@ -25,12 +25,12 @@ export const projectDetails: projectDetailsProps[] = [
     frontPageDescription:
       "Addressing the common challenges in managing a chemical laboratory",
     backPageDescription:
-    "A collaboration project which can help in managing the logistics of chemicals at a chemical laboratory. This provides convenient insights to chemistry professionals on the traceability, consumption, and purchase of chemicals",
-    image:chemstack,
+      "A collaboration project which can help in managing the logistics of chemicals at a chemical laboratory. This provides convenient insights to chemistry professionals on the traceability, consumption, and purchase of chemicals",
+    image: chemstack,
     language: ["JavaScript"],
     techStack: ["MERN Stack", "Socket IO", "Tailwind CSS"],
     repository: "",
-    demo:""
+    demo: "",
   },
   {
     id: 2,
@@ -39,12 +39,12 @@ export const projectDetails: projectDetailsProps[] = [
     frontPageDescription:
       "Effective communication with real-time messaging that takes you to the outer space",
     backPageDescription:
-      "This small chat application can help you connect with friends with simple steps to create your account. Additional features includes  some sharing of common information about you such as hobbies and motto, and can change your profile picture from those cool avatars",
-    image:spacechat,
+      "This small chat application can help you connect with friends with simple steps to create your account. Also have features that is common to a social media platform.",
+    image: spacechat,
     language: ["TypeScript", "JavaScript"],
     techStack: ["MERN Stack", "Socket IO", "Tailwind CSS"],
     repository: "https://github.com/bryancastillo10/space-chat",
-    demo:""
+    demo: "",
   },
   {
     id: 3,
@@ -54,11 +54,11 @@ export const projectDetails: projectDetailsProps[] = [
       "Discover and book along with the beautiful sceneries of the Philippines",
     backPageDescription:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos eaque similique libero omnis dolorum? Harum maiores fuga qui cumque vitae.",
-    image:elnido,
+    image: elnido,
     language: ["TypeScript"],
     techStack: ["NextJS", "Prisma", "PostgreSQL"],
     repository: "",
-    demo:""
+    demo: "",
   },
 
   {
@@ -68,11 +68,11 @@ export const projectDetails: projectDetailsProps[] = [
     frontPageDescription:
       "Obtaining fast insights from biological data by providing input sequences (DNA, RNA, or Protein)",
     backPageDescription:
-    "Leveraging the PyQt library of Python to develop a desktop application for biologists to gain information on several biological sequences such as GC-content, base frequencies and basic pairwise sequencing",
-    image:biobytes,
+      "Leveraging the PyQt library of Python to develop a desktop application for biologists to gain information on several biological sequences such as GC-content, base frequencies and basic pairwise sequencing",
+    image: biobytes,
     language: ["Python"],
     techStack: ["PyQt5", "Matplotlib", "Numpy"],
     repository: "https://github.com/bryancastillo10/BioBytes-PairSync",
-    demo:""
+    demo: "",
   },
 ];
