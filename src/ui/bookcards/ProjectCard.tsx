@@ -26,10 +26,9 @@ const ProjectCard = ({
   techStack,
   repository,
 }: ProjectCardProps) => {
+   const { theme } = useThemeContext();
+
   if (repository == undefined) return "Private Repo";
-
-  const { theme } = useThemeContext();
-
   return (
     <div className="card">
       <CardContent
