@@ -1,10 +1,15 @@
 "use client";
 import HeroContainer from "@/components/container/HeroContainer";
-import Navbar from "@/components/navbar/Navbar";
+
+// Landing Page Parent Compoent
 import Hero from "@/components/hero/Hero";
 import About from "@/components/about/About";
 import Project from "@/components/projects/Project";
+import TechStackPage from "@/components/techstack/TechStackPage";
+import Contact from "@/components/contact/Contact";
 
+// Wave SVG
+import WaveUp from "@/components/ui/WaveUp";
 import WaveDown from "@/components/ui/WaveDown";
 import { useThemeContext } from "@/context/useContext";
 export default function Home() {
@@ -13,6 +18,9 @@ export default function Home() {
     <main>
       <HeroContainer>
         <Hero />
+        <div className="w-full md:min-h-auto">
+          <WaveUp />
+        </div>
       </HeroContainer>
       <About />
       <div
@@ -24,15 +32,14 @@ export default function Home() {
           <WaveDown />
         </div>
         <Project />
-
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est
-          molestias alias dolor, suscipit accusantium quam fuga quaerat modi,
-          sapiente minima error unde iusto architecto, saepe numquam sint a
-          beatae non deleniti exercitationem. Possimus labore et nulla
-          perspiciatis corrupti alias doloribus vitae ipsa nemo iusto qui
-          repellendus tenetur, beatae voluptas voluptatem.
-        </p>
+        <div className="w-full md:min-h-auto">
+          <WaveUp />
+        </div>
+        <TechStackPage />
+        <div className="w-full md:min-h-auto">
+          <WaveDown />
+        </div>
+        <Contact />
       </div>
     </main>
   );
