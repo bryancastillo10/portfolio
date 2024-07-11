@@ -20,7 +20,7 @@ const Navbar = () => {
       <div className="container flex relative justify-between items-center max-w-full md:max-w-[80%] mx-auto p-4">
         {/* Logo */}
         <div className="relative size-16 bg-primary/75 rounded-full">
-          <Image src={NavLogo} alt="portfolio-logo" className="p-1" fill />
+          <Image src={NavLogo} alt="portfolio-logo" layout="fill" objectFit="contain" />
         </div>
 
         {/* Nav Right Side */}
