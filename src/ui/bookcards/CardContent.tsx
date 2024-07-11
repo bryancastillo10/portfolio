@@ -76,11 +76,11 @@ const CardContent = ({
         </div>
         <div className="">
           <div className="tech-block space-x-4">
-            <h1>Repository</h1>
+            <h1 className="text-base">Repository</h1>
             <FaGithub size={24} />
           </div>
           <div className="tech-block space-x-4">
-            <h1>Live Demo</h1>
+            <h1 className="text-base">Live Demo</h1>
             <BiPlayCircle size={24} />
           </div>
         </div>
