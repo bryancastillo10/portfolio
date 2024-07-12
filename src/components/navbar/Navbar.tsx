@@ -2,7 +2,6 @@
 
 import { useState, useCallback } from "react";
 import Image from "next/image";
-import NavLogo from "../../../public/icons/NavLogo.svg";
 import ThemeToggle from "@/ui/themetoggle/ThemeToggle";
 import HamburgerMenu from "@/ui/hamburgermenu/HamburgerMenu";
 import { navLinks } from "@/constants/navLinks";
@@ -20,7 +19,12 @@ const Navbar = () => {
       <div className="container flex relative justify-between items-center max-w-full md:max-w-[80%] mx-auto p-4">
         {/* Logo */}
         <div className="relative size-16 bg-primary/75 rounded-full">
-          <Image src={NavLogo} alt="portfolio-logo" layout="fill" objectFit="contain" />
+          <Image
+            src="/icons/NavLogo.svg"
+            alt="portfolio-logo"
+            fill
+            style={{ objectFit: "contain" }}
+          />
         </div>
 
         {/* Nav Right Side */}

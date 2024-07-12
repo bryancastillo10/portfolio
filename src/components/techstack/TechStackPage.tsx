@@ -1,35 +1,27 @@
 "use client";
-import Html from "../../../public/techstack/HTML.svg";
-import Tailwind from "../../../public/techstack/Tailwind CSS.svg";
-import React from "../../../public/techstack/React.svg";
-import Python from "../../../public/techstack/Python.svg";
+import dynamic from "next/dynamic";
 
 import TechStackIcon from "./TechStackIcon";
 
+const HtmlIcon = dynamic(() => import("../../../public/techstack/HTML.svg"), {
+  ssr: false,
+});
+const CSSIcon = dynamic(() => import("../../../public/techstack/CSS.svg"), {
+  ssr: false,
+});
+const ReactIcon = dynamic(() => import("../../../public/techstack/React.svg"), {
+  ssr: false,
+});
+
 const TechStackPage = () => {
-
-
   return (
     <section className="bg-accent pt-10">
       <div className="flex flex-col gap-2 max-w-[80%] mx-auto">
-<div className="grid grid-cols-3">
-          <TechStackIcon
-           svgIcon={React} 
-          techStackName="React"
-          />
-          <TechStackIcon
-           svgIcon={Html} 
-          techStackName="HTML"
-          />
-          <TechStackIcon
-           svgIcon={Tailwind} 
-          techStackName="Tailwind"
-          />
-          <TechStackIcon
-           svgIcon={Python} 
-          techStackName="Python"
-          />
-</div>
+        <div className="flex items-center">
+          <TechStackIcon svgIcon={HtmlIcon} techStackName="HTML" />
+          <TechStackIcon svgIcon={CSSIcon} techStackName="CSS" />
+          <TechStackIcon svgIcon={ReactIcon} techStackName="React" />
+        </div>
       </div>
     </section>
   );

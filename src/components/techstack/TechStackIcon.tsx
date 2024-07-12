@@ -1,19 +1,23 @@
 import Hexagon from "../ui/Hexagon";
-import Image, { StaticImageData } from "next/image";
+import { ComponentType, SVGProps } from "react";
 
 interface TechStackIconProps {
-  svgIcon: StaticImageData;
+  svgIcon: ComponentType<React.SVGProps<SVGSVGElement>>;
   techStackName: string;
 }
 
-const TechStackIcon = ({ svgIcon, techStackName }: TechStackIconProps) => {
+const TechStackIcon = ({
+  svgIcon: SvgIcon,
+  techStackName,
+}: TechStackIconProps) => {
   return (
-    <div className="relative">
-      <Hexagon fillColor="#001C55" width="200" height="180" />
-      <div className="absolute top-10 left-14 flex flex-col gap-1 items-center">
-        {/* <SvgIcon width="80" height="80" />  */}
-        <Image src={svgIcon} height="70" width="70" alt="tech-icon" />
-        <p className="text-secondary font-semibold text-lg">{techStackName}</p>
+    <div className="relative flex">
+      <Hexagon fillColor="#001C55" width="115" height="120" />
+      <div className="absolute top-6 right-[18%]">
+        <SvgIcon height="50" viewBox="0 0 70 80" />
+        <p className="mt-1 text-secondary text-center font-semibold text-lg">
+          {techStackName}
+        </p>
       </div>
     </div>
   );
