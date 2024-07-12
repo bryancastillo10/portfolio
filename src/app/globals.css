@@ -40,7 +40,8 @@
 /* Project Card Component */
 @layer components {
   .card {
-    @apply relative w-[400px] h-[500px] bg-[#f9eee7] text-[#001c55] shadow-[1px_1px_12px_#000] flex items-center justify-center rounded-[10px];
+    @apply relative h-[500px]  md:max-w-[400px] 
+     bg-[#f9eee7] text-[#001c55] shadow-[1px_1px_12px_#000] flex items-center justify-center rounded-[10px];
     -webkit-box-shadow: 1px 1px 12px #000;
     -webkit-transform: preserve-3d;
     -ms-transform: preserve-3d;
