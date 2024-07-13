@@ -1,43 +1,17 @@
 "use client";
-
+import Image from "next/image";
+import Headers from "../ui/Headers";
 import TechStackIcon from "./TechStackIcon";
-import {
-  HtmlIcon,
-  CSSIcon,
-  JSIcon,
-  TSIcon,
-  ReactIcon,
-  TailwindIcon,
-  CodeIcon,
-  GitIcon,
-  NextIcon,
-  FigmaIcon,
-} from "./TechStackImport";
 
 const TechStackPage = () => {
   return (
     <section className="bg-accent pt-10">
-      <div className="grid grid-cols-1 md:grid-cols-2 max-w-[80%] mx-auto">
-        <div className="relative flex flex-col flex-wrap">
-          {/* First Row */}
-          <div className="flex items-center">
-            <TechStackIcon svgIcon={HtmlIcon} techStackName="HTML" />
-            <TechStackIcon svgIcon={CSSIcon} techStackName="CSS" />
-            <TechStackIcon svgIcon={JSIcon} techStackName="JavaScript" />
-            <TechStackIcon svgIcon={ReactIcon} techStackName="React" />
-            <TechStackIcon svgIcon={CodeIcon} techStackName="VSCode" />
-          </div>
-
-          {/* Second Row */}
-          <div className="ml-10 flex items-center">
-            <TechStackIcon svgIcon={TailwindIcon} techStackName="Tailwind" />
-            <TechStackIcon svgIcon={TSIcon} techStackName="TypeScript" />
-            <TechStackIcon svgIcon={NextIcon} techStackName="Next JS" />
-            <TechStackIcon svgIcon={GitIcon} techStackName="Git" />
-            <TechStackIcon svgIcon={FigmaIcon} techStackName="Figma" />
-          </div>
-        </div>
-
+      <div className=" max-w-[80%] mx-auto">
+        <Headers>My Tools for Development</Headers>
+      
+        <article className="mt-4">
+        <TechStackIcon/>
+        <Image src="/techstack/HTML.svg" alt="html-logo" width={100} height={100}/>
         {/* Card Section */}
         <div className="">
           <p>
@@ -55,7 +29,8 @@ const TechStackPage = () => {
             nihil ipsa! Quas doloremque molestiae nostrum fugiat sit animi
             voluptates ratione quod!
           </p>
-        </div>
+          </div>
+        </article>
       </div>
     </section>
   );

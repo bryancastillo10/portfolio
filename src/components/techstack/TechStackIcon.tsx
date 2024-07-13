@@ -1,26 +1,27 @@
-import Hexagon from "../ui/Hexagon";
-import { ComponentType, SVGProps } from "react";
+import arraySplit from "../../utils/arraySplit";
+import techStacks, { techStacksProps } from "@/constants/techStack";
 
-interface TechStackIconProps {
-  svgIcon: ComponentType<React.SVGProps<SVGSVGElement>>;
-  techStackName: string;
+
+const TechStackIcon = () => {
+  const leftSideStack = arraySplit(techStacks, 3);
+  const [firstRow, secondRow, thirdRow, fourthRow] = leftSideStack;
+
+  console.log(thirdRow);
+
+
+  const lowerSideStack = arraySplit(techStacks, 6);
+  const [_ , __ ,  thirdLongRow, fourthLongRow] = lowerSideStack;
+
+  console.log(fourthLongRow);
+  return (
+    <div>
+      {thirdLongRow.map((s:techStacksProps) => (
+        <div key={s.id}>{s.name}</div>
+      ))}
+    </div>
+  )
 }
 
-const TechStackIcon = ({
-  svgIcon: SvgIcon,
-  techStackName,
-}: TechStackIconProps) => {
-  return (
-    <div className="relative flex">
-      <Hexagon fillColor="#001C55" width="115" height="120" />
-      <div className="absolute top-6 right-[18%]">
-        <SvgIcon height="50" viewBox="0 0 70 85" />
-        <p className="mt-1 text-secondary text-center font-semibold text-md">
-          {techStackName}
-        </p>
-      </div>
-    </div>
-  );
-};
-
 export default TechStackIcon;
+
+
