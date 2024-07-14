@@ -3,10 +3,10 @@ interface AboutContentProps{
     paragraph: string;
 }
 
-const AboutContent = ({paragraph}:AboutContentProps) => {
+const ParagraphContent = ({paragraph}:AboutContentProps) => {
   return (
     <div className="max-w-full md:max-w-[90%] font-medium text-[22px] md:text-[24px] 
-      my-16 md:my-10 
+      py-14 md:py-10 
      text-center md:text-left
     ">
       {paragraph}
@@ -14,4 +14,4 @@ const AboutContent = ({paragraph}:AboutContentProps) => {
   )
 }
 
-export default AboutContent;
+export default ParagraphContent;
