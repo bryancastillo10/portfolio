@@ -34,7 +34,7 @@ const techStacks:techStacksProps[] = [
         name:"Tailwind CSS",
         iconPath: "/techstack/Tailwind.svg",
         category:"Frontend Web Development",
-        description:"Utility-based styling of HTMl which is a more pragmatic approach than CSS"
+        description:"Utility-based styling of HTML which is a more pragmatic approach than CSS"
     },
     {
         id: 5,
