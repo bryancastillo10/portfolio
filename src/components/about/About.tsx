@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import AboutContent from "./AboutContent";
+import ParagraphContent from "../ui/ParagraphContent";
 import Image from "next/image";
 import Button from "../ui/Button";
 import Headers from "../ui/Headers";
@@ -20,11 +20,11 @@ const About = () => {
               <Headers>About Bryan</Headers>
             </div>
             <div className="my-0 lg:my-1">
-              <AboutContent
+              <ParagraphContent
                 paragraph="Bryan adapts to the rapidly changing digital world and discovers 
                 that producing and maintaining software can solve some real-world problems."
               />
-              <AboutContent
+              <ParagraphContent
                 paragraph="He became a self-taught programmer capable of creating valuable 
                 software applications due to his resourcefulness and perseverance in his 
                 career development."

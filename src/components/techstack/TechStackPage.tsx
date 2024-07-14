@@ -1,8 +1,8 @@
 "use client";
 import Headers from "../ui/Headers";
 import TechCard from "./TechCard";
-import TechArticle from "./TechArticle";
 import { techRows } from "./techStackGroupSplit";
+import ParagraphContent from "../ui/ParagraphContent";
 
 const TechStackPage = () => {
 
@@ -26,8 +26,13 @@ const TechStackPage = () => {
             </div>
           ))}
         </article>
-        <article className="pt-8">
-            <TechArticle/>
+          <article className="p-8">
+            <Headers>Versatile, Reliable, Scalable</Headers>
+            <ParagraphContent paragraph="Here are some of the technologies, libraries, and frameworks that I had
+            experience to utilize in order to build meaningful software applications."/>
+
+            <ParagraphContent paragraph="Learning these tech stacks and collaborating with other developers on projects has significantly expanded my professional experience,
+             enhancing my ability to tackle challenges and deliver innovative solutions effectively."/>
           </article>
         </div>
       </div>
