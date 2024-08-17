@@ -1,6 +1,7 @@
 import Facebook from "./icons/facebook";
 import Github from "./icons/github";
 import Instagram from "./icons/instagram";
+import Linkedin from "./icons/Linkedin";
 
 const SocialMedia = () => {
   return (
@@ -8,6 +9,7 @@ const SocialMedia = () => {
       <Facebook/>
       <Instagram/>
       <Github/>
+      <Linkedin/>
     </div>
   )
 }

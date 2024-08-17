@@ -14,7 +14,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="flex justify-between items-center p-4 bg-light-secondary text-primary">
+    <nav className="flex justify-between items-center  bg-light-secondary text-primary px-12 py-4">
       <div className="flex justify-between items-center gap-5">
           <div
           className="p-3.5 cursor-pointer bg-primary text-secondary rounded-full hover:bg-emerald-200"

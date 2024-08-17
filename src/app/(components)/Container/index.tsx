@@ -25,7 +25,7 @@ const MainLayout = ({children}:ContainerProps) => {
   <div className={`${theme ? "bg-secondary text-primary": "bg-primary text-secondary"}
   flex w-full min-h-screen ease-in-out duration-500`}>
     <Sidebar/>
-    <main className="flex flex-col w-full h-full px-6 py-4">
+    <main className="flex flex-col w-full h-full pb-4">
       <Navbar/>
       {children}
     </main>
