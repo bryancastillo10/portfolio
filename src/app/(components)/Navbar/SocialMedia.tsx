@@ -1,11 +1,9 @@
-import Facebook from "./icons/facebook";
-import Github from "./icons/github";
-import Instagram from "./icons/instagram";
-import Linkedin from "./icons/Linkedin";
+import { Facebook, Instagram, Github, Linkedin } from "./icons/SocialMediaIcons";
 
 const SocialMedia = () => {
+
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-3">
       <Facebook/>
       <Instagram/>
       <Github/>

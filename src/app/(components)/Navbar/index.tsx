@@ -25,8 +25,8 @@ const Navbar = () => {
           <ThemeToggle/>
       </div>
       <div className="flex justify-between items-center">
-        Reach me out
-        <hr className="w-0 h-7 border border-solid  border-primary mx-3"/>
+        <span className="hidden md:block">Reach me out</span>
+        <hr className="hidden md:block w-0 h-7 border border-solid  border-primary mx-3"/>
         <SocialMedia/>
       </div>
     </nav>
