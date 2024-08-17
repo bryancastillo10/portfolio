@@ -3,6 +3,7 @@ import { AlignCenter } from "lucide-react";
 import { setIsSidebarCollapse }  from "@/state";
 import { useAppDispatch, useAppSelector } from "@/app/redux";
 import ThemeToggle from "./ThemeToggle";
+import SocialMedia from "./SocialMedia";
 
 const Navbar = () => {
   const dispatch = useAppDispatch();
@@ -11,8 +12,6 @@ const Navbar = () => {
   const toggleSideBar = () => {
     dispatch(setIsSidebarCollapse(!isSideBarCollapsed));
   }
-
-
 
   return (
     <nav className="flex justify-between items-center p-4 bg-light-secondary text-primary">
@@ -25,8 +24,10 @@ const Navbar = () => {
           </div>
           <ThemeToggle/>
       </div>
-      <div className="">
-        Social Media
+      <div className="flex justify-between items-center">
+        Reach me out
+        <hr className="w-0 h-7 border border-solid  border-primary mx-3"/>
+        <SocialMedia/>
       </div>
     </nav>
   )
