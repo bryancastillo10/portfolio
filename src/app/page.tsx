@@ -2,7 +2,7 @@
 
 export default function Home() {
   return (
-    <main className="w-full min-h-screen  ">
+    <main className="w-full min-h-screen">
       <div className="flex justify-center pt-4">
         <h1 className="">Portfolio Version 2</h1>
       </div>
