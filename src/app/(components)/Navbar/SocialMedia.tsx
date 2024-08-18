@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Github, Linkedin } from "./icons/SocialMediaIcons";
+import { Facebook, Instagram, Github, Linkedin } from "./SocialMediaIcons";
 
 const SocialMedia = () => {
 
