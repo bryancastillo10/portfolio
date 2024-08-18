@@ -8,13 +8,16 @@ import SocialMedia from "./SocialMedia";
 const Navbar = () => {
   const dispatch = useAppDispatch();
   const isSideBarCollapsed = useAppSelector((state) => state.global.isSidebarCollapse);
+  const theme = useAppSelector((state) => state.global.theme);
 
   const toggleSideBar = () => {
     dispatch(setIsSidebarCollapse(!isSideBarCollapsed));
   }
 
   return (
-    <nav className="flex justify-between items-center  bg-light-secondary text-primary px-12 py-4">
+    <nav className={`flex justify-between items-center px-12 py-4 sticky top-0 z-10
+    ${theme ? 'bg-dark-primary text-primary':'bg-light-secondary text-primary'}
+    `}>
       <div className="flex justify-between items-center gap-5">
           <div
           className="p-3.5 cursor-pointer bg-primary text-secondary rounded-full hover:bg-emerald-200"
