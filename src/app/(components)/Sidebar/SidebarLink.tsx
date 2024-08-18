@@ -13,7 +13,7 @@ interface SidebarLinksProps {
 const SidebarLink = ({id,icon:Icon,name,theme, isSidebarCollapsed}:SidebarLinksProps) => {
     const pathname = usePathname();
 
-    const isActive = pathname === id || (pathname === "/" && id === "/home");
+    const isActive = pathname === id || (pathname.startsWith(id) && id !== "/");
     return (
       <Link href={id}>
         <div className={`cursor-pointer p-4 flex items-center gap-3 rounded-2xl duration-300 ease-in-out
