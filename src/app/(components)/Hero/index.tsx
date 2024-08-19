@@ -2,6 +2,8 @@
 import { useAppSelector } from "@/app/redux";
 import HeroBg from "@/asset/HeroMainBG.png";
 import TopProjects from "@/app/(components)/Hero/TopProjects";
+import { adventPro } from "@/utils/font";
+import Button from "@/app/(reusables)/Button";
 
 const Hero = () => {
     const theme = useAppSelector((state)=> state.global.theme);
@@ -23,7 +25,7 @@ const Hero = () => {
             <div className={`my-4 md:p-4 flex flex-col gap-4 text-center md:text-left  rounded-2xl 
               ${isSidebarCollapse ? "md:max-w-[50%]":"md:max-w-[60%]"}
               ${theme ? "bg-secondary":"bg-primary/80"}`}>
-              <h1 className={`mt-8 md:mt-4 font-bold text-5xl lg:text-7xl tracking-wide`}>
+              <h1 className={`mt-8 md:mt-4 font-bold text-7xl tracking-wide ${adventPro.className}`}>
                 Bryan Castillo
               </h1>
               <div className="min-w-fit md:max-w-full py-4 ">
@@ -37,8 +39,8 @@ const Hero = () => {
 
             {/* Hero CTA */}
             <div className={`flex flex-col md:flex-row justify-end gap-x-6 pt-4 max-w-[80%] mx-auto md:mx-0 ${isSidebarCollapse ? "md:max-w-[50%]":"md:max-w-[60%]"}`}>
-              <button className="min-w-fit m-2 px-8 py-2 text-2xl rounded-2xl bg-light-secondary text-primary">About</button>
-              <button className="min-w-fit m-2 px-8 py-2 text-2xl rounded-2xl bg-primary text-dark-primary">Contact</button>
+              <Button action={()=>{}} variant="primary">About</Button>
+              <Button action={()=>{}} variant="secondary">Contact</Button> 
             </div>
           </div>
 
