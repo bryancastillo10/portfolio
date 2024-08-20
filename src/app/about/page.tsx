@@ -6,7 +6,7 @@ const About = () => {
   return (
     <section className='p-4'>
       <div className="max-w-[88%] mx-auto container">
-      <h1 className={`text-left mt-4 text-5xl ${adventPro.className}`}>About Bryan</h1>
+      <h1 className={`text-center lg:text-left mt-4 text-5xl ${adventPro.className}`}>About Bryan</h1>
       <AboutInfo/>
       <TechStack/>
         <div className="mt-8">
@@ -22,11 +22,6 @@ const About = () => {
             </div>
           </div>
           {/* Content Draft */}  
-            <div className="p-4">
-              <h1 className='text-2xl font-semibold pb-2'>Tech Stack</h1>
-              <p className='text-base text-center md:text-left mt-4'>Here are some of the technologies, libraries, 
-                and frameworks he learned and used to build applications</p>
-            </div>
             <div className="p-4">
               <h1 className='text-2xl font-semibold pb-2'>Work Experience and Education</h1>
               <p  className='text-base text-center md:text-left mt-4'>Associate Researcher</p>

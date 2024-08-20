@@ -9,18 +9,19 @@ const TechStack = () => {
   const theme = useAppSelector((state)=> state.global.theme);
   return (
     <div className="mt-4">
-      <div className="py-4 w-full border">
-        <h1 className={`text-left mt-4 text-5xl ${adventPro.className}`}>My Tools for Development</h1>
-
+      <div className="py-4 w-full">
+        <h1 className={`text-center lg:text-left mt-4 text-5xl ${adventPro.className}`}>My Tools for Development</h1>
+        <p className="pt-4 text-base leading-relaxed  text-center md:text-left lg:max-w-[70%]">Here are some of the technologies, libraries, and frameworks that I had
+        experience to utilize in order to build meaningful software applications.</p>
         {/* TechStack Hexagons  */}
-        <div className="mt-8 flex flex-wrap gap-y-6">
+        <div className="mt-8 flex flex-wrap justify-center lg:justify-start gap-y-6">
           {techStacks.map((stack) => (
             <div key={stack.id}
               className="relative"
               onMouseEnter={() => setHoveredId(stack.id)}
               onMouseLeave={() => setHoveredId(null)}
             >
-              <stack.iconComponent className="duration-500 ease-in-out hover:scale-110 " fill={stack.fillColor} />
+              <stack.iconComponent className="duration-500 ease-in-out hover:scale-110 " fill={theme ? "#050F0D" :"#3C6997"} />
               {hoveredId === stack.id && (
                 <div className={`absolute z-10 top-full left-8 p-6 rounded-md shadow-lg w-80
                 ${theme ? "bg-dark-primary/80 text-white" :"bg-light-secondary/80 text-primary"}`}>
@@ -31,6 +32,11 @@ const TechStack = () => {
               )}
             </div>
           ))}
+        </div>
+
+        <div className="my-8">
+          <p className="mt-6 text-base text-center leading-relaxed md:text-left lg:max-w-[70%]">Learning these tech stacks and collaborating with other developers on projects has significantly expanded my professional experience,
+          enhancing my ability to tackle challenges and deliver innovative solutions effectively.</p>
         </div>
       </div>
     </div>
