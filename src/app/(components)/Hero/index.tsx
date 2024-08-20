@@ -59,7 +59,7 @@ const Hero = () => {
               <h1 className="text-4xl font-mono">Software Developer</h1>
             </div>
           </div>
-          <div className="bottom-0 w-full ">
+          <div className="bottom-0 w-full overflow-x-hidden">
                 <WaveUp />
           </div>
         </section>
