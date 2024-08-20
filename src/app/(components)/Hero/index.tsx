@@ -2,9 +2,10 @@
 import { useAppSelector } from "@/app/redux";
 import HeroBg from "@/asset/HeroMainBG.png";
 import { TopProjects } from "@/app/(components)/Hero/TopProjects";
+import Button from "@/app/(reusables)/Button";
 import { adventPro } from "@/utils/font";
 import { projectInfo } from "./projectInfo";
-import Button from "@/app/(reusables)/Button";
+import WaveUp from "./WaveUp";
 
 const Hero = () => {
     const theme = useAppSelector((state)=> state.global.theme);
@@ -51,9 +52,12 @@ const Hero = () => {
               <h1 className="text-4xl font-mono">Software Developer</h1>
             </div>
           </div>
+          <div className="bottom-0 w-full ">
+                <WaveUp />
+          </div>
         </section>
         <div className="mt-8 max-w-[90%] md:max-w-[80%] mx-auto space-y-4 md:space-y-8">
-        <h1 className="text-4xl tracking-wider">Top Projects</h1>
+        <h1 className={`text-5xl xl:text-7xl tracking-wider ${adventPro.className}`}>Top Projects</h1>
         <TopProjects projectInfo={projectInfo} />
         </div>
     </div>

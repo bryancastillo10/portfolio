@@ -8,7 +8,7 @@ import { TopProjectsProps,
           Spring_Config,
           IndicatorProps, 
            } from './useCardCarousel';
-
+import { useAppSelector } from "@/app/redux";
 
 
 export const TopProjects = ({projectInfo}:TopProjectsProps) => {
@@ -71,6 +71,7 @@ export const TopProjects = ({projectInfo}:TopProjectsProps) => {
 
 
 const Cards = ({projectInfo}:TopProjectsProps) => {
+  const theme = useAppSelector((state)=> state.global.theme);
   return (
     <>
       {projectInfo.map((project,idx)=> {
@@ -88,42 +89,46 @@ const Cards = ({projectInfo}:TopProjectsProps) => {
             }}
 
             transition={Spring_Config}
-            className="w-full h-[71vh] shrink-0 rounded-xl object-cover"
+            className="w-full h-[700px] xl:h-[71vh] shrink-0 rounded-xl object-cover place-content-center xl:place-content-start"
           >
-            <div className="p-6 md:p-10 space-y-2 text-white">
-                <h1 className="text-4xl md:text-7xl font-semibold tracking-wider">{project.projectTitle}</h1>
-                <h3 className="py-4 text-3xl">{project.projectSubtitle}</h3>
-                {/* Description */}
-                <p className="pt-4 text-xl text-balance">{project.description}</p>
-
-                {/* Tech Stack */}
-                <div className="pt-4">
-                  <ul className="grid grid-cols-2 md:flex gap-4 items-center">
-                    {project.techStack.map((tech, index) => (
-                      <li
-                        key={index}
-                        className="md:text-2xl max-w-fit font-light shadow-lg bg-secondary text-primary px-4 py-2 rounded-2xl"
-                      >
-                        {tech}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Links */}
-                <div className="pt-8 md:pt-12 flex  justify-start gap-10  mx-2 md:max-w-[50%]">
-                  <div className="flex flex-col items-center gap-2 duration-500 ease-out p-4 ">
-                    <a href={project.demoLink} target="_blank" rel="noopener noreferrer ">
-                      <PlayCircle size={50} className="" />
-                    </a>
-                    <p className="text-2xl">Demo</p>
+            <div className="p-6 md:p-10 space-y-4">
+                  {/* Header */}
+                  <div className={`p-6 rounded-2xl shadow-md w-full xl:max-w-[70%] ${theme ? "bg-dark-primary/80": "bg-white/80"}`}>
+                    <h1 className="text-4xl md:text-7xl font-semibold tracking-wider">{project.projectTitle}</h1>
+                    <h3 className="py-4 text-xl italic xl:not-italic xl:text-3xl">{project.projectSubtitle}</h3>
+                    {/* Description */}
+                    <p className="pt-4 text-xl text-balance">{project.description}</p>
                   </div>
-                  <div className="flex flex-col items-center gap-2 duration-500 ease-out p-4">
-                    <a href={project.gitRepo} target="_blank" rel="noopener noreferrer">
-                      <GitForkIcon size={50} />
-                    </a>
-                    <p className="text-2xl">Repository</p>
-                  </div>
+                    {/* Tech Stack */}
+                    <div className="pt-4">
+                      <ul className="grid grid-cols-2 xl:grid-cols-3 gap-4 items-center xl:w-[55%]">
+                        {project.techStack.map((tech, index) => (
+                          <li
+                            key={index}
+                            className={`row-span-3 md:text-2xl text-nowrap w-fit font-light shadow-lg text-primary
+                             ${theme ? "bg-teal-700": "bg-secondary"} px-4 py-2 rounded-2xl`}
+                          >
+                            {tech}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  <div className="pt-4">    
+                    {/* Links */}
+                    <div className={`flex justify-evenly items-center gap-10  mx-2 xl:max-w-[25%] rounded-2xl shadow-md ${theme ? "bg-dark-primary/80": "bg-white/80"}`}>
+                      <div className="flex flex-col items-center gap-2 duration-500 ease-out p-4 hover:scale-110">
+                        <a href={project.demoLink} target="_blank" rel="noopener noreferrer ">
+                          <PlayCircle size={40} />
+                        </a>
+                        <p className="text-2xl">Demo</p>
+                      </div>
+                      <div className="flex flex-col items-center gap-2 duration-500 ease-out p-4 hover:scale-110">
+                        <a href={project.gitRepo} target="_blank" rel="noopener noreferrer">
+                          <GitForkIcon size={40} />
+                        </a>
+                        <p className="text-2xl">Repository</p>
+                      </div> 
+                  </div>                  
                 </div>
              </div>         
           </motion.div>
@@ -135,7 +140,7 @@ const Cards = ({projectInfo}:TopProjectsProps) => {
 
 const Indicator = ({ projectInfo, cardIndex, setCardIndex }:IndicatorProps) => {
   return (
-    <div className="mt-4 flex w-full justify-center gap-2">
+    <div className="md:mt-4 flex w-full justify-center gap-2">
       {projectInfo.map((_, idx) => {
         return (
           <button
