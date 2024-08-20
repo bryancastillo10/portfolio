@@ -39,7 +39,7 @@ const techStacks:TechStackProps[] = [
         iconComponent: JavascriptIcon,
         category: "Programming Language",
         description: "Mostly used programming language for web development to create interactivity on the web browser",
-        fillColor: "#F7DF1E"
+        fillColor: "#ECDC5A"
       },
     {
         id: 4,
@@ -47,7 +47,7 @@ const techStacks:TechStackProps[] = [
         iconComponent: TailwindIcon,
         category:"Frontend Web Development",
         description:"Utility-based styling of HTML which is a more pragmatic approach than CSS",
-        fillColor:"#001C55",
+        fillColor:"#06B6D4",
     },
     {
         id: 5,
@@ -55,7 +55,7 @@ const techStacks:TechStackProps[] = [
         iconComponent: PythonIcon,
         category:"Programming Language",
         description:"Versatile dynamic language that I can utilize for GUI development,data analysis, and building simple API",
-        fillColor:"#0072b2",
+        fillColor:"#3776AB",
     },
     {
         id: 6,
@@ -63,7 +63,7 @@ const techStacks:TechStackProps[] = [
         iconComponent: TypescriptIcon,
         category:"Programming Language",
         description:"Superset of JavaScript made for strong typing of data to have a better scalability and prevent any runtime bugs on the code",
-        fillColor:"#001C55",
+        fillColor:"#3178C6",
     },
     {
         id: 7,
@@ -71,7 +71,7 @@ const techStacks:TechStackProps[] = [
         iconComponent: ReactIcon,
         category:"Frontend Web Development",
         description:"Frontend JavaScript library that features faster building of user interfaces than the traditional approach",
-        fillColor:"#001C55",
+        fillColor:"#61DAFB",
     },]
 
 //     {
