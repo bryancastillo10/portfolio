@@ -27,6 +27,9 @@ const config: Config = {
         base: '16px',
         md: '22px',
       },
+      animation: {
+        "spin-slow": "spin 8s linear infinite",
+      },
     },
   },
   darkMode:'class',
