@@ -15,6 +15,11 @@ import MongoDBIcon from "@/asset/techstack/MongoDB.svg";
 import PostmanIcon from "@/asset/techstack/Postman.svg";
 import NumpyIcon from  "@/asset/techstack/Numpy.svg";
 import PandasIcon from "@/asset/techstack/Pandas.svg";
+import PostgresIcon from "@/asset/techstack/Postgres.svg";
+import StreamlitIcon from "@/asset/techstack/Streamlit.svg";
+import FlaskIcon from "@/asset/techstack/Flask.svg";
+import SkLearnIcon from "@/asset/techstack/SkLearn.svg";
+import PrismaIcon from "@/asset/techstack/Prisma.svg";
 
 export interface TechStackProps {
     id: number;
@@ -163,46 +168,47 @@ const techStacks:TechStackProps[] = [
     description:"Popular data analysis framework in Python to be able to manipulate datasets and pre-process for effective exploratory data analysis or machine learning",
     fillColor:""
 },
+{
+  id: 18,
+  name: "PostgreSQL",
+  iconComponent:PostgresIcon,
+  category: "Databases",
+  description:"One of the open-source relational database which is used for its robustness and scalability",
+  fillColor:"#4169E1"
+},
+{
+  id: 19,
+  name: "Streamlit",
+  iconComponent: StreamlitIcon,
+  category:"Lightweight Web Development",
+  description: "A data dashboard building library that is constantly being updated by the tech community",
+  fillColor:"#FF4B4B"
+},
+{
+  id: 20,
+  name: "Flask",
+  iconComponent: FlaskIcon,
+  category: "Backend Web Development",
+  description:"A lightweight backend framework for fast establishment of Python-based API",
+  fillColor:"#000000"
+},
+  {
+    id: 21,
+    name: "Scikit Learn",
+    iconComponent: SkLearnIcon,
+    category: "Data Analysis Tool",
+    description:"Python library for the fundamentals of machine learning wherein I learned some regression and classification algorithms",
+    fillColor:"#F7931E"
+    }, 
+    {
+      id: 22,
+        name: "Prisma",
+        iconComponent: PrismaIcon,
+        category: "Object Relational Mapping Tool",
+        description:"A versatile tool used to provide a schema on a server in an easier way without the need of using respective database syntax",
+      fillColor:"#2D3748"
+      }
   ]
 
-
-
-
-
-//     {
-//         id: 18,
-//         name: "PostgreSQL",
-//         iconComponent:"@/asset/techstack/Postgres.svg",
-//         category: "Databases",
-//         description:"One of the open-source relational database which is used for its robustness and scalability",
-//     },
-//     {
-//         id: 19,
-//         name: "Streamlit",
-//         iconComponent: "@/asset/techstack/Streamlit.svg",
-//         category:"Lightweight Web Development",
-//         description: "A data dashboard building library that is constantly being updated by the tech community"
-//     },
-//     {
-//         id: 20,
-//         name: "Flask",
-//         iconComponent: "@/asset/techstack/Flask.svg",
-//         category: "Backend Web Development",
-//         description:"A lightweight backend framework for fast establishment of Python-based API",
-//     },
-//     {
-//         id: 21,
-//         name: "Scikit Learn",
-//         iconComponent: "@/asset/techstack/SkLearn.svg",
-//         category: "Data Analysis Tool",
-//         description:"Python library for the fundamentals of machine learning wherein I learned some regression and classification algorithms"
-//     }, {
-//         id: 22,
-//         name: "Prisma",
-//         iconComponent: "@/asset/techstack/Prisma.svg",
-//         category: "Object Relational Mapping Tool",
-//         description:"A versatile tool used to provide a schema on a server in an easier way without the need of using respective database syntax"
-//     }
-// ]
 
 export default techStacks;
