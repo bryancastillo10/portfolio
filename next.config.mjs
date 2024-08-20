@@ -1,8 +1,27 @@
 /** @type {import('next').NextConfig} */
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+
 const nextConfig = {
-    images: {
-        domains: ["placehold.co"]
-    }
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ["@svgr/webpack"],
+    });
+
+    return config;
+  },
+
+  images: {
+    remotePatterns: [{
+      protocol:"https",
+      hostname:"placehold.co",
+      port:'',
+      pathname:"**"
+    }]
+}
 };
 
 export default nextConfig;
+
+
