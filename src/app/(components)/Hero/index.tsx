@@ -1,8 +1,9 @@
 "use client";
 import { useAppSelector } from "@/app/redux";
 import HeroBg from "@/asset/HeroMainBG.png";
-import TopProjects from "@/app/(components)/Hero/TopProjects";
+import { TopProjects } from "@/app/(components)/Hero/TopProjects";
 import { adventPro } from "@/utils/font";
+import { projectInfo } from "./projectInfo";
 import Button from "@/app/(reusables)/Button";
 
 const Hero = () => {
@@ -51,7 +52,10 @@ const Hero = () => {
             </div>
           </div>
         </section>
-        <TopProjects/>
+        <div className="mt-8 max-w-[80%] mx-auto space-y-4 md:space-y-8">
+        <h1 className="text-4xl tracking-wider">Top Projects</h1>
+        <TopProjects projectInfo={projectInfo} />
+        </div>
     </div>
   )
 }

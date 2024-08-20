@@ -1,34 +1,35 @@
-import { useState, useEffect } from "react";
-
-interface CardCarouselContentProps {
-  id: number;
-  projectTitle: string;
+interface ProjectInfo{
+  id:number;
+  projectTitle:string;
   projectSubtitle:string;
   description:string;
-  techStack: string[];
-  image: string;
+  techStack:string[];
+  image:string;
   demoLink:string;
   gitRepo:string;
 }
 
-const useCardCarousel = (array: CardCarouselContentProps[]) => {
-  const [slideIndex, setSlideIndex] = useState<number>(0);
-  const autoSlide: boolean = true;
-  const autoSlideInterval: number = 5000;
-  const handlePrevious = () => {
-    setSlideIndex((index) => (index === 0 ? array.length - 1 : index - 1));
-  };
+export type TopProjectsProps = {
+  projectInfo: ProjectInfo[];
+}
 
-  const handleNext = () => {
-    setSlideIndex((index) => (index === array.length - 1 ? 0 : index + 1));
-  };
-  useEffect(() => {
-    if (!autoSlide) return;
-    const slideInterval = setInterval(handleNext, autoSlideInterval);
-    return () => clearInterval(slideInterval);
-  }, []);
+export type IndicatorProps = {
+  projectInfo: ProjectInfo[];
+  cardIndex:number;
+  setCardIndex:(idx:number) => void;
+}
 
-  return { slideIndex, handlePrevious, handleNext };
+const One_Second = 1000;
+const Auto_Delay = One_Second * 10;
+const Drag_Buffer = 50;
+
+const Spring_Config = {
+  type: "spring",
+  mass:3,
+  stiffness:400,
+  damping:50
 };
 
-export default useCardCarousel;
+
+
+export { Auto_Delay, Drag_Buffer, Spring_Config};
