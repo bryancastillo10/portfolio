@@ -1,5 +1,6 @@
 import { adventPro } from "@/utils/font";
 import AboutInfo from "./(sections)/AboutInfo";
+import TechStack from "./(sections)/TechStack";
 
 const About = () => {
   return (
@@ -7,16 +8,11 @@ const About = () => {
       <div className="max-w-[88%] mx-auto container">
       <h1 className={`text-left mt-4 text-5xl ${adventPro.className}`}>About Bryan</h1>
       <AboutInfo/>
+      <TechStack/>
         <div className="mt-8">
           {/* Layout Draft */}
          
-          <div className="mt-4">
-            <div className="w-full h-[400px] md:h-[300px] bg-slate-500">
-            <p className='pt-8 text-xl text-primary text-center'>Tech Stack Section</p>
-            <p className='ml-10 mt-4 text-primary'>Short description</p>
-            <p className='ml-10 mt-4 text-primary'>Hexagon Logos with Tooltip</p>
-            </div>
-          </div>
+     
           <div className="mt-4 flex flex-col-reverse md:flex-row justify-center items-center w-full gap-4 ">
             <div className="w-full h-[150px] bg-slate-500">
               <p className='my-8 text-xl text-primary text-center'>Educational Background</p>
@@ -25,9 +21,7 @@ const About = () => {
               <p className='my-8 text-xl text-primary text-center'>Work Experience</p>
             </div>
           </div>
-          {/* Content Draft */}
-      
-            
+          {/* Content Draft */}  
             <div className="p-4">
               <h1 className='text-2xl font-semibold pb-2'>Tech Stack</h1>
               <p className='text-base text-center md:text-left mt-4'>Here are some of the technologies, libraries, 
