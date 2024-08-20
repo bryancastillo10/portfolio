@@ -52,7 +52,7 @@ const Hero = () => {
             </div>
           </div>
         </section>
-        <div className="mt-8 max-w-[80%] mx-auto space-y-4 md:space-y-8">
+        <div className="mt-8 max-w-[90%] md:max-w-[80%] mx-auto space-y-4 md:space-y-8">
         <h1 className="text-4xl tracking-wider">Top Projects</h1>
         <TopProjects projectInfo={projectInfo} />
         </div>
