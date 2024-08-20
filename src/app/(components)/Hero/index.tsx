@@ -1,13 +1,20 @@
 "use client";
+// Libraries
 import { useAppSelector } from "@/app/redux";
-import HeroBg from "@/asset/HeroMainBG.png";
+import { useRouter } from "next/navigation";
+
+// Components
 import { TopProjects } from "@/app/(components)/Hero/TopProjects";
 import Button from "@/app/(reusables)/Button";
+
+// Assets and Styling
 import { adventPro } from "@/utils/font";
 import { projectInfo } from "./projectInfo";
+import HeroBg from "@/asset/HeroMainBG.png";
 import WaveUp from "./WaveUp";
 
 const Hero = () => {
+    const router = useRouter();
     const theme = useAppSelector((state)=> state.global.theme);
     const isSidebarCollapse = useAppSelector((state)=> state.global.isSidebarCollapse);
 
@@ -41,8 +48,8 @@ const Hero = () => {
 
             {/* Hero CTA */}
             <div className={`flex flex-col md:flex-row justify-end gap-x-6 pt-4 max-w-[80%] mx-auto md:mx-0 ${isSidebarCollapse ? "md:max-w-[50%]":"md:max-w-[60%]"}`}>
-              <Button action={()=>{}} variant="primary">About</Button>
-              <Button action={()=>{}} variant="secondary">Contact</Button> 
+              <Button action={()=>{router.push("/about")}} variant="hero-primary">About</Button>
+              <Button action={()=>{router.push("/contact")}} variant="hero-secondary">Contact</Button> 
             </div>
           </div>
 
