@@ -11,7 +11,7 @@ const AboutInfo = () => {
   return (
     <section className="flex flex-col-reverse md:flex-row justify-center items-center w-full gap-4 ">
         {/* About Description */}
-        <div className="xl:mt-[-50px] p-4 text-wrap w-[70%]">
+        <article className="xl:mt-[-50px] p-4 text-wrap w-[70%]">
           <p className='text-base text-center md:text-left'>Bryan adapts to the rapidly changing digital world and discovers 
               that producing and maintaining software can solve some real-world problems.</p>
           <p className='text-base text-center md:text-left mt-4'>He became a self-taught programmer capable 
@@ -21,7 +21,7 @@ const AboutInfo = () => {
               <Button action={()=> router.push("/projects")} variant="primary">View Projects</Button>
               <Button action={()=>router.push("/contact")} variant="secondary">Contact Me</Button> 
           </div>
-        </div>
+        </article>
         {/* About Image */}
         <div className="flex items-center relative mt-8 p-10 w-full place-content-center">
             <div className="absolute top-[5%] left-[-12%] md:top-[-15%] lg:top-[-5%] lg:left-[-5%] xl:top-[5%] xl:left-[5%] 
