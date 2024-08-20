@@ -10,6 +10,11 @@ import NodeIcon from "@/asset/techstack/NodeJS.svg";
 import FigmaIcon from "@/asset/techstack/Figma.svg";
 import GitIcon from "@/asset/techstack/Git.svg";
 import VSCodeIcon from "@/asset/techstack/VSCode.svg";
+import PyQtIcon from "@/asset/techstack/PyQt.svg";
+import MongoDBIcon from "@/asset/techstack/MongoDB.svg";
+import PostmanIcon from "@/asset/techstack/Postman.svg";
+import NumpyIcon from  "@/asset/techstack/Numpy.svg";
+import PandasIcon from "@/asset/techstack/Pandas.svg";
 
 export interface TechStackProps {
     id: number;
@@ -118,45 +123,52 @@ const techStacks:TechStackProps[] = [
       description:"Distributed version control system for tracking code changes and collaborations",
       fillColor:"#F05032"
     },
+    {
+      id: 13,
+      name: "PyQt",
+      iconComponent: PyQtIcon,
+      category: "Desktop App Development",
+      description:"A Python library specific for desktop development wherein I learned the principles of Object Oriented Programming in Python",
+      fillColor:"#41CD52"
+  },
+  {
+      id: 14,
+      name: "MongoDB",
+      iconComponent: MongoDBIcon,
+      category: "Databases",
+      description:"A fast and flexible NoSQL database to establish data storage due to its ease of use",
+      fillColor:"#47A248"
+  },
+  {
+      id: 15,
+      name: "Postman",
+      iconComponent: PostmanIcon,
+      category: "Dev Tools",
+      description:"Useful tool for testing backend APIs before integrating it to the frontend side of an app",
+      fillColor:"#FF6C37"
+  },
+  {
+    id: 16,
+    name: "Numpy",
+    iconComponent:NumpyIcon,
+    category: "Data Analysis Tool",
+    description:"A Python library used for mathematical operation of matrices and array. Used this library for building the algorithm of pairwise DNA sequencing",
+    fillColor:"#013243"
+},
+{
+    id: 17,
+    name: "Pandas",
+    iconComponent: PandasIcon,
+    category: "Data Analysis Tool",
+    description:"Popular data analysis framework in Python to be able to manipulate datasets and pre-process for effective exploratory data analysis or machine learning",
+    fillColor:""
+},
   ]
 
 
 
-//     {
-//         id: 13,
-//         name: "PyQt",
-//         iconComponent: "@/asset/techstack/PyQt.svg",
-//         category: "Desktop App Development",
-//         description:"A Python library specific for desktop development wherein I learned the principles of Object Oriented Programming in Python",
-//     },
-//     {
-//         id: 14,
-//         name: "MongoDB",
-//         iconComponent: "@/asset/techstack/MongoDB.svg",
-//         category: "Databases",
-//         description:"A fast and flexible NoSQL database to establish data storage due to its ease of use"
-//     },
-//     {
-//         id: 15,
-//         name: "Postman",
-//         iconComponent: "@/asset/techstack/Postman.svg",
-//         category: "Dev Tools",
-//         description:"Useful tool for testing backend APIs before integrating it to the frontend side of an 
-//     },
-//     {
-//         id: 16,
-//         name: "Numpy",
-//         iconComponent: "@/asset/techstack/Numpy.svg",
-//         category: "Data Analysis Tool",
-//         description:"A Python library used for mathematical operation of matrices and array. Used this library for building the algorithm of pairwise DNA sequencing"
-//     },
-//     {
-//         id: 17,
-//         name: "Pandas",
-//         iconComponent: "@/asset/techstack/Pandas.svg",
-//         category: "Data Analysis Tool",
-//         description:"Popular data analysis framework in Python to be able to manipulate datasets and pre-process for effective exploratory data analysis or machine learning"
-//     },
+
+
 //     {
 //         id: 18,
 //         name: "PostgreSQL",
