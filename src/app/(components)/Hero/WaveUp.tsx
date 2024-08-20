@@ -19,8 +19,3 @@ const WaveUp = () => {
   };
   
   export default WaveUp;
-
-//   fill={`${theme ?"#C7EDE4" : "#07004D"}`}
-
-
-// fill={`${theme ?"#07004D" : "#C7EDE4" }`}
