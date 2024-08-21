@@ -1,5 +1,11 @@
-import { educationData, workExperienceData } from "./data";
+import { educationData, workExperienceData } from './data';
+import { EducationDataProps, WorkExpDataProps } from './data';
 import { NextResponse } from "next/server";
+
+export interface WorkAndEducationType {
+    education: EducationDataProps;
+    workExperience: WorkExpDataProps;
+}
 
 export async function GET() {
     try{
