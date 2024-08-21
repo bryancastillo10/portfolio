@@ -1,12 +1,13 @@
-
+import { ReactNode } from "react";
 interface FillerSectionProps{
     order:string;
+    children:ReactNode;
 }
 
-const FillerSection = ({order}:FillerSectionProps) => {
+const FillerSection = ({order,children}:FillerSectionProps) => {
   return (
-    <section className={`${order} col-span-1 md:col-span-2 xl:order-none xl:row-span-1 bg-gray-500`}>
-        <h1 className="p-2 text-2xl">Long Filler Section</h1>
+    <section className={`${order} col-span-1 md:col-span-2 xl:order-none row-span-1 xl:row-span-1`}>
+        {children}
     </section>
   )
 }

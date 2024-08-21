@@ -2,15 +2,16 @@ import MajorProject from "@/app/projects/(components)/MajorProject";
 import FillerSection from '@/app/projects/(components)/FillerSection';
 import MinorProject from "@/app/projects/(components)/MinorProject";
 
+import ProjectPageHeader from "@/app/projects/ProjectPageHeader";
 
 const BentoLayout = () => {
   return (
-<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 
+<main className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 
     grid-rows-[repeat(14,20vh)]  xl:grid-rows-[repeat(6,20vh)] gap-4">
 
     <MajorProject order="order-2" backgroundColor="bg-teal-700" />
 
-    <FillerSection order="order-1"/>
+    <FillerSection order="order-1"><ProjectPageHeader/></FillerSection>
 
     <MinorProject order="order-3" backgroundColor="bg-sky-700"/>
 
@@ -22,9 +23,13 @@ const BentoLayout = () => {
 
     <MajorProject order="order-5" backgroundColor="bg-emerald-700" />
 
-    <FillerSection order="order-6"/>
+    <FillerSection order="order-6">
+      <h1 className="p-4 text-2xl">
+        Footer
+      </h1>
+    </FillerSection>
 
-</div>
+</main>
   )
 }
 

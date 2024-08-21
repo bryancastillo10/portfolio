@@ -1,8 +1,8 @@
-import ChemStashImg from "@/asset/projects/ChemStash.png";
-import SpaceChatImg from "@/asset/projects/SpaceChat.png";
-import NPKCalculatorImg from "@/asset/projects/NPKCalculator.png";
-import BioBytesImg from "@/asset/projects/BioBytes.png";
-import AirBnbCloneImg from "@/asset/projects/AirBnbClone.png";
+import ChemStashImg from "@/asset/topprojects/ChemStash.png";
+import SpaceChatImg from "@/asset/topprojects/SpaceChat.png";
+import NPKCalculatorImg from "@/asset/topprojects/NPKCalculator.png";
+import BioBytesImg from "@/asset/topprojects/BioBytes.png";
+import AirBnbCloneImg from "@/asset/topprojects/AirBnbClone.png";
 
 export const projectInfo = [
     {
@@ -42,7 +42,7 @@ export const projectInfo = [
         description:"Leveraging the PyQt library of Python to develop a desktop application for biologists to gain information on several biological sequences such as GC-content, base frequencies and basic pairwise sequencing",
         techStack:["PyQt5","Matplotlib","Numpy"],
         image: BioBytesImg.src,
-        demoLink:"https://sourceforge.net/projects/biobytes-pairsync/",
+        demoLink:"https://sourceforge.net/topprojects/biobytes-pairsync/",
         gitRepo:"https://github.com/bryancastillo10/BioBytes-PairSync"
     },
     {
