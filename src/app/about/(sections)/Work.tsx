@@ -1,13 +1,13 @@
 "use client";
 import SectionHeader from "@/app/(reusables)/SectionHeader";
-import { WorkAndEducationType } from "@/app/api/about/route";
+import { WorkExpDataProps } from "@/app/api/about/data";
 
 interface WorkProps{
-    data: WorkAndEducationType;
+    data: WorkExpDataProps[];
 }
 
 const Work = ({data}:WorkProps) => {
-    console.log(data.workExperience);
+    console.log(data);
   return (
     <section className="w-full h-[300px]">
       <SectionHeader title="Professional Experience"/>
