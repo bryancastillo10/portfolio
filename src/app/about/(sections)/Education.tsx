@@ -28,7 +28,7 @@ const Education = ({data}: EducationProps) => {
                     <section className="p-6">
                         <div className="flex flex-col xl:flex-row gap-y-2 xl:justify-between gap-x-10 items-center">
                             <h1 className="text-2xl text-center xl:text-left font-semibold">{educ.degree} in {educ.field}</h1>
-                            <p className="italic">{educ.dateRange}</p>
+                            <p className="my-2 italic">{educ.dateRange}</p>
                         </div>
                         <div className="flex flex-col-reverse xl:flex-row xl:justify-between items-center">
                             <div className="my-4 flex flex-col items-center xl:items-start space-y-4 md:space-y-4">
