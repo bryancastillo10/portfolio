@@ -16,9 +16,9 @@ const  About = async () => {
       <SectionHeader title="About Bryan"/>
       <AboutInfo/>
       <TechStack/>
-        <article className="mt-4 flex flex-col-reverse md:flex-row justify-center items-center w-full gap-4 ">
-          <Education data={workAndEducationData}/>
-          <Work data={workAndEducationData}/>
+        <article className="mt-4 flex flex-col-reverse xl:flex-row justify-center gap-4 ">
+          <Education data={workAndEducationData.education}/>
+          <Work data={workAndEducationData.workExperience}/>
         </article>   
       </div> 
     </section>
