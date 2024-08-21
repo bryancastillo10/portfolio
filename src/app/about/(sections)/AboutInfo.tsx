@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 const AboutInfo = () => {
   const router = useRouter();
   return (
-    <section className="flex flex-col-reverse md:flex-row justify-center items-center w-full gap-4 ">
+    <section className="flex flex-col-reverse lg:flex-row justify-center items-center w-full gap-4 ">
         {/* About Description */}
         <article className="xl:mt-[-50px] p-4 text-wrap w-[70%]">
           <p className='text-base text-center md:text-left'>Bryan adapts to the rapidly changing digital world and discovers 
