@@ -68,7 +68,7 @@ const Hero = () => {
         <h1 className={`text-5xl xl:text-7xl tracking-wider ${adventPro.className}`}>Top Projects</h1>
         <TopProjects projectInfo={projectInfo} />
         <article className="flex place-content-center xl:place-content-end my-8">
-            <Button action={()=>{router.push("/projects")}} variant="secondary">Check my other projects...</Button>
+            <Button action={()=>{router.push("/projects")}} variant="secondary">More Project Details...</Button>
         </article>
         </div>
     </div>
