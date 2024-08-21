@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
 import { useAppSelector } from "@/app/redux";
-import { adventPro } from "@/utils/font";
 import techStacks from "../techStack";
+import SectionHeader from "@/app/(reusables)/SectionHeader";
 
 const TechStack = () => {
   const [hoveredId, setHoveredId] = useState<number|null>(null); 
@@ -10,7 +10,7 @@ const TechStack = () => {
   return (
     <div className="mt-4">
       <div className="py-4 w-full">
-        <h1 className={`text-center lg:text-left mt-4 text-5xl ${adventPro.className}`}>My Tools for Development</h1>
+        <SectionHeader title="My Tools for Development"/>
         <p className="pt-4 text-base leading-relaxed  text-center md:text-left lg:max-w-[70%]">Here are some of the technologies, libraries, and frameworks that I had
         experience to utilize in order to build meaningful software applications.</p>
         {/* TechStack Hexagons  */}
