@@ -59,7 +59,7 @@ export const workExperienceData:WorkExpDataProps[] = [
         position:"Laboratory Chemist",
         icon:"testubediagonal",
         dateRange:"2018-2020",
-        description:"Facilitate chemical laboratory analysis on water/wastewater. Also assigned to manage environmental compliances of the company as a pollution control offier",
+        description:"Facilitate chemical laboratory analysis on water/wastewater. Also assigned to manage environmental compliances of the company as a pollution control officer",
     },
     {
         id:2,
@@ -68,6 +68,6 @@ export const workExperienceData:WorkExpDataProps[] = [
         position:"Associate Researcher",
         dateRange:"2022-present",
         icon:"wrench",
-        description:"Perform laboratory experiments on evaluating wastewater treatment plant systems, Build UI templates for some technical project proposals, searching for innovations in water technology",
+        description:"Perform laboratory experiments on evaluating wastewater treatment plant systems, Build UI templates for some technical project proposals, seeking for innovations in water technology",
     }
 ]
