@@ -3,7 +3,7 @@ import Image from "next/image";
 import { CircleEllipsis, PlayCircle, FolderCode } from "lucide-react";
 import { MinorProjectTypes } from "@/app/api/project/minor/data";
 import IconButton from "@/app/(reusables)/IconButton";
-
+import { useAppSelector } from "@/app/redux";
 interface MinorProjectProps{
   project: MinorProjectTypes;
   backgroundColor?:string;
@@ -12,7 +12,7 @@ interface MinorProjectProps{
 }
 
 const MinorProject = ({order,backgroundColor,isLayoutLeft,project}:MinorProjectProps) => {
-
+  const theme = useAppSelector((state)=>state.global.theme);
   return (
     <section className={`${order} ${backgroundColor} col-span-1  lg:order-none row-span-2 rounded-xl shadow-md duration-500 ease-in-out hover:scale-110`}>
       <div className={`flex ${isLayoutLeft ? "flex-col-reverse": "flex-col"}  p-4`}>
@@ -34,8 +34,8 @@ const MinorProject = ({order,backgroundColor,isLayoutLeft,project}:MinorProjectP
         <h3 className="font-semibold text-xl">Language/App</h3>
               <ul className="flex gap-1.5">
                 {project.language.map((lang,index)=>(
-                    <li key={index} className="bg-light-secondary text-nowrap w-fit 
-                    font-light shadow-lg text-primary px-4 py-1 xl:text-xl rounded-2xl">{lang}</li>
+                    <li key={index} className={`${theme ?"bg-dark-primary text-teal-400" :"bg-secondary text-primary"} 
+                      text-nowrap w-fit font-light shadow-lg px-4 py-1 xl:text-xl rounded-2xl`}>{lang}</li>
                 ))}
               </ul>
             </div>

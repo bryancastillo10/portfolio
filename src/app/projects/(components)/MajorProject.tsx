@@ -1,7 +1,7 @@
 "use client";
 import { MajorProjectTypes } from "@/app/api/project/major/data";
-import { CircleEllipsis, CirclePlay, FolderCode, PlayCircle } from "lucide-react";
-
+import { CircleEllipsis, FolderCode, PlayCircle } from "lucide-react";
+import { useAppSelector } from "@/app/redux";
 import Image from "next/image";
 import IconButton from '../../(reusables)/IconButton';
 
@@ -13,7 +13,7 @@ interface MajorProjectProps {
 }
 
 const MajorProject = ({ order, backgroundColor,isLayoutRight,project }: MajorProjectProps) => {
-
+  const theme= useAppSelector((state)=>state.global.theme);
   return (
     <section
       className={`${order} ${backgroundColor} col-span-1 md:col-span-2 xl:order-none row-span-2 xl:row-span-3 rounded-xl shadow-md duration-500 ease-in-out hover:scale-110`}
@@ -30,7 +30,7 @@ const MajorProject = ({ order, backgroundColor,isLayoutRight,project }: MajorPro
             <ul className="grid grid-cols-2 xl:grid-cols-3 items-center gap-2 my-2">
                 {project.techStack.map((stack,index)=> (
                     <li key={index}
-                    className="bg-light-secondary text-nowrap text-xs xl:text-xl w-fit font-light shadow-lg text-primary px-4 py-1 rounded-2xl">{stack}</li>                  
+                    className={`${theme ?"bg-dark-primary text-teal-400" :"bg-secondary text-primary"} text-nowrap text-xs xl:text-xl w-fit font-light shadow-lg px-4 py-1 rounded-2xl`}>{stack}</li>                  
                 ))}
             </ul>
             {/* Programming Language */}
@@ -38,8 +38,8 @@ const MajorProject = ({ order, backgroundColor,isLayoutRight,project }: MajorPro
               <h3 className="font-semibold text-xl">Programming Language</h3>
               <ul className="grid grid-cols-2 xl:grid-cols-3 gap-2 items-center my-2">
                 {project.language.map((lang,index)=> (
-                  <li key={index} className="bg-light-secondary text-nowrap w-fit font-light shadow-lg text-primary xl:text-xl
-                   px-4 py-1 rounded-2xl">{lang}</li>
+                  <li key={index} className={`${theme ?"bg-dark-primary text-teal-400" :"bg-secondary text-primary"} text-nowrap w-fit font-light shadow-lg  xl:text-xl
+                   px-4 py-1 rounded-2xl`}>{lang}</li>
                 ))}
               </ul>
             </div>
