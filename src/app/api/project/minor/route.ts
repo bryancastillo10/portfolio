@@ -5,7 +5,7 @@ import minorProjectsData from './data';
 export async function GET(){
     try{
         const responseData = minorProjectsData;
-        return NextResponse.json(responseData);
+        return NextResponse.json({responseData});
     }
     catch(error){
         console.error('Failed to fetch the minor project data', error);
