@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
-import { CircleEllipsis, CirclePlay, FolderCode } from "lucide-react";
-import NPKAppImg from "@/asset/projectpreview/npkcalcapp.png";
+import { CircleEllipsis, PlayCircle, FolderCode } from "lucide-react";
 import { MinorProjectTypes } from "@/app/api/project/minor/data";
+import IconButton from "@/app/(reusables)/IconButton";
 
 interface MinorProjectProps{
   project: MinorProjectTypes;
@@ -46,9 +46,11 @@ const MinorProject = ({order,backgroundColor,isLayoutLeft,project}:MinorProjectP
             </div>
             {/* Links */}
             <div className="flex justify-center gap-10 items-center m-4">
-              <CircleEllipsis className=""/>
-              <CirclePlay className="" />
-              <FolderCode className="" />
+              <IconButton icon={CircleEllipsis} link={()=>{}} />
+              <IconButton icon={PlayCircle} link={project.demoLink}/>
+              {project.gitRepo ? (<IconButton icon={FolderCode} link={project.gitRepo}/>):
+                <span className="text-center cursor-not-allowed">Private <br/> Repository</span>
+              }
             </div>
           </article>
       </div>      

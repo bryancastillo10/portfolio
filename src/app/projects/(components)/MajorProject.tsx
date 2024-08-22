@@ -1,7 +1,10 @@
 "use client";
 import { MajorProjectTypes } from "@/app/api/project/major/data";
-import { CircleEllipsis, CirclePlay, FolderCode } from "lucide-react";
+import { CircleEllipsis, CirclePlay, FolderCode, PlayCircle } from "lucide-react";
+
 import Image from "next/image";
+import IconButton from '../../(reusables)/IconButton';
+
 interface MajorProjectProps {
   project:MajorProjectTypes;
   backgroundColor?: string;
@@ -48,9 +51,11 @@ const MajorProject = ({ order, backgroundColor,isLayoutRight,project }: MajorPro
 
             {/* Links */}
             <div className="flex justify-center gap-10 items-center mt-8 xl:mt-10 mb-4">
-              <CircleEllipsis className=""/>
-              <CirclePlay className="" />
-              <FolderCode className="" />
+              <IconButton icon={CircleEllipsis} link={()=>{}} />
+              <IconButton icon={PlayCircle} link={project.demoLink}/>
+              {project.gitRepo ? (<IconButton icon={FolderCode} link={project.gitRepo}/>):
+                <span className="text-center cursor-not-allowed">Private <br/> Repository</span>
+              }
             </div>
           </div>
         </article>
