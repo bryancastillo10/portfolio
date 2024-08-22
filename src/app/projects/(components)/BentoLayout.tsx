@@ -6,10 +6,9 @@ import ProjectPageHeader from "@/app/projects/ProjectPageHeader";
 
 const BentoLayout = () => {
   return (
-<main className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 
-    grid-rows-[repeat(14,20vh)]  xl:grid-rows-[repeat(6,20vh)] gap-4">
+<main className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
 
-    <MajorProject order="order-2" backgroundColor="bg-teal-700" />
+    <MajorProject order="order-2" backgroundColor="bg-gray-400/50" isLayoutRight={false}  />
 
     <FillerSection order="order-1"><ProjectPageHeader/></FillerSection>
 
@@ -21,7 +20,7 @@ const BentoLayout = () => {
 
     <MinorProject order="order-7" backgroundColor="bg-amber-700"/>
 
-    <MajorProject order="order-5" backgroundColor="bg-emerald-700" />
+    <MajorProject order="order-5" backgroundColor="bg-stone-500/50" isLayoutRight />
 
     <FillerSection order="order-6">
       <h1 className="p-4 text-2xl">

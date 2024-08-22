@@ -1,4 +1,4 @@
-import BentoLayout from "../(reusables)/BentoLayout";
+import BentoLayout from "@/app/projects/(components)/BentoLayout";
 
 const Projects = () => {
   return (
@@ -9,4 +9,3 @@ const Projects = () => {
 }
 
 export default Projects;
-768
