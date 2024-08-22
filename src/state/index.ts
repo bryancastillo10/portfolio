@@ -3,12 +3,13 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 export interface InitialStateTypes {
     isSidebarCollapse: boolean;
     theme: boolean;
-
+    openProjectModal:boolean;
 }
 
 const initialState: InitialStateTypes = {
     isSidebarCollapse: false,
-    theme: false
+    theme: false,
+    openProjectModal:false,
 }
 
 export const globalSlice = createSlice({
@@ -20,10 +21,13 @@ export const globalSlice = createSlice({
         },
         setTheme: (state, action: PayloadAction<boolean>) => {
             state.theme = action.payload;
-        }
+        },
+        setOpenProjectModal: (state, action:PayloadAction<boolean>) => {
+            state.openProjectModal = action.payload;
+        }   
     }
 });
 
-export const { setIsSidebarCollapse, setTheme } = globalSlice.actions;
+export const { setIsSidebarCollapse, setTheme, setOpenProjectModal } = globalSlice.actions;
 
 export default globalSlice.reducer;
