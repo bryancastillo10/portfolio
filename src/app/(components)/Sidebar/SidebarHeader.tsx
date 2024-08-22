@@ -13,7 +13,7 @@ const SidebarHeader = ({isSidebarCollapsed,toggle}:SidebarHeaderProps) => {
     <div className={`flex  gap-3 justify-between md:justify-normal items-center pt-8 ${isSidebarCollapsed ? 'px-2':'px-8'}`}>
       <div className="grid grid-cols-[1fr_2fr] gap-1">
         <div className="relative size-12">
-            <Image fill src={Logo} alt="portfolio-logo" />
+            <Image fill sizes="12" src={Logo} alt="portfolio-logo" />
         </div>
       <h1 className={`${isSidebarCollapsed ? 'hidden':'block'}  tracking-wide font-semibold`}>Bryan&apos;s Portfolio</h1>
       </div>
