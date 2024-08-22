@@ -1,14 +1,23 @@
+"use client";
 import MajorProject from "@/app/projects/(components)/MajorProject";
 import FillerSection from '@/app/projects/(components)/FillerSection';
 import MinorProject from "@/app/projects/(components)/MinorProject";
 
 import ProjectPageHeader from "@/app/projects/ProjectPageHeader";
+import { MajorProjectTypes } from "@/app/api/project/major/data";
+import { MinorProjectTypes } from '@/app/api/project/minor/data';
 
-const BentoLayout = () => {
+interface BentoLayoutProps{
+  majorData: MajorProjectTypes[];
+  minorData: MinorProjectTypes[];
+}
+
+const BentoLayout = ({majorData,minorData}:BentoLayoutProps) => {
+
   return (
 <main className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
 
-    <MajorProject order="order-2" backgroundColor="bg-gray-400/50" isLayoutRight={false}  />
+    <MajorProject project={majorData[0]} order="order-2" backgroundColor="bg-gray-400/50" isLayoutRight={false}  />
 
     <FillerSection order="order-1"><ProjectPageHeader/></FillerSection>
 
@@ -20,7 +29,7 @@ const BentoLayout = () => {
 
     <MinorProject order="order-7" backgroundColor="bg-amber-700/50" isLayoutLeft />
 
-    <MajorProject order="order-5" backgroundColor="bg-stone-500/50" isLayoutRight />
+    <MajorProject project={majorData[1]} order="order-5" backgroundColor="bg-stone-500/50" isLayoutRight />
 
     <FillerSection order="order-6">
       <h1 className="p-4 text-2xl">

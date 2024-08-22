@@ -4,9 +4,7 @@ import majorProjectsData from "./data";
 
 export async function GET(){
     try{
-        const responseData = {
-            majorProjectsData
-        };
+        const responseData = majorProjectsData;
         return NextResponse.json(responseData);
     }
     catch(error){
