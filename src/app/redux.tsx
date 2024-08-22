@@ -47,6 +47,7 @@ const persistConfig = {
   key: "root",
   storage,
   whitelist: ["global"],
+  blacklist: ["global.openProjectModal"]
 };
 const rootReducer = combineReducers({
   global: globalReducer,
