@@ -29,7 +29,11 @@ const majorProjectsData:MajorProjectTypes[] = [
         imgPath:[ChmStashPreview1.src, ChmStashPreview2.src, ChmStashPreview3.src, ChmStashPreview4.src],
         techStack:["MERN Stack", "Recharts", "Socket IO","Tailwind CSS", "React-Redux","MUI Table"],
         language:["JavaScript"],
-        skillLearned:"This project helps me improve my usage of Git since it is a collaboration with another developer. It also provide some insights on backend development by crafting API endpoints using Express at Node JS. It also give mee the idea on how to set up dashboards and work critically on several tasks such as effective API integration",
+        skillLearned:"This project helps me improve my usage of Git since it is a collaboration with another developer.\
+         Another important thing is that it provide some insights on backend development by crafting API endpoints using Express at Node JS.\
+        It also give me the idea on how to set up dashboards and work critically on several tasks such as effective API integration. \
+        This collaboration projects involves online discussions with the team using Slacks, task management by Asana. Most of the conceptualization were done by me since I have background in the chemical industry \
+        working on a chemical laboratory.",
         gitRepo:"",
         demoLink:"https://mern-with-auth-rba5.onrender.com/"
     },
@@ -41,7 +45,10 @@ const majorProjectsData:MajorProjectTypes[] = [
         imgPath:[SpaceChatPreview1.src, SpaceChatPreview2.src, SpaceChatPreview3.src,SpaceChatPreview4.src],
         techStack:["MERN Stack", "Typescript", "Socket IO","Tailwind CSS", "Zustand"],
         language:["TypeScript","JavaScript"],
-        skillLearned:"This web app helps me understand how to work with MERN Stack and the use of web sockets for real-time data transfer. This is my first web application to utilize JWT Authentication and understand the logic how user authentication works. ",
+        skillLearned:"This web app helps me understand how to work with MERN Stack and the use of web sockets for real-time data transfer.\
+        This is my first web application to utilize JWT Authentication and understand the logic how user authentication\
+         works. Aside from that, I added some features that were common on social media platforms such as changing your profile picture, sharing some information such as hobbies, birthday, or your favorite quote \
+         to get to know with other connections.",
         gitRepo:"https://github.com/bryancastillo10/space-chat",
         demoLink:"https://space-chat-ywt3.onrender.com"
     },
