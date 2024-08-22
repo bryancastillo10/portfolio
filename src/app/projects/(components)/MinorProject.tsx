@@ -23,7 +23,7 @@ const MinorProject = ({order,backgroundColor,isLayoutLeft,project}:MinorProjectP
               height="180"
               width="330"
                />
-        <article className="flex flex-col">
+        <article className="flex flex-col max-w-[85%] mx-auto">
         {/* Header */}
         <div className="my-4 text-center">
           <h1 className="text-2xl tracking-wide">{project.title}</h1>
@@ -31,18 +31,18 @@ const MinorProject = ({order,backgroundColor,isLayoutLeft,project}:MinorProjectP
         </div>
         {/* Programming Language */}
         <div className={`flex justify-between items-center gap-2 ${isLayoutLeft ? "my-0": "my-4"}`}>
-            <h3 className="font-semibold">Language/App</h3>
+        <h3 className="font-semibold text-xl">Language/App</h3>
               <ul className="flex gap-1.5">
                 {project.language.map((lang,index)=>(
                     <li key={index} className="bg-light-secondary text-nowrap w-fit 
-                    font-light shadow-lg text-primary px-4 py-1 rounded-2xl">{lang}</li>
+                    font-light shadow-lg text-primary px-4 py-1 xl:text-xl rounded-2xl">{lang}</li>
                 ))}
               </ul>
             </div>
             {/* Skills Learned */}
             <div className="my-2">
-              <h3 className="font-semibold">Skills Learned</h3>
-              <p className="text-pretty line-clamp-2">{project.skillLearned}</p>
+            <h3 className="font-semibold text-xl">Skills Learned</h3>
+              <p className="xl:max-w-[80%] text-pretty line-clamp-2 pt-2">{project.skillLearned}</p>
             </div>
             {/* Links */}
             <div className="flex justify-center gap-10 items-center m-4">

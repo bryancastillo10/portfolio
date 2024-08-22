@@ -24,7 +24,7 @@ const Education = ({data}: EducationProps) => {
               {data.slice().reverse().map((educ) => {
                 const Icon = iconMap[educ.icon.toLowerCase()];
                 return (
-                 <div className={`my-6 rounded-xl shadow-md w-[90%] ${theme ?"bg-dark-primary": "bg-gray-200"}`} key={educ.id}>
+                 <div className={`my-6 rounded-xl shadow-md w-[90%] xl:w-[75%] ${theme ?"bg-dark-primary": "bg-gray-200"}`} key={educ.id}>
                     <section className="p-6">
                         <div className="flex flex-col xl:flex-row gap-y-2 xl:justify-between gap-x-10 items-center">
                             <h1 className="text-2xl text-center xl:text-left font-semibold">{educ.degree} in {educ.field}</h1>
