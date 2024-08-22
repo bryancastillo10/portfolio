@@ -12,13 +12,13 @@ const BentoLayout = () => {
 
     <FillerSection order="order-1"><ProjectPageHeader/></FillerSection>
 
-    <MinorProject order="order-3" backgroundColor="bg-sky-700"/>
+    <MinorProject order="order-3" backgroundColor="bg-sky-700/50" isLayoutLeft={false}/>
 
-    <MinorProject order="order-4" backgroundColor="bg-pink-600"/>
+    <MinorProject order="order-4" backgroundColor="bg-pink-500/50" isLayoutLeft={false}/>
 
-    <MinorProject order="order-8" backgroundColor="bg-stone-500"/>
+    <MinorProject order="order-8" backgroundColor="bg-stone-500/50" isLayoutLeft/>
 
-    <MinorProject order="order-7" backgroundColor="bg-amber-700"/>
+    <MinorProject order="order-7" backgroundColor="bg-amber-700/50" isLayoutLeft />
 
     <MajorProject order="order-5" backgroundColor="bg-stone-500/50" isLayoutRight />
 
