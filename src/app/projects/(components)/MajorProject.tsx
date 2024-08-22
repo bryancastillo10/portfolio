@@ -10,10 +10,10 @@ interface MajorProjectProps {
 }
 
 const MajorProject = ({ order, backgroundColor,isLayoutRight,project }: MajorProjectProps) => {
-  
+
   return (
     <section
-      className={`${order} ${backgroundColor} col-span-1 md:col-span-2 xl:order-none row-span-2 xl:row-span-3 rounded-xl shadow-md`}
+      className={`${order} ${backgroundColor} col-span-1 md:col-span-2 xl:order-none row-span-2 xl:row-span-3 rounded-xl shadow-md duration-500 ease-in-out hover:scale-110`}
     >
       <div className="grid grid-cols-2 max-w-[95%] gap-y-1 gap-x-4 mx-auto py-2">
         <article className={`mt-4 ${isLayoutRight ? "order-2":"order-none"}`}>
@@ -55,12 +55,12 @@ const MajorProject = ({ order, backgroundColor,isLayoutRight,project }: MajorPro
         </article>
 
         {/* Preview Images */}
-        <div className={`mt-10 overflow-hidden h-[350px] xl:h-[440px] ${isLayoutRight ? "order-1":"order-none"} `}>
+        <div className={`mt-10 overflow-hidden h-[400px] xl:h-[440px] ${isLayoutRight ? "order-1":"order-none"} `}>
           <div className="flex flex-col">
-            {/* {project.imgPath.map((img,index)=>(
+            {project.imgPath.map((img,index)=>(
               <Image width="400" height="250"
               key={index} src={img} alt={`${img}-pathname`} />
-            ))} */}
+            ))}
           </div>
         </div>
       </div>

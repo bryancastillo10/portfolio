@@ -21,15 +21,15 @@ const BentoLayout = ({majorData,minorData}:BentoLayoutProps) => {
 
     <FillerSection order="order-1"><ProjectPageHeader/></FillerSection>
 
-    <MinorProject order="order-3" backgroundColor="bg-sky-700/50" isLayoutLeft={false}/>
+    <MinorProject project={minorData[0]} order="order-3" backgroundColor="bg-sky-700/50" isLayoutLeft={false}/>
 
-    <MinorProject order="order-4" backgroundColor="bg-pink-500/50" isLayoutLeft={false}/>
+    <MinorProject project={minorData[1]} order="order-4" backgroundColor="bg-pink-500/50" isLayoutLeft={false}/>
 
-    <MinorProject order="order-8" backgroundColor="bg-stone-500/50" isLayoutLeft/>
+    <MinorProject project={minorData[2]} order="order-8" backgroundColor="bg-stone-500/50" isLayoutLeft/>
 
-    <MinorProject order="order-7" backgroundColor="bg-amber-700/50" isLayoutLeft />
+    <MinorProject project={minorData[3]} order="order-7" backgroundColor="bg-teal-700/50" isLayoutLeft />
 
-    <MajorProject project={majorData[1]} order="order-5" backgroundColor="bg-stone-500/50" isLayoutRight />
+    <MajorProject project={majorData[1]} order="order-5" backgroundColor="bg-amber-500/50" isLayoutRight />
 
     <FillerSection order="order-6">
       <h1 className="p-4 text-2xl">
