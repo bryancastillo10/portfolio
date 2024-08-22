@@ -22,7 +22,7 @@ const Work = ({data}:WorkProps) => {
               {data.slice().reverse().map((work) => {
                 const Icon = iconMap[work.icon.toLowerCase()];
                 return (
-                 <div className={`my-6 rounded-xl shadow-md w-[90%] ${theme ?"bg-sky-900": "bg-slate-200"}`} key={work.id}>
+                 <div className={`my-6 rounded-xl shadow-md w-[90%] xl:w-[75%] ${theme ?"bg-sky-900": "bg-slate-200"}`} key={work.id}>
                     <section className="p-6">
                         <div className="flex flex-col xl:flex-row gap-y-2 xl:justify-between gap-x-10 items-center">
                             <h1 className="text-2xl text-center xl:text-left font-semibold">{work.position}</h1>

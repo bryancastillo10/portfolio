@@ -20,29 +20,30 @@ const MajorProject = ({ order, backgroundColor,isLayoutRight,project }: MajorPro
           {/* Header */}
           <h1 className="text-4xl tracking-wide">{project.title}</h1>
           <h3 className="text-2xl xl:my-4">{project.subtitle}</h3>
-          <p className="py-3 xl:py-6">{project.objective}</p>
+          <p className="py-3 xl:py-6 xl:text-xl">{project.objective}</p>
 
           {/* Tech Stack */}
           <div className="w-[95%]">
             <ul className="grid grid-cols-2 xl:grid-cols-3 items-center gap-2 my-2">
                 {project.techStack.map((stack,index)=> (
                     <li key={index}
-                    className="bg-light-secondary text-nowrap text-xs w-fit font-light shadow-lg text-primary px-4 py-1 rounded-2xl">{stack}</li>                  
+                    className="bg-light-secondary text-nowrap text-xs xl:text-xl w-fit font-light shadow-lg text-primary px-4 py-1 rounded-2xl">{stack}</li>                  
                 ))}
             </ul>
             {/* Programming Language */}
             <div className="my-8">
-              <h3 className="font-semibold">Programming Language</h3>
+              <h3 className="font-semibold text-xl">Programming Language</h3>
               <ul className="grid grid-cols-2 xl:grid-cols-3 gap-2 items-center my-2">
                 {project.language.map((lang,index)=> (
-                  <li key={index} className="bg-light-secondary text-nowrap w-fit font-light shadow-lg text-primary px-4 py-1 rounded-2xl">{lang}</li>
+                  <li key={index} className="bg-light-secondary text-nowrap w-fit font-light shadow-lg text-primary xl:text-xl
+                   px-4 py-1 rounded-2xl">{lang}</li>
                 ))}
               </ul>
             </div>
             {/* Skills Learned */}
             <div className="mt-4 mb-1">
-              <h3 className="font-semibold">Skills Learned</h3>
-              <p className="text-pretty line-clamp-3">{project.skillLearned}</p>              
+              <h3 className="font-semibold text-xl">Skills Learned</h3>
+              <p className="pt-4 text-pretty line-clamp-3 text-xl">{project.skillLearned}</p>              
             </div>
 
             {/* Links */}
