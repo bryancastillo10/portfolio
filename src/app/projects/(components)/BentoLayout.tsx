@@ -4,6 +4,7 @@ import FillerSection from '@/app/projects/(components)/FillerSection';
 import MinorProject from "@/app/projects/(components)/MinorProject";
 
 import ProjectPageHeader from "@/app/projects/ProjectPageHeader";
+import ProjectPageFooter from "../ProjectPageFooter";
 import { MajorProjectTypes } from "@/app/api/project/major/data";
 import { MinorProjectTypes } from '@/app/api/project/minor/data';
 
@@ -33,11 +34,7 @@ const BentoLayout = ({majorData,minorData}:BentoLayoutProps) => {
 
     <MajorProject project={majorData[1]} order="order-5" backgroundColor={`${theme ? "bg-amber-400/50":"bg-amber-400/50"}`} isLayoutRight />
 
-    <FillerSection order="order-6">
-      <h1 className="p-4 text-2xl">
-        Footer
-      </h1>
-    </FillerSection>
+    <FillerSection order="order-6"><ProjectPageFooter/></FillerSection>
 
 </main>
   )
