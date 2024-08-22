@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
-import { CircleEllipsis, CirclePlay, FolderCode } from "lucide-react";
-import NPKAppImg from "@/asset/projectpreview/npkcalcapp.png";
+import { CircleEllipsis, PlayCircle, FolderCode } from "lucide-react";
 import { MinorProjectTypes } from "@/app/api/project/minor/data";
-
+import IconButton from "@/app/(reusables)/IconButton";
+import { useAppSelector } from "@/app/redux";
 interface MinorProjectProps{
   project: MinorProjectTypes;
   backgroundColor?:string;
@@ -12,7 +12,7 @@ interface MinorProjectProps{
 }
 
 const MinorProject = ({order,backgroundColor,isLayoutLeft,project}:MinorProjectProps) => {
-
+  const theme = useAppSelector((state)=>state.global.theme);
   return (
     <section className={`${order} ${backgroundColor} col-span-1  lg:order-none row-span-2 rounded-xl shadow-md duration-500 ease-in-out hover:scale-110`}>
       <div className={`flex ${isLayoutLeft ? "flex-col-reverse": "flex-col"}  p-4`}>
@@ -34,8 +34,8 @@ const MinorProject = ({order,backgroundColor,isLayoutLeft,project}:MinorProjectP
         <h3 className="font-semibold xl:text-xl">Language</h3>
               <ul className="flex lg:flex-col items-center gap-1.5">
                 {project.language.map((lang,index)=>(
-                    <li key={index} className="bg-light-secondary text-nowrap w-fit 
-                    font-light shadow-lg text-primary px-4 py-1 xl:text-xl rounded-2xl">{lang}</li>
+                    <li key={index} className={`${theme ?"bg-dark-primary text-teal-400" :"bg-secondary text-primary"} 
+                      text-nowrap w-fit font-light shadow-lg px-4 py-1 xl:text-xl rounded-2xl`}>{lang}</li>
                 ))}
               </ul>
             </div>
@@ -46,9 +46,11 @@ const MinorProject = ({order,backgroundColor,isLayoutLeft,project}:MinorProjectP
             </div>
             {/* Links */}
             <div className="flex justify-center gap-10 items-center m-4">
-              <CircleEllipsis className=""/>
-              <CirclePlay className="" />
-              <FolderCode className="" />
+              <IconButton icon={CircleEllipsis} link={()=>{}} />
+              <IconButton icon={PlayCircle} link={project.demoLink}/>
+              {project.gitRepo ? (<IconButton icon={FolderCode} link={project.gitRepo}/>):
+                <span className="text-center cursor-not-allowed">Private <br/> Repository</span>
+              }
             </div>
           </article>
       </div>      
