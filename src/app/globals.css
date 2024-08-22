@@ -14,3 +14,11 @@ body,
 .app {
   @apply text-sm;
 }
+
+@layer utilities {
+  .bg-glassmorphism
+  {
+    @apply h-full w-full bg-secondary text-primary rounded-md bg-clip-padding 
+    backdrop-filter backdrop-blur-md bg-opacity-70 border border-gray-100;
+  }
+}
