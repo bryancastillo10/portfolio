@@ -31,8 +31,8 @@ const MinorProject = ({order,backgroundColor,isLayoutLeft,project}:MinorProjectP
         </div>
         {/* Programming Language */}
         <div className={`flex justify-between items-center gap-2 ${isLayoutLeft ? "my-0": "my-4"}`}>
-        <h3 className="font-semibold text-xl">Language/App</h3>
-              <ul className="flex gap-1.5">
+        <h3 className="font-semibold xl:text-xl">Language</h3>
+              <ul className="flex lg:flex-col items-center gap-1.5">
                 {project.language.map((lang,index)=>(
                     <li key={index} className={`${theme ?"bg-dark-primary text-teal-400" :"bg-secondary text-primary"} 
                       text-nowrap w-fit font-light shadow-lg px-4 py-1 xl:text-xl rounded-2xl`}>{lang}</li>

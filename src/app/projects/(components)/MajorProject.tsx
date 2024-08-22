@@ -36,7 +36,7 @@ const MajorProject = ({ order, backgroundColor,isLayoutRight,project }: MajorPro
             {/* Programming Language */}
             <div className="my-8">
               <h3 className="font-semibold text-xl">Programming Language</h3>
-              <ul className="grid grid-cols-2 xl:grid-cols-3 gap-2 items-center my-2">
+              <ul className="grid grid-cols-2  gap-2 items-center my-2">
                 {project.language.map((lang,index)=> (
                   <li key={index} className={`${theme ?"bg-dark-primary text-teal-400" :"bg-secondary text-primary"} text-nowrap w-fit font-light shadow-lg  xl:text-xl
                    px-4 py-1 rounded-2xl`}>{lang}</li>
