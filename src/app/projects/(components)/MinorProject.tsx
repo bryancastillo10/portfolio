@@ -9,9 +9,10 @@ interface MinorProjectProps{
   backgroundColor?:string;
   order:string;
   isLayoutLeft:boolean;
+  toggleModal:()=>void;
 }
 
-const MinorProject = ({order,backgroundColor,isLayoutLeft,project}:MinorProjectProps) => {
+const MinorProject = ({order,backgroundColor,isLayoutLeft,project, toggleModal}:MinorProjectProps) => {
   const theme = useAppSelector((state)=>state.global.theme);
   return (
     <section className={`${order} ${backgroundColor} col-span-1  lg:order-none row-span-2 rounded-xl shadow-md duration-500 ease-in-out`}>
@@ -46,7 +47,7 @@ const MinorProject = ({order,backgroundColor,isLayoutLeft,project}:MinorProjectP
             </div>
             {/* Links */}
             <div className="flex justify-center gap-10 items-center m-4">
-              <IconButton tooltip="Read More 📖" icon={CircleEllipsis} link={()=>{}} />
+              <IconButton tooltip="Read More 📖" icon={CircleEllipsis} link={toggleModal} />
               <IconButton tooltip="Live Demo 💻" icon={PlayCircle} link={project.demoLink}/>
               {project.gitRepo ? (<IconButton tooltip="Repository ⚙️" icon={FolderCode} link={project.gitRepo}/>):null}
             </div>

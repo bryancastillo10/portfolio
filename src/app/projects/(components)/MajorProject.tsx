@@ -29,7 +29,7 @@ const MajorProject = ({ order, backgroundColor,isLayoutRight,project, toggleModa
 
           {/* Tech Stack */}
           <div className="w-[95%]">
-            <ul className="grid grid-cols-2 xl:grid-cols-3 items-center gap-2 my-2">
+            <ul className="grid grid-cols-2 xl:grid-cols-2 items-center gap-2 my-2">
                 {project.techStack.map((stack,index)=> (
                     <li key={index}
                     className={`${theme ?"bg-dark-primary text-teal-400" :"bg-secondary text-primary"} text-nowrap text-xs xl:text-xl w-fit font-light shadow-lg px-4 py-1 rounded-2xl`}>{stack}</li>                  
