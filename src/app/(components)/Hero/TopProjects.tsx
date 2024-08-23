@@ -9,6 +9,7 @@ import { TopProjectsProps,
           IndicatorProps, 
            } from './useCardCarousel';
 import { useAppSelector } from "@/app/redux";
+import IconButton from "@/app/(reusables)/IconButton";
 
 
 export const TopProjects = ({projectInfo}:TopProjectsProps) => {
@@ -72,6 +73,8 @@ export const TopProjects = ({projectInfo}:TopProjectsProps) => {
 
 const Cards = ({projectInfo}:TopProjectsProps) => {
   const theme = useAppSelector((state)=> state.global.theme);
+  
+  const iconHover =`p-4 rounded-3xl ease-out hover:rounded-lg ${theme ? "bg-dark-primary/80":"bg-white/80"} shadow-md`;
   return (
     <>
       {projectInfo.map((project,idx)=> {
@@ -115,24 +118,17 @@ const Cards = ({projectInfo}:TopProjectsProps) => {
                     </div>
                   <div className="pt-4">    
                     {/* Links */}
-                    <div className={`flex justify-evenly items-center gap-10  mx-2 lg:max-w-[40%] xl:max-w-[30%] 
-                      rounded-2xl shadow-md ${theme ? "bg-dark-primary/80": "bg-white/80"}`}>
-                      <div className="flex flex-col items-center gap-2 duration-500 ease-out p-4 
-                      hover:scale-110 hover:text-teal-500">
-                        <a href={project.demoLink} target="_blank" rel="noopener noreferrer ">
-                          <PlayCircle size={40}/>
-                        </a>
-                        <p className="text-2xl">Demo</p>
+                    <div className={`flex justify-evenly items-center gap-8  lg:max-w-[40%] xl:max-w-[30%]`}>
+                      <div className={iconHover}>
+                        <IconButton tooltip="Live Demo ✨" link={project.demoLink} icon={PlayCircle} iconSize="40"/>
                       </div>
                       {project.gitRepo ? (
-                        <div className="flex flex-col items-center gap-2 duration-500 ease-out p-4 hover:scale-110 hover:text-yellow-500">
-                            <a href={project.gitRepo} target="_blank" rel="noopener noreferrer">
-                                <GitForkIcon size={40} />
-                            </a>
-                            <p className="text-2xl">Repository</p>
-                        </div>
+                      <div className={iconHover}>
+                        <IconButton tooltip="Git Repository 🖥️" link={project.gitRepo} icon={GitForkIcon} iconSize="40"/>
+                      </div>
                         ) : (
-                        <div className="flex flex-col items-center gap-2 p-4 text-gray-500 cursor-not-allowed">
+                        <div className="flex flex-col items-center gap-2 p-4 bg-white/80 duration-500 ease-out
+                        rounded-3xl hover:rounded-xl text-gray-500 cursor-not-allowed">
                               <GitForkIcon size={40} />
                         <p className="text-xl">Private Repository</p>
                         </div>

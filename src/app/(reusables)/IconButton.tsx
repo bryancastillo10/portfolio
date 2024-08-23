@@ -5,6 +5,7 @@ interface IconButtonProps {
   icon: LucideIcon;
   link: string | (() => void);
   tooltip:string;
+  iconSize?:string;
 }
 
 const buttonVariants = {
@@ -18,7 +19,7 @@ const buttonTransition = {
   damping: 15,
 };
 
-const IconButton = ({ icon: Icon, link,tooltip}: IconButtonProps) => {
+const IconButton = ({ icon: Icon, link,tooltip,iconSize="30"}: IconButtonProps) => {
   const isExternalLink = typeof link === "string";
 
   const handleClick = () => {
@@ -35,7 +36,7 @@ const IconButton = ({ icon: Icon, link,tooltip}: IconButtonProps) => {
       transition={buttonTransition}
       className="relative inline-block group"
     >
-      <Icon />
+      <Icon size={iconSize}/>
       <p className="tooltip group-hover:scale-100">
         {tooltip}
       </p>

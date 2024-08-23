@@ -14,7 +14,7 @@ interface MinorProjectProps{
 const MinorProject = ({order,backgroundColor,isLayoutLeft,project}:MinorProjectProps) => {
   const theme = useAppSelector((state)=>state.global.theme);
   return (
-    <section className={`${order} ${backgroundColor} col-span-1  lg:order-none row-span-2 rounded-xl shadow-md duration-500 ease-in-out hover:scale-110`}>
+    <section className={`${order} ${backgroundColor} col-span-1  lg:order-none row-span-2 rounded-xl shadow-md duration-500 ease-in-out`}>
       <div className={`flex ${isLayoutLeft ? "flex-col-reverse": "flex-col"}  p-4`}>
             <Image  
               src={project.imgPath} 
@@ -48,9 +48,7 @@ const MinorProject = ({order,backgroundColor,isLayoutLeft,project}:MinorProjectP
             <div className="flex justify-center gap-10 items-center m-4">
               <IconButton tooltip="Read More 📖" icon={CircleEllipsis} link={()=>{}} />
               <IconButton tooltip="Live Demo 💻" icon={PlayCircle} link={project.demoLink}/>
-              {project.gitRepo ? (<IconButton tooltip="Repository ⚙️" icon={FolderCode} link={project.gitRepo}/>):
-                <span className="text-center cursor-not-allowed">Private <br/> Repository</span>
-              }
+              {project.gitRepo ? (<IconButton tooltip="Repository ⚙️" icon={FolderCode} link={project.gitRepo}/>):null}
             </div>
           </article>
       </div>      

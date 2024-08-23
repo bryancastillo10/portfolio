@@ -18,7 +18,7 @@ const MajorProject = ({ order, backgroundColor,isLayoutRight,project, toggleModa
  
   return (
     <section
-      className={`${order} ${backgroundColor} col-span-1 md:col-span-2 xl:order-none row-span-2 xl:row-span-3 rounded-xl shadow-md duration-500 ease-in-out hover:scale-110`}
+      className={`${order} ${backgroundColor} col-span-1 md:col-span-2 xl:order-none row-span-2 xl:row-span-3 rounded-xl shadow-md duration-500 ease-in-out hover:animate`}
     >
       <div className="grid grid-cols-2 max-w-[95%] gap-y-1 gap-x-4 mx-auto py-2">
         <article className={`mt-4 ${isLayoutRight ? "order-2":"order-none"}`}>
@@ -55,9 +55,7 @@ const MajorProject = ({ order, backgroundColor,isLayoutRight,project, toggleModa
             <div className="flex justify-center gap-10 items-center mt-8 xl:mt-10 mb-4">
               <IconButton tooltip="Read More 📖" icon={CircleEllipsis} link={toggleModal} />
               <IconButton tooltip="Live Demo 💻" icon={PlayCircle} link={project.demoLink}/>
-              {project.gitRepo ? (<IconButton tooltip="Repository ⚙️" icon={FolderCode} link={project.gitRepo}/>):
-                <span className="text-center cursor-not-allowed">Private <br/> Repository</span>
-              }
+              {project.gitRepo ? (<IconButton tooltip="Repository ⚙️" icon={FolderCode} link={project.gitRepo}/>):null}
             </div>
           </div>
         </article>
