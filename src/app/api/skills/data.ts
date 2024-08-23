@@ -1,5 +1,8 @@
-
-
+import FrontendImg from "@/asset/skills/frontend.png";
+import BackendImg from "@/asset/skills/backend.png";
+import ProjectImg from "@/asset/skills/projectm.png";
+import DBDesignImg from "@/asset/skills/dbdesign.png";
+import BioinfoImg from "@/asset/skills/bioinfo.png";
 export interface TechSkillsTypes{
     id:number;
     name:string;
@@ -18,7 +21,7 @@ const techSkills: TechSkillsTypes[] = [
         on UI/UX design, DOM manipulation by Javascript, state managements in React, and utility-based styling through Tailwind CSS. As a visual learner, this side of the application\
         could be my strong points in software development and still pursues to learn more.",
         techStack:["Tailwind CSS","React-Vite","Typescript", "Next JS"],
-        imgPath:""
+        imgPath:FrontendImg.src
     },
     {
         id:2,
@@ -27,8 +30,8 @@ const techSkills: TechSkillsTypes[] = [
         establishing calculation logic, manipulating data structures, and developing user authentication system were all valuable server-side skillset.\
         Based on my programming experience, I can use Python Flask framework, Python OOP scripts, Node JS together with Express Library to build REST APIs, and other algorithms for various\
         projects",
-        techStack:["NodeJS","Python Flask","Postman","Linux(WSL) Environment"],
-        imgPath:""
+        techStack:["NodeJS","Python Flask","Postman","Linux(WSL)"],
+        imgPath:BackendImg.src
     },
     {
         id:3,
@@ -37,8 +40,8 @@ const techSkills: TechSkillsTypes[] = [
         necessitates effective team planning and communication in order to address the flow of the project. A software developer&apos;s efficiency stems from their ability \
         to divide a complex task into smaller parts and be able to implement them. From my engineering background, planning is critical for optimizing systems and it might be a valuable \
         skill transfer into the tech industry",
-        techStack:["Git","Slacks","Discord","Notion","Asana"],
-        imgPath:""
+        techStack:["Git","Notion","Asana"],
+        imgPath:ProjectImg.src
     },
     {
         id:4,
@@ -49,7 +52,7 @@ const techSkills: TechSkillsTypes[] = [
         skillset yet still continues to learn more. From my projects, I had experience on document-oriented database such as MongoDB and a relational database like PostgreSQL to design. Moreover, I was also\
         introduced to the versatile object relational mapping tool which is Prisma.",
         techStack:["PostgreSQL","MongoDB","Prisma"],
-        imgPath:""
+        imgPath:DBDesignImg.src
     },
     {
         id:5,
@@ -60,7 +63,7 @@ const techSkills: TechSkillsTypes[] = [
         mcrA for methanogenesis process to identify those key microorganisms on those system. The tech skills that I applied for this project is mainly on the data analysis and data visualization as I used statistical prorgamming language R for it.\
         Aside from that I was also able to explore to use other bioinformatic pipelines (for DNA sequencing) which requires some knowledge in Bash scripts, and used some Python libraries to learn bioinformatics",
         techStack:["Bash Shell Script","R Ecology Libraries","Python for Data Science"],
-        imgPath:""
+        imgPath:BioinfoImg.src
     }
 ]
 

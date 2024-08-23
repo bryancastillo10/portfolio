@@ -11,7 +11,7 @@ const Projects = async () => {
   const minorProjData = await minorProjRes.json();
 
   return (
-    <section className="pt-4 w-[96%] mx-auto">
+    <section className="pt-10 w-[94%] mx-auto">
       <BentoLayout 
         majorData={majorProjData.responseData} 
         minorData={minorProjData.responseData}
