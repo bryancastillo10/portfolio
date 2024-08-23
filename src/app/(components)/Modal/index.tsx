@@ -17,19 +17,21 @@ const Modal = ({ openModal, title, onClose, body }: ModalProps) => {
     };
 
     return (
-        <div className={`fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none bg-slate-500/20 backdrop-blur-[1px] transition-opacity duration-500 ${openModal ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+        <div className={`fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none bg-slate-700/20 backdrop-blur-sm transition-opacity duration-500 
+            ${openModal ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
             <div className="relative w-full h-full md:w-[80%] lg:w-[50%] mx-auto md:h-auto">
                 {/* Modal Content */}
                 <div className={`transform transition-transform duration-500 ${openModal ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"}`}>
-                    <div className="relative w-full h-full md:h-auto border-0 rounded-xl shadow-lg flex flex-col bg-glassmorphism outline-none focus:outline-none">
+                    <div className="relative w-full h-full md:h-auto  rounded-xl shadow-lg flex flex-col bg-glassmorphism outline-none focus:outline-none">
                         {/* Header */}
-                        <div className="relative flex p-6 justify-center rounded-t">
+                        <div className="relative flex p-6 justify-center xl:justify-start rounded-t">
                             <button onClick={handleCloseModal}
-                                className="p-1 border-0 hover:opacity-70 transition absolute right-9 hover:text-rose-500">
+                                className="p-2  transition absolute right-9 bg-rose-500/90 hover:opacity-80 rounded-full hover:scale-110">
                                 <XIcon size={18} />
                             </button>
-                            <div className="text-2xl font-semibold">
-                                Project Name: {title}
+                            <div className="flex flex-col items-center gap-x-4 xl:flex-row">
+                                <h1 className="text-xl">Project Name</h1>
+                                <h1 className="text-4xl font-semibold tracking-wide">{title || "Project Title"}</h1>
                             </div>
                         </div>
                         {/* Body */}
