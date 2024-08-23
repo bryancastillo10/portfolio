@@ -20,7 +20,7 @@ const Modal = ({ openModal, title, modalLabel, onClose, body }: ModalProps) => {
     return (
         <div className={`fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none bg-slate-700/20 backdrop-blur-sm transition-opacity duration-500 
             ${openModal ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-            <div className="relative w-full h-full md:w-[80%] lg:w-[50%] mx-auto md:h-auto">
+            <div className="relative w-full h-full md:w-[80%] lg:w-[70%] mx-auto md:h-[500px]">
                 {/* Modal Content */}
                 <div className={`transform transition-transform duration-500 ${openModal ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"}`}>
                     <div className="relative w-full h-full md:h-auto  rounded-xl shadow-lg flex flex-col bg-glassmorphism outline-none focus:outline-none">
