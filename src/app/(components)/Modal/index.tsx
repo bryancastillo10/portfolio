@@ -6,10 +6,11 @@ interface ModalProps {
     openModal: boolean;
     onClose: () => void;
     title: string;
+    modalLabel?:string;
     body: React.ReactElement;
 }
 
-const Modal = ({ openModal, title, onClose, body }: ModalProps) => {
+const Modal = ({ openModal, title, modalLabel, onClose, body }: ModalProps) => {
     const handleCloseModal = () => {
         setTimeout(() => {
             onClose();
@@ -30,7 +31,7 @@ const Modal = ({ openModal, title, onClose, body }: ModalProps) => {
                                 <XIcon size={18} />
                             </button>
                             <div className="flex flex-col items-center gap-x-4 xl:flex-row">
-                                <h1 className="text-xl">Project Name</h1>
+                                <h1 className="text-xl">{modalLabel}</h1>
                                 <h1 className="text-4xl font-semibold tracking-wide">{title || "Project Title"}</h1>
                             </div>
                         </div>

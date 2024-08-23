@@ -29,7 +29,7 @@ const IconButton = ({ icon: Icon, link,tooltip,iconSize="30"}: IconButtonProps) 
   };
 
   const ButtonContent = (
-    <motion.p
+    <motion.div
       variants={buttonVariants}
       initial="initial"
       whileHover="hover"
@@ -40,7 +40,7 @@ const IconButton = ({ icon: Icon, link,tooltip,iconSize="30"}: IconButtonProps) 
       <p className="tooltip group-hover:scale-100">
         {tooltip}
       </p>
-    </motion.p>
+    </motion.div>
   );
 
   return isExternalLink ? (

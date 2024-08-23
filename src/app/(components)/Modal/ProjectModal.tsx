@@ -29,7 +29,7 @@ const ProjectModal = ({openModal,handleCloseModal,project}:ProjectModalProps) =>
                 ))}
             </div>
             <div className="max-w-[90%] mx-auto">
-                <Image src={getImagePath() || ""} alt="project-preview" width="450" height="320"/>
+                {project ? <Image src={getImagePath()} alt="project-preview" width="450" height="320"/> : null}
             </div>
         </div>
     )
@@ -37,6 +37,7 @@ const ProjectModal = ({openModal,handleCloseModal,project}:ProjectModalProps) =>
     return (
     <Modal
        title={project?.title!}
+       modalLabel="Project Name"
        openModal={openModal}
        onClose={handleCloseModal}
        body={bodyContent} 
