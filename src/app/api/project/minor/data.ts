@@ -20,8 +20,9 @@ const minorProjectsData:MinorProjectTypes[] = [
         subtitle:"Research Project Proposal",
         imgPath:NPKCalcImg.src,
         language:["Typescript","Python"],
-        skillLearned:"This project is my first attempt to use two different programming languages wherein Python Flask framework was used as the server while React JS Typescript in Vite is the client side. \
-        This serves as a prototype for a project on my job as a researcher in Taiwan. The algorithm or flow of the logic on how the calculation result obtained is based on real data gathered from several laboratory\
+        skillLearned:"My first attempt to use two different programming languages wherein Python Flask framework was used as the server while React JS Typescript in Vite is the client side. \
+        This serves as a prototype for a project on my job as a researcher in Taiwan. Take note that this is multi-lingual project since Mandarin Chinese is the native language in Taiwan.\
+        The algorithm or flow of the logic on how the calculation result obtained is based on real data gathered from several laboratory\
         analysis on different organic waste materials suitable to be a fertilizer. NPK ratio and the desired input were the input of the user and the calculator would provide different combinations of those raw materials\
         on the database togeter with the weighted average calculation of the overall NPK while also providing some comments based on the results. Taking a step further, it would be planned to be actually integrated with artificial intelligence as\
         long as sufficient amount of data can train an appropriate model for this task.",
@@ -34,7 +35,7 @@ const minorProjectsData:MinorProjectTypes[] = [
         subtitle:"Accomodation Booking App",
         imgPath:AirBnbImg.src,
         language:["Typescript"],
-        skillLearned:"This project was my attempt to further understand the principles in NextJS which is a server side framework in React that kind of hybridize the nature of React at this stage.\
+        skillLearned:"To further understand the principles of NextJS, I built this project. NextJS can be describe as a hybrid of traditional and modern web development since it follows the traditional server side rendering with the ability of utilizing client side UI building such as the nature of React.\
         Through this clone project, it helps me improve my understanding on database designs, ORM tool which is entirely beneficial for me who can only write minimal SQL queries. It  also provide me the\
         understanding between one-to-many and one-to-one schema relationships as I first attempted to create this with a relational database but had decided to change it to a document based database like MongoDB for faster production.\
         As a result, I was able to mimic the key features such as authentication, reservations, liking an accomodation, and booking a reservation",
@@ -47,7 +48,7 @@ const minorProjectsData:MinorProjectTypes[] = [
         subtitle:"Python GUI App for Molecular Biology",
         imgPath:BioBytesImg.src,
         language:["Python"],
-        skillLearned:"At the onset of my programming journey, Python was my second programming language learned. My first ever programming is R which domain specific only for statistics that I used during my master degree. However, I seek for\
+        skillLearned:"At the onset of my programming journey, Python was my second programming language learned. My first ever programming is R which is a domain-specific language for statistics that I used during my master degree. However, I seek for\
         a more versatile language that can build tangible programs such as GUI app. As a result, this is one of my first software applications ever built. The UI may not be fully\
         optimized but the backend side of it was my own logic formulation following some mathematics I learned during my college. It basically involves some string manipulation specifically for letters G,T,C,A for DNA as the example. Moroever, this\
         app is one of the things that make me understand object oriented programming and it also brought me some strong foundation on how software works. I would like to advertise that this is open to the public as I uploaded the desktop installer (Windows OS compatible only) on SourceForge.",
@@ -60,7 +61,9 @@ const minorProjectsData:MinorProjectTypes[] = [
         subtitle:"Small Data Science Project",
         imgPath:CO2Dashboard.src,
         language:["Python","Microsoft Power BI"],
-        skillLearned:"This is not a web application but more on data analysis as I attempt to understand on how to work on data and create dashboards by which I can also integrate further on my software development. On my own opinion, data is the building blocks of a software which has the same analogy as atoms in the chemistry field or cells in life science. In conclusion to that, understanding how to perform data analysis and its interpretation is an essential skill that can create effective software applications.",
+        skillLearned:"This is not a web application but more on data analysis as I attempt to understand on how to work on data and create dashboards by which I can also integrate further on my software development\
+        skill. On my own opinion, data is the building blocks of a software which has the same analogy as atoms in the chemistry field or cells in life science. In conclusion to that, understanding how to perform data analysis and its interpretation\
+        is an essential skill that can create effective software applications.",
         demoLink:"",
         gitRepo:"https://github.com/bryancastillo10/co2-emissions-analysis/",
     },
