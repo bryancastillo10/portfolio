@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { CircleEllipsis, PlayCircle, FolderCode } from "lucide-react";
 import { MinorProjectTypes } from "@/app/api/project/minor/data";
+
 import IconButton from "@/app/(reusables)/IconButton";
 import { useAppSelector } from "@/app/redux";
 interface MinorProjectProps{
@@ -48,7 +49,7 @@ const MinorProject = ({order,backgroundColor,isLayoutLeft,project, toggleModal}:
             {/* Links */}
             <div className="flex justify-center gap-10 items-center m-4">
               <IconButton tooltip="Read More 📖" icon={CircleEllipsis} link={toggleModal} />
-              <IconButton tooltip="Live Demo 💻" icon={PlayCircle} link={project.demoLink}/>
+              {project.demoLink ? (<IconButton tooltip="Live Demo 💻" icon={PlayCircle} link={project.demoLink}/>):null}
               {project.gitRepo ? (<IconButton tooltip="Repository ⚙️" icon={FolderCode} link={project.gitRepo}/>):null}
             </div>
           </article>
