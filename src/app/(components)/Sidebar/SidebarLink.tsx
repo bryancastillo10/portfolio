@@ -16,7 +16,7 @@ const SidebarLink = ({id,icon:Icon,name,theme, isSidebarCollapsed}:SidebarLinksP
     const isActive = pathname === id || (pathname === "/" && id === "/home");
     return (
       <Link href={id}> 
-        <div className={`cursor-pointer p-4 flex items-center gap-3 rounded-2xl duration-300 ease-in-out
+        <div className={`cursor-pointer p-4 flex items-center gap-3 rounded-3xl hover:rounded-xl duration-500 ease-in-out
           ${theme ? " hover:bg-light-secondary":"hover:bg-primary hover:text-dark-primary"} 
           ${isActive ? "bg-secondary":""}
           ${isSidebarCollapsed ? "justify-center": "justify-start"}`}>

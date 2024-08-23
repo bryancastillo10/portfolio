@@ -4,6 +4,7 @@ import { LucideIcon } from "lucide-react";
 interface IconButtonProps {
   icon: LucideIcon;
   link: string | (() => void);
+  tooltip:string;
 }
 
 const buttonVariants = {
@@ -17,7 +18,7 @@ const buttonTransition = {
   damping: 15,
 };
 
-const IconButton = ({ icon: Icon, link}: IconButtonProps) => {
+const IconButton = ({ icon: Icon, link,tooltip}: IconButtonProps) => {
   const isExternalLink = typeof link === "string";
 
   const handleClick = () => {
@@ -27,15 +28,18 @@ const IconButton = ({ icon: Icon, link}: IconButtonProps) => {
   };
 
   const ButtonContent = (
-    <motion.span
+    <motion.p
       variants={buttonVariants}
       initial="initial"
       whileHover="hover"
       transition={buttonTransition}
-      className="inline-block"
+      className="relative inline-block group"
     >
       <Icon />
-    </motion.span>
+      <p className="tooltip group-hover:scale-100">
+        {tooltip}
+      </p>
+    </motion.p>
   );
 
   return isExternalLink ? (
