@@ -29,7 +29,7 @@ const ProjectModal = ({openModal,handleCloseModal,project}:ProjectModalProps) =>
                 ))}
             </div>
             <div className="max-w-[90%] mx-auto">
-                <Image src={getImagePath()} alt="project-preview" width="450" height="320"/>
+                <Image src={getImagePath() || ""} alt="project-preview" width="450" height="320"/>
             </div>
         </div>
     )

@@ -61,13 +61,35 @@ const MajorProject = ({ order, backgroundColor,isLayoutRight,project, toggleModa
         </article>
 
         {/* Preview Images */}
-        <div className={`mt-10 overflow-hidden h-[400px] xl:h-[440px] ${isLayoutRight ? "order-1":"order-none"} `}>
-          <div className="flex flex-col">
-            {project.imgPath.map((img,index)=>(
-              <Image width="400" height="250"
-              key={index} src={img} alt={`${img}-pathname`} />
+        <div className={`mt-10 h-fit ${isLayoutRight ? "order-1" : "order-none"}`}>
+        <section className="relative flex flex-col overflow-hidden">
+          {/* First Set of Images */}
+          <div className="animate-marquee flex flex-col h-[400px] xl:h-[600px]">
+            {project.imgPath.map((img, index) => (
+              <Image
+                width="400"
+                height="250"
+                key={index}
+                src={img}
+                alt={`${img}-pathname`}
+                className="mb-4"
+              />
             ))}
-          </div>
+            </div>
+
+            <div className="absolute inset-0 animate-marquee2 flex flex-col">
+            {project.imgPath.map((img, index) => (
+              <Image
+                width="400"
+                height="250"
+                key={index}
+                src={img}
+                alt={`${img}-pathname`}
+                className="mb-4"
+              />
+            ))}
+            </div>
+          </section>
         </div>
       </div>
     </section>

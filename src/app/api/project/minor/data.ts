@@ -56,7 +56,7 @@ const minorProjectsData:MinorProjectTypes[] = [
     },
     {
         id:4,
-        title:"CO₂ Emission Analysis",
+        title:"Global CO₂ Emission Analysis",
         subtitle:"Small Data Science Project",
         imgPath:CO2Dashboard.src,
         language:["Python","Microsoft Power BI"],
