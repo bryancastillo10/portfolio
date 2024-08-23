@@ -1,13 +1,16 @@
 import Modal from "@/app/(components)/Modal";
-import { setOpenProjectModal } from "@/state";
-import { useAppSelector, useAppDispatch } from "@/app/redux";
+import { MajorProjectTypes } from "@/app/api/project/major/data";
+import { MinorProjectTypes } from "@/app/api/project/minor/data";
+
 
 interface ProjectModalProps{
     openModal:boolean;
     handleCloseModal:()=>void;
+    project: MajorProjectTypes | MinorProjectTypes | null;
 }
 
-const ProjectModal = ({openModal,handleCloseModal}:ProjectModalProps) => {
+const ProjectModal = ({openModal,handleCloseModal,project}:ProjectModalProps) => {
+    console.log(project);
     const bodyContent=(
         <>
         <h1>Project Here</h1>

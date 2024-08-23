@@ -53,7 +53,7 @@ const MajorProject = ({ order, backgroundColor,isLayoutRight,project, toggleModa
 
             {/* Links */}
             <div className="flex justify-center gap-10 items-center mt-8 xl:mt-10 mb-4">
-              <IconButton tooltip="Read More 📖" icon={CircleEllipsis} link={toggleModal} />
+              <IconButton tooltip="Read More 📖" icon={CircleEllipsis} link={toggleModal}  />
               <IconButton tooltip="Live Demo 💻" icon={PlayCircle} link={project.demoLink}/>
               {project.gitRepo ? (<IconButton tooltip="Repository ⚙️" icon={FolderCode} link={project.gitRepo}/>):null}
             </div>

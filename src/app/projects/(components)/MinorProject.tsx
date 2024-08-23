@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { CircleEllipsis, PlayCircle, FolderCode } from "lucide-react";
 import { MinorProjectTypes } from "@/app/api/project/minor/data";
+
 import IconButton from "@/app/(reusables)/IconButton";
 import { useAppSelector } from "@/app/redux";
 interface MinorProjectProps{
