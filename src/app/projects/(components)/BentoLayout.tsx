@@ -10,7 +10,8 @@ import { MajorProjectTypes } from "@/app/api/project/major/data";
 import { MinorProjectTypes } from '@/app/api/project/minor/data';
 
 import { useAppSelector, useAppDispatch } from "@/app/redux";
-import { setOpenProjectModal, setSelectedProject } from "@/state";
+import { setOpenProjectModal, setOpenSkillsModal, setSelectedProject } from "@/state";
+import SkillsModal from "@/app/(components)/Modal/SkillsModal";
 
 interface BentoLayoutProps{
   majorData: MajorProjectTypes[];
@@ -18,14 +19,24 @@ interface BentoLayoutProps{
 }
 
 const BentoLayout = ({majorData,minorData}:BentoLayoutProps) => {
-  const theme = useAppSelector((state)=>state.global.theme);
   const dispatch = useAppDispatch();
-  const openProjectModal = useAppSelector((state) => state.global.openProjectModal);
   
+  // Theme State
+  const theme = useAppSelector((state)=>state.global.theme);
+
+  // Modal States
+  const openProjectModal = useAppSelector((state) => state.global.openProjectModal);
+  const openSkillsModal = useAppSelector((state)=> state.global.openSkillsModal);
+  
+  // Setter Function for States
   const toggleProjectModal = (project:  MajorProjectTypes | MinorProjectTypes | null) => {
     dispatch(setSelectedProject(project));
     dispatch(setOpenProjectModal(!openProjectModal));
   }; 
+
+  const handleSkillsModal = () => {
+    dispatch(setOpenSkillsModal(!openSkillsModal));
+  }
 
   return (
 <main className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
@@ -38,7 +49,7 @@ const BentoLayout = ({majorData,minorData}:BentoLayoutProps) => {
       toggleModal={()=> toggleProjectModal(majorData[0])}
     />
 
-    <FillerSection order="order-1"><ProjectPageHeader/></FillerSection>
+    <FillerSection order="order-1"><ProjectPageHeader toggleModal={handleSkillsModal}/></FillerSection>
 
     <MinorProject 
       project={minorData[0]} 
@@ -82,11 +93,16 @@ const BentoLayout = ({majorData,minorData}:BentoLayoutProps) => {
 
     <FillerSection order="order-6"><ProjectPageFooter/></FillerSection>
 
+    {/* Modals */}
     <ProjectModal 
       openModal={openProjectModal} 
       handleCloseModal={()=>toggleProjectModal(null)} 
       project={useAppSelector((state)=> state.global.selectedProject)}
       />
+    <SkillsModal
+      openModal={openSkillsModal}
+      handleCloseModal={handleSkillsModal}
+    />
 </main>
   )
 }
