@@ -7,13 +7,15 @@ export interface InitialStateTypes {
     theme: boolean;
     openProjectModal:boolean;
     selectedProject: MajorProjectTypes | MinorProjectTypes | null;
+    openSkillsModal:boolean;
 }
 
 const initialState: InitialStateTypes = {
     isSidebarCollapse: false,
     theme: false,
     openProjectModal:false,
-    selectedProject:null
+    selectedProject:null,
+    openSkillsModal:false,
 }
 
 export const globalSlice = createSlice({
@@ -31,10 +33,18 @@ export const globalSlice = createSlice({
         },
         setSelectedProject: (state, action:PayloadAction<MajorProjectTypes | MinorProjectTypes | null>) => {
             state.selectedProject = action.payload;
-        }  
+        },
+        setOpenSkillsModal: (state, action:PayloadAction<boolean>) => {
+            state.openSkillsModal = action.payload;
+        } 
     }
 });
 
-export const { setIsSidebarCollapse, setTheme, setOpenProjectModal, setSelectedProject } = globalSlice.actions;
+export const { setIsSidebarCollapse, 
+               setTheme, 
+               setOpenProjectModal, 
+               setSelectedProject,
+               setOpenSkillsModal
+            } = globalSlice.actions;
 
 export default globalSlice.reducer;
