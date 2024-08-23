@@ -21,4 +21,10 @@ body,
     @apply h-full w-full bg-secondary text-primary rounded-md bg-clip-padding 
     backdrop-filter backdrop-blur-md bg-opacity-70 border border-gray-100;
   }
+
+  .tooltip {
+    @apply absolute w-auto p-2 mt-1 min-w-max rounded-md shadow-md
+    text-white bg-secondary text-xs font-semibold transition-all
+    duration-100 origin-bottom scale-0;
+  }
 }

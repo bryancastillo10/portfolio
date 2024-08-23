@@ -46,9 +46,9 @@ const MinorProject = ({order,backgroundColor,isLayoutLeft,project}:MinorProjectP
             </div>
             {/* Links */}
             <div className="flex justify-center gap-10 items-center m-4">
-              <IconButton icon={CircleEllipsis} link={()=>{}} />
-              <IconButton icon={PlayCircle} link={project.demoLink}/>
-              {project.gitRepo ? (<IconButton icon={FolderCode} link={project.gitRepo}/>):
+              <IconButton tooltip="Read More 📖" icon={CircleEllipsis} link={()=>{}} />
+              <IconButton tooltip="Live Demo 💻" icon={PlayCircle} link={project.demoLink}/>
+              {project.gitRepo ? (<IconButton tooltip="Repository ⚙️" icon={FolderCode} link={project.gitRepo}/>):
                 <span className="text-center cursor-not-allowed">Private <br/> Repository</span>
               }
             </div>
