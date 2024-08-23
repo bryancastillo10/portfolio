@@ -1,15 +1,18 @@
 import Modal from "@/app/(components)/Modal";
+import { TechSkillsTypes } from "@/app/api/skills/data";
 
 interface SkillsModalProps{
     openModal:boolean;
     handleCloseModal:()=>void;
+    skills: TechSkillsTypes | null;
 }
 
-const SkillsModal = ({openModal, handleCloseModal}:SkillsModalProps) => {
+const SkillsModal = ({openModal, handleCloseModal,skills}:SkillsModalProps) => {
   
   const bodyContent = (
     <>
         <h1>Test Modal</h1>
+        <p>{skills?.name!}</p>
     </>
   )
   
@@ -18,7 +21,7 @@ const SkillsModal = ({openModal, handleCloseModal}:SkillsModalProps) => {
         openModal={openModal}
         onClose={handleCloseModal}
         body={bodyContent}
-        title="Technical Skills Name"
+        title={skills?.name!}
         modalLabel="Tech Skills"
     />
   )

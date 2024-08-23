@@ -1,5 +1,6 @@
 import { MajorProjectTypes } from "@/app/api/project/major/data";
 import { MinorProjectTypes } from "@/app/api/project/minor/data";
+import { TechSkillsTypes } from "@/app/api/skills/data";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface InitialStateTypes {
@@ -8,6 +9,7 @@ export interface InitialStateTypes {
     openProjectModal:boolean;
     selectedProject: MajorProjectTypes | MinorProjectTypes | null;
     openSkillsModal:boolean;
+    selectedSkills: TechSkillsTypes | null;
 }
 
 const initialState: InitialStateTypes = {
@@ -16,6 +18,7 @@ const initialState: InitialStateTypes = {
     openProjectModal:false,
     selectedProject:null,
     openSkillsModal:false,
+    selectedSkills:null,
 }
 
 export const globalSlice = createSlice({
@@ -36,7 +39,10 @@ export const globalSlice = createSlice({
         },
         setOpenSkillsModal: (state, action:PayloadAction<boolean>) => {
             state.openSkillsModal = action.payload;
-        } 
+        },
+        setSelectedSkills:(state, action: PayloadAction<TechSkillsTypes | null>) => {
+            state.selectedSkills = action.payload;
+        }
     }
 });
 
@@ -44,7 +50,8 @@ export const { setIsSidebarCollapse,
                setTheme, 
                setOpenProjectModal, 
                setSelectedProject,
-               setOpenSkillsModal
+               setOpenSkillsModal,
+               setSelectedSkills
             } = globalSlice.actions;
 
 export default globalSlice.reducer;
