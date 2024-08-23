@@ -20,7 +20,7 @@ const MinorProject = ({order,backgroundColor,isLayoutLeft,project, toggleModal}:
       <div className={`flex ${isLayoutLeft ? "flex-col-reverse": "flex-col"}  p-4`}>
             <Image  
               src={project.imgPath} 
-              className="rounded-xl shadow-md self-center h-[220px] max-h-auto"
+              className="rounded-xl shadow-md self-center h-[220px] size-auto"
               alt="Project Preview-1"
               height="180"
               width="330"

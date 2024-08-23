@@ -6,21 +6,29 @@ import MinorProject from "@/app/projects/(components)/MinorProject";
 import ProjectPageHeader from "@/app/projects/ProjectPageHeader";
 import ProjectModal from "@/app/(components)/Modal/ProjectModal";
 import ProjectPageFooter from "@/app/projects/ProjectPageFooter";
+
 import { MajorProjectTypes } from "@/app/api/project/major/data";
 import { MinorProjectTypes } from '@/app/api/project/minor/data';
+import { TechSkillsTypes } from "@/app/api/skills/data";
 
 import { useAppSelector, useAppDispatch } from "@/app/redux";
-import { setOpenProjectModal, setOpenSkillsModal, setSelectedProject } from "@/state";
+import { setOpenProjectModal, 
+         setOpenSkillsModal, 
+         setSelectedProject,
+         setSelectedSkills
+        } from "@/state";
 import SkillsModal from "@/app/(components)/Modal/SkillsModal";
+
 
 interface BentoLayoutProps{
   majorData: MajorProjectTypes[];
   minorData: MinorProjectTypes[];
+  skillsData: TechSkillsTypes[];
 }
 
-const BentoLayout = ({majorData,minorData}:BentoLayoutProps) => {
+const BentoLayout = ({majorData,minorData,skillsData}:BentoLayoutProps) => {
   const dispatch = useAppDispatch();
-  
+
   // Theme State
   const theme = useAppSelector((state)=>state.global.theme);
 
@@ -34,7 +42,8 @@ const BentoLayout = ({majorData,minorData}:BentoLayoutProps) => {
     dispatch(setOpenProjectModal(!openProjectModal));
   }; 
 
-  const handleSkillsModal = () => {
+  const handleSkillsModal = (skill: TechSkillsTypes | null) => {
+    dispatch(setSelectedSkills(skill))
     dispatch(setOpenSkillsModal(!openSkillsModal));
   }
 
@@ -49,7 +58,7 @@ const BentoLayout = ({majorData,minorData}:BentoLayoutProps) => {
       toggleModal={()=> toggleProjectModal(majorData[0])}
     />
 
-    <FillerSection order="order-1"><ProjectPageHeader toggleModal={handleSkillsModal}/></FillerSection>
+    <FillerSection order="order-1"><ProjectPageHeader  skillsData={skillsData} handleSkillsModal={handleSkillsModal}/></FillerSection>
 
     <MinorProject 
       project={minorData[0]} 
@@ -101,7 +110,8 @@ const BentoLayout = ({majorData,minorData}:BentoLayoutProps) => {
       />
     <SkillsModal
       openModal={openSkillsModal}
-      handleCloseModal={handleSkillsModal}
+      handleCloseModal={()=>handleSkillsModal(null)}
+      skills={useAppSelector((state)=>state.global.selectedSkills)}
     />
 </main>
   )

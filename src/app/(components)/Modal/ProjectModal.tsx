@@ -15,7 +15,7 @@ const ProjectModal = ({openModal,handleCloseModal,project}:ProjectModalProps) =>
     const getImagePath = () => {
         if (!project) return "";
         if (isMajorProject(project)) {
-          return project.imgPath[0] || "";
+          return project.imgPath[1] || "";
         }
         return project.imgPath;
       };
@@ -25,7 +25,7 @@ const ProjectModal = ({openModal,handleCloseModal,project}:ProjectModalProps) =>
         <div className="grid grid-cols-1 xl:grid-cols-2 justify items-center gap-4">
             <div className="max-w-[90%]">
                 {paragraphs.map((para,index)=> (
-                    <p className="indent-2 my-2 text-justify" key={index}>{para}</p>
+                    <p className="text-lg indent-2 my-2 text-justify" key={index}>{para}</p>
                 ))}
             </div>
             <div className="max-w-[90%] mx-auto">
