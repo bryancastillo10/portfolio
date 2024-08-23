@@ -30,7 +30,7 @@ const majorProjectsData:MajorProjectTypes[] = [
         techStack:["MERN Stack", "Recharts", "Socket IO","Tailwind CSS", "React-Redux","MUI Table"],
         language:["JavaScript"],
         skillLearned:"This project helps me improve my usage of Git since it is a collaboration with another developer.\
-         Another important thing is that it provide some insights on backend development by crafting API endpoints using Express at Node JS.\
+         Another significant aspect is that it provide some insights on backend development by crafting API endpoints using Express at Node JS.\
         It also give me the idea on how to set up dashboards and work critically on several tasks such as effective API integration. \
         This collaboration projects involves online discussions with the team using Slacks, task management by Asana. Most of the conceptualization were done by me since I have background in the chemical industry \
         working on a chemical laboratory.",
