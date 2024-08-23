@@ -78,7 +78,7 @@ const MajorProject = ({ order, backgroundColor,isLayoutRight,project, toggleModa
             </div>
 
             <div className="absolute inset-0 animate-marquee2 flex flex-col">
-            {project.imgPath.slice(0,2).map((img, index) => (
+            {project.imgPath.map((img, index) => (
               <Image
                 width="400"
                 height="250"

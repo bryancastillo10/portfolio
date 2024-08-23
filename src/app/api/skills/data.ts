@@ -37,7 +37,7 @@ const techSkills: TechSkillsTypes[] = [
         id:3,
         name:"Project Conceptualization",
         description:"As I continue to engage with the tech world, I've realized that being a software engineer does not require constant coding. This career path also\
-        necessitates effective team planning and communication in order to address the flow of the project. A software developer&apos;s efficiency stems from their ability \
+        necessitates effective team planning and communication in order to address the flow of the project. A software developer's efficiency stems from their ability \
         to divide a complex task into smaller parts and be able to implement them. From my engineering background, planning is critical for optimizing systems and it might be a valuable \
         skill transfer into the tech industry",
         techStack:["Git","Notion","Asana"],
