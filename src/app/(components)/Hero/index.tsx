@@ -2,6 +2,7 @@
 // Libraries
 import { useAppSelector } from "@/app/redux";
 import { useRouter } from "next/navigation";
+import {motion} from "framer-motion";
 
 // Components
 import { TopProjects } from "@/app/(components)/Hero/TopProjects";
@@ -63,13 +64,18 @@ const Hero = () => {
                 <WaveUp />
           </div>
         </section>
-        <div className="mt-8 max-w-[90%] md:max-w-[80%] mx-auto space-y-4 md:space-y-8">
+        <motion.div 
+          initial={{opacity:0}}
+          whileInView={{opacity:1}}
+          transition={{duration:1.5}}
+          className="mt-8 max-w-[90%] md:max-w-[80%] mx-auto space-y-4 md:space-y-8"
+          >
         <h1 className={`text-5xl xl:text-7xl tracking-wider ${adventPro.className}`}>Top Projects</h1>
         <TopProjects projectInfo={projectInfo} />
         <article className="flex place-content-center xl:place-content-end my-8">
             <Button type="button" action={()=>{router.push("/projects")}} variant="secondary">More Project Details...</Button>
         </article>
-        </div>
+        </motion.div>
     </div>
   )
 }
