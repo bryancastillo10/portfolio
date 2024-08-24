@@ -8,9 +8,10 @@ interface RevealTextProps{
     children: ReactNode;
     width?: "fit-content" | "100%";
     isLeft:boolean;
+    withSlider?:boolean | null;
 }
 
-const RevealText = ({children,isLeft, width= "fit-content"}:RevealTextProps) => {
+const RevealText = ({children,isLeft, width= "fit-content", withSlider=null}:RevealTextProps) => {
   const ref= useRef(null);
   const theme = useAppSelector((state)=> state.global.theme);
 
@@ -41,10 +42,10 @@ const RevealText = ({children,isLeft, width= "fit-content"}:RevealTextProps) => 
       >
         {children}
       </motion.div>
-      <motion.div
+    {withSlider && (<motion.div
         className={`absolute z-20 inset-y-4 inset-x-0 
            ${theme ? "bg-teal-500/80":"bg-light-secondary/80 "}
-            ${isLeft ? "rounded-r-2xl": "rounded-l-2xl"}`}
+            ${isLeft ? "rounded-r-lg": "rounded-l-lg"}`}
         variants={{
             initial:isLeft ? { right:0} : {left:0},
             loaded: isLeft ? { right:"100%"}: {left:"100%"}
@@ -52,7 +53,7 @@ const RevealText = ({children,isLeft, width= "fit-content"}:RevealTextProps) => 
         initial="initial"
         animate={slideControls}
         transition={{duration:1, ease:"easeInOut"}}  
-      />
+      />) }
     </div>
   )
 }
