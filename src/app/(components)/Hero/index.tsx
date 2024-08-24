@@ -7,6 +7,7 @@ import {motion} from "framer-motion";
 // Components
 import { TopProjects } from "@/app/(components)/Hero/TopProjects";
 import Button from "@/app/(reusables)/Button";
+import RevealText from "@/app/(reusables)/RevealText";
 
 // Assets and Styling
 import { adventPro } from "@/utils/font";
@@ -35,6 +36,7 @@ const Hero = () => {
             <div className={`my-4 md:p-4 flex flex-col gap-4 text-center md:text-left  rounded-2xl 
               ${isSidebarCollapse ? "md:max-w-[50%]":"md:max-w-[60%]"}
               ${theme ? "bg-secondary":"bg-primary/80"}`}>
+              <RevealText isLeft>
               <h1 className={`mt-8 md:mt-4 font-bold text-7xl tracking-wide ${adventPro.className}`}>
                 Bryan Castillo
               </h1>
@@ -45,6 +47,7 @@ const Hero = () => {
                   <span className="font-bold">software development</span>
                 </p>
               </div>
+              </RevealText>
             </div>
 
             {/* Hero CTA */}
