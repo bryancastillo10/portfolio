@@ -41,7 +41,7 @@ const Modal = ({ openModal, title, modalLabel, onClose, body }: ModalProps) => {
                         </div>
                         {/* Footer */}
                         <div className="p-6 flex flex-col gap-2 items-center">
-                            <Button action={handleCloseModal} variant="secondary">Got It</Button>
+                            <Button type="button" action={handleCloseModal} variant="secondary">Got It</Button>
                         </div>
                     </div>
                 </div>

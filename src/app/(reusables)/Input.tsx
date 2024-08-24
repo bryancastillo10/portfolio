@@ -3,7 +3,7 @@ import { LucideIcon } from "lucide-react";
 
 
 interface InputProps{
-    id:string;
+    name:string;
     label:string;
     type?:string;
     disabled:boolean;
@@ -13,11 +13,11 @@ interface InputProps{
 }
 
 
-const Input = ({id,type,label,disabled,required,icon:Icon,theme}:InputProps) => {
+const Input = ({name,type,label,disabled,required,icon:Icon,theme}:InputProps) => {
   return (
     <div className="relative">
       <input
-        id={id} 
+        name={name} 
         type={type}
         disabled={disabled}
         placeholder=" "

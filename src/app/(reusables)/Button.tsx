@@ -3,10 +3,11 @@ import { ReactNode } from "react";
 interface ButtonProps {
     children:ReactNode;
     variant?:string;
-    action:()=> void;
+    action?:()=> void;
+    type: "submit"|"reset"|"button"|undefined;
 }
 
-const Button = ({children,variant,action}:ButtonProps) => {
+const Button = ({children,variant,action,type}:ButtonProps) => {
     const getBtnStyle = (variant:string) => {
         switch(variant){
             case 'primary':
@@ -24,6 +25,7 @@ const Button = ({children,variant,action}:ButtonProps) => {
     return (
         <button 
         onClick={action}
+        type={type}
         className={`min-w-fit m-2 px-8 py-2 text-2xl font-semibold rounded-2xl hover:scale-110
         duration-500 ease-in-out
         ${getBtnStyle(variant!)}`}>

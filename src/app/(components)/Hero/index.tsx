@@ -49,8 +49,8 @@ const Hero = () => {
 
             {/* Hero CTA */}
             <div className={`flex flex-col md:flex-row justify-end gap-x-6 pt-4 max-w-[80%] mx-auto md:mx-0 ${isSidebarCollapse ? "md:max-w-[50%]":"md:max-w-[60%]"}`}>
-              <Button action={()=>{router.push("/about")}} variant="hero-primary">About</Button>
-              <Button action={()=>{router.push("/contact")}} variant="hero-secondary">Contact</Button> 
+              <Button type="button" action={()=>{router.push("/about")}} variant="hero-primary">About</Button>
+              <Button type="button" action={()=>{router.push("/contact")}} variant="hero-secondary">Contact</Button> 
             </div>
           </div>
 
@@ -68,7 +68,7 @@ const Hero = () => {
         <h1 className={`text-5xl xl:text-7xl tracking-wider ${adventPro.className}`}>Top Projects</h1>
         <TopProjects projectInfo={projectInfo} />
         <article className="flex place-content-center xl:place-content-end my-8">
-            <Button action={()=>{router.push("/projects")}} variant="secondary">More Project Details...</Button>
+            <Button type="button" action={()=>{router.push("/projects")}} variant="secondary">More Project Details...</Button>
         </article>
         </div>
     </div>
