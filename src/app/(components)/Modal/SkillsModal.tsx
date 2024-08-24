@@ -15,8 +15,8 @@ const SkillsModal = ({openModal, handleCloseModal,skills}:SkillsModalProps) => {
     <section className="grid grid-cols-1 xl:grid-cols-2 justify items-center gap-4">
       <div className="max-w-[90%] mx-auto">
         {skills ? 
-          <Image src={skills.imgPath} 
-                 alt="project-preview" 
+          <Image src={skills.imgPath || "/skills/backend.png" } 
+                 alt="skills-preview" 
                  width="450" 
                  height="320"
                  className="rounded-2xl shadow-sm"

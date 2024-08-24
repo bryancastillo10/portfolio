@@ -23,7 +23,7 @@ const Input = ({name,type,label,disabled,required,icon:Icon,theme}:InputProps) =
         placeholder=" "
         required={required}
         className={`peer w-full p-2 caret-light-secondary border-2  rounded-xl outline-none transition 
-        disabled:opacity-50 disabled:cursor-not-allowed 
+        disabled:opacity-50 disabled:cursor-not-allowed indent-2
         ${theme ? "bg-dark-primary text-primary border-teal-400 ":"bg-white/90 text-teal-700 border-teal-500 "}
         `}
        />

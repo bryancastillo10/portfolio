@@ -92,7 +92,7 @@ const ContactForm = () => {
       <div className="relative mt-4">
         <textarea
           name="message"
-          className={`text-lg resize-none h-[250px] peer w-full p-2 caret-light-secondary 
+          className={`indent-2 text-lg resize-none h-[250px] peer w-full p-2 caret-light-secondary 
             border-2 rounded-xl outline-none transition 
             disabled:opacity-50 disabled:cursor-not-allowed 
             ${
