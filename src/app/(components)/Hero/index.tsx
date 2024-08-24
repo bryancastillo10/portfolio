@@ -10,7 +10,6 @@ import Button from "@/app/(reusables)/Button";
 // Assets and Styling
 import { adventPro } from "@/utils/font";
 import { projectInfo } from "./projectInfo";
-import HeroBg from "@/asset/HeroMainBG.png";
 import WaveUp from "./WaveUp";
 import TextAnimation from "./TextAnimation";
 
@@ -21,7 +20,7 @@ const Hero = () => {
 
     const backgroundStyle = {
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), 
-        rgba(0, 0, 0, 0.2)), url(${HeroBg.src})`,
+        rgba(0, 0, 0, 0.2)), url(/main/HeroMainBG.png)`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",

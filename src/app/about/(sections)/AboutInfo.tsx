@@ -1,10 +1,8 @@
 "use client";
 import Image from "next/image";
-import AboutImg from "@/asset/AboutPic.png";
 import Button from "@/app/(reusables)/Button";
 import Hexagon from "@/app/(reusables)/Hexagon";
 import { useRouter } from "next/navigation";
-
 
 const AboutInfo = () => {
   const router = useRouter();
@@ -29,7 +27,7 @@ const AboutInfo = () => {
               <Hexagon fillColor="#119DA4" width="150" height="130" />
             </div>
             <Image 
-              src={AboutImg.src} 
+              src={"/main/AboutPic.png"} 
               alt="about-me-image" 
               width="350"
               height="350"
