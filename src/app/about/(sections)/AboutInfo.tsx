@@ -18,8 +18,8 @@ const AboutInfo = () => {
                 of creating valuable software applications due to his resourcefulness and perseverance in his 
                 career development.</p>
           <div className="py-10 flex flex-col md:flex-row gap-4">
-              <Button action={()=> router.push("/projects")} variant="primary">View Projects</Button>
-              <Button action={()=>router.push("/contact")} variant="secondary">Contact Me</Button> 
+              <Button type="button" action={()=> router.push("/projects")} variant="primary">View Projects</Button>
+              <Button type="button" action={()=>router.push("/contact")} variant="secondary">Contact Me</Button> 
           </div>
         </article>
         {/* About Image */}
