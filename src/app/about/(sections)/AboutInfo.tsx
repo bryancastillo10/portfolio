@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Button from "@/app/(reusables)/Button";
 import Hexagon from "@/app/(reusables)/Hexagon";
+import RevealText from "@/app/(reusables)/RevealText";
 import { useRouter } from "next/navigation";
 
 const AboutInfo = () => {
@@ -10,15 +11,17 @@ const AboutInfo = () => {
     <section className="flex flex-col-reverse lg:flex-row justify-center items-center w-full gap-4 ">
         {/* About Description */}
         <article className="xl:mt-[-50px] p-4 text-wrap w-[70%]">
-          <p className='text-base text-center md:text-left'>Bryan adapts to the rapidly changing digital world and discovers 
-              that producing and maintaining software can solve some real-world problems.</p>
-          <p className='text-base text-center md:text-left mt-4'>He became a self-taught programmer capable 
+          <RevealText withSlider isLeft={false}><p className='text-base text-center md:text-left'>Bryan adapts to the rapidly changing digital world and discovers 
+              that producing and maintaining software can solve some real-world problems.</p></RevealText>
+              <RevealText withSlider isLeft><p className='text-base text-center md:text-left mt-4'>He became a self-taught programmer capable 
                 of creating valuable software applications due to his resourcefulness and perseverance in his 
-                career development.</p>
-          <div className="py-10 flex flex-col md:flex-row gap-4">
-              <Button type="button" action={()=> router.push("/projects")} variant="primary">View Projects</Button>
-              <Button type="button" action={()=>router.push("/contact")} variant="secondary">Contact Me</Button> 
-          </div>
+                career development.</p></RevealText>
+          <RevealText withSlider isLeft={false}>
+            <div className="py-10 flex flex-col md:flex-row gap-4">              
+                <Button type="button" action={()=> router.push("/projects")} variant="primary">View Projects</Button>
+                <Button type="button" action={()=>router.push("/contact")} variant="secondary">Contact Me</Button>            
+            </div>
+          </RevealText> 
         </article>
         {/* About Image */}
         <div className="flex items-center relative mt-8 p-10 w-full place-content-center">
