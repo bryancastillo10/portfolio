@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
-import { createRequire } from "module";
-const require = createRequire(import.meta.url);
+import path from 'path';
 
 const nextConfig = {
   webpack(config) {
@@ -9,9 +8,17 @@ const nextConfig = {
       use: ["@svgr/webpack"],
     });
 
+    config.module.rules.push({
+      test: /\.(png|jpg|jpeg|gif|webp|ico|bmp|tiff)$/i,  
+      type: 'asset/resource',
+      generator: {
+        filename: 'static/images/[hash][ext][query]',  
+      },
+      include: path.join(process.cwd(), 'app/asset'),  
+    });
+
     return config;
   },
-
   images: {
     remotePatterns: [{
       protocol:"https",

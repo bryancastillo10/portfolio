@@ -23,7 +23,7 @@ const minorProjectsData:MinorProjectTypes[] = [
         skillLearned:"My first attempt to use two different programming languages wherein Python Flask framework was used as the server while React JS Typescript in Vite is the client side. \
         This serves as a prototype for a project on my job as a researcher in Taiwan. Take note that this is multi-lingual project since Mandarin Chinese is the native language in Taiwan.\
         The algorithm or flow of the logic on how the calculation result obtained is based on real data gathered from several laboratory\
-        analysis on different organic waste materials suitable to be a fertilizer. NPK ratio and the desired input were the input of the user and the calculator would provide different combinations of those raw materials\
+        analysis on different organic waste materials suitable to be a fertilizer. NPK ratio and the desired amount (in kilograms) were the input of the user and the calculator would provide different combinations of those raw materials\
         on the database togeter with the weighted average calculation of the overall NPK while also providing some comments based on the results. Taking a step further, it would be planned to be actually integrated with artificial intelligence as\
         long as sufficient amount of data can train an appropriate model for this task.",
         demoLink:"https://npk-calculator.onrender.com/",
