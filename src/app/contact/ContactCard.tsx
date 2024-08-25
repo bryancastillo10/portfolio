@@ -8,7 +8,7 @@ const ContactCard = () => {
           <Image src="/skills/frontend.png" className="rounded-2xl" alt="contact-img" fill/>
         </div>
         <div className="grid grid-cols-1 xl:grid-cols-2">
-          <div className="w-full overflow-hidden xl:h-[255px] bg-light-secondary/90 backdrop-blur-md"/>
+          <div className="w-[80%] overflow-hidden xl:h-[255px] bg-light-secondary/90 xl:rounded-bl-2xl backdrop-blur-md"/>
           <div className="p-2 h-fit">
             <h1>Email</h1>
             <p>bryanium.bc10@gmail.com</p>

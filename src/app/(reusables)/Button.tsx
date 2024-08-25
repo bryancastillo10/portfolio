@@ -6,9 +6,11 @@ interface ButtonProps {
     variant?:string;
     action?:()=> void;
     type: "submit"|"reset"|"button"|undefined;
+    loading?:boolean;
+    width?:string;
 }
 
-const Button = ({children,variant,action,type}:ButtonProps) => {
+const Button = ({children,variant,action,loading,type,width = "fit"}:ButtonProps) => {
     const getBtnStyle = (variant:string) => {
         switch(variant){
             case 'primary':
@@ -30,10 +32,19 @@ const Button = ({children,variant,action,type}:ButtonProps) => {
         transition={{ duration:0.15, ease:"backInOut"}}
         onClick={action}
         type={type}
-        className={`min-w-fit m-2 px-8 py-2 text-2xl font-semibold rounded-2xl
+        className={`${width} min-w-fit m-2 px-8 py-2 text-2xl font-semibold rounded-2xl
         duration-500 ease-in-out
         ${getBtnStyle(variant!)}`}>
-            {children}
+                {loading ? (
+                <div className="flex justify-center items-center gap-0.5">
+                    <svg
+                        className="animate-spin size-4 mr-2 border-white border-t-secondary border-2 rounded-full"
+                        viewBox="0 0 24 24"
+                         />
+                    <span className="font-semibold text-base">Loading . . .</span>
+                </div>       
+
+                ) : children}
         </motion.button>
   )
 }
