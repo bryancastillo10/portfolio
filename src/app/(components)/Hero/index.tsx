@@ -3,15 +3,16 @@
 import { useAppSelector } from "@/app/redux";
 import { useRouter } from "next/navigation";
 import {motion} from "framer-motion";
+import { Ellipsis } from "lucide-react";
 
 // Components
-import { TopProjects } from "@/app/(components)/Hero/TopProjects";
 import Button from "@/app/(reusables)/Button";
 import RevealText from "@/app/(reusables)/RevealText";
+import Timeline from "@/app/(components)/Hero/Timeline";
 
 // Assets and Styling
 import { adventPro } from "@/utils/font";
-import { projectInfo } from "./projectInfo";
+import { projects } from "./projectInfo";
 import WaveUp from "./WaveUp";
 import TextAnimation from "./TextAnimation";
 
@@ -73,11 +74,14 @@ const Hero = () => {
           transition={{duration:1.5}}
           className="mt-8 max-w-[90%] md:max-w-[80%] mx-auto space-y-4 md:space-y-8"
           >
-        <h1 className={`text-5xl xl:text-7xl tracking-wider ${adventPro.className}`}>Top Projects</h1>
-        <TopProjects projectInfo={projectInfo} />
-        <article className="flex place-content-center xl:place-content-end my-8">
-            <Button type="button" action={()=>{router.push("/projects")}} variant="secondary">More Project Details...</Button>
+        <h1 className={`text-5xl xl:text-7xl tracking-wider ${adventPro.className}`}>Top Projects</h1> 
+        <article className="flex sticky top-2 right-10 z-20 place-content-center xl:place-content-start mr-4 xl:ml-4 my-8">
+            <Button width="w-fit" type="button" action={()=>{router.push("/projects")}}>
+              <span className="text-xs xl:text-base">More Project Details...</span>
+            </Button>
+
         </article>
+             <Timeline projects={projects}/> 
         </motion.div>
     </div>
   )
