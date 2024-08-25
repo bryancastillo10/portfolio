@@ -4,6 +4,7 @@ import Button from "@/app/(reusables)/Button";
 import Hexagon from "@/app/(reusables)/Hexagon";
 import RevealText from "@/app/(reusables)/RevealText";
 import { useRouter } from "next/navigation";
+import {motion} from "framer-motion";
 
 const AboutInfo = () => {
   const router = useRouter();
@@ -29,12 +30,22 @@ const AboutInfo = () => {
             animate-spin-slow">
               <Hexagon fillColor="#119DA4" width="150" height="130" />
             </div>
-            <Image 
-              src={"/main/AboutPic.png"} 
-              alt="about-me-image" 
-              width="350"
-              height="350"
-              />
+            <motion.div
+              variants={{
+                start:{scale:0},
+                loaded:{scale:1, rotate:"360deg", x:[0,100,-100,1]}
+              }}
+              transition={{duration:2, delay:0.125, ease:"easeOut"}}
+              initial="start"
+              animate="loaded"
+            >
+              <Image 
+                src={"/main/AboutPic.png"} 
+                alt="about-me-image" 
+                width="350"
+                height="350"
+                />
+            </motion.div>
             <div className="absolute bottom-0 right-[-12%] md:bottom-[-15%] lg:bottom-[-5%] lg:right-[-5%] xl:right-[10%] xl:bottom-0
             animate-spin-slow">
             <Hexagon fillColor="#3C6997" width="150" height="130" />
