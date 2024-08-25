@@ -28,7 +28,6 @@ const config: Config = {
         md: '22px',
       },
       animation: {
-        "spin-slow": "spin 8s linear infinite",
         marquee: 'marquee 25s linear infinite',
         marquee2: 'marquee2 25s linear infinite',
       },
