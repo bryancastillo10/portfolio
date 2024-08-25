@@ -1,6 +1,6 @@
 "use client";
 import { ReactNode, useEffect, useRef } from "react";
-import {motion, useInView, useAnimation, easeInOut} from "framer-motion";
+import {motion, useInView, useAnimation} from "framer-motion";
 import { useAppSelector } from "@/app/redux";
 
 

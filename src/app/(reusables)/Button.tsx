@@ -8,9 +8,10 @@ interface ButtonProps {
     type: "submit"|"reset"|"button"|undefined;
     loading?:boolean;
     width?:string;
+    layout?:boolean;
 }
 
-const Button = ({children,variant,action,loading,type,width = "fit"}:ButtonProps) => {
+const Button = ({children,variant,action,loading,type,layout,width = "fit"}:ButtonProps) => {
     const getBtnStyle = (variant:string) => {
         switch(variant){
             case 'primary':
@@ -32,6 +33,7 @@ const Button = ({children,variant,action,loading,type,width = "fit"}:ButtonProps
         transition={{ duration:0.15, ease:"backInOut"}}
         onClick={action}
         type={type}
+        layout={layout}
         className={`${width} min-w-fit m-2 px-8 py-2 text-2xl font-semibold rounded-2xl
         duration-500 ease-in-out
         ${getBtnStyle(variant!)}`}>
