@@ -1,59 +1,25 @@
 "use client";
-import { ChangeEvent, useState, useEffect } from 'react';
 import Input from '@/app/(reusables)/Input';
 import Button from '@/app/(reusables)/Button';
 import { User2, MailCheck, Pencil } from 'lucide-react';
 import { useAppSelector } from '@/app/redux';
-import Toast from '@/app/contact/Toast';
+import useSubmitMessage from './useSubmitMessage';
 
 const ContactForm = () => {
   const theme = useAppSelector((state) => state.global.theme);
-  const [isMessageSent, setIsMessageSent] = useState<boolean>(false);
-  const [isError, setIsError] = useState<boolean>(false);
-
+  const { loading, error , status, handleSubmit } = useSubmitMessage();
   // Toast Timer
-  useEffect(() => {
-    if (isMessageSent || isError) {
-      const timer = setTimeout(() => {
-        setIsMessageSent(false);
-        setIsError(false);
-      }, 3000); 
+  // useEffect(() => {
+  //   if (isMessageSent || isError) {
+  //     const timer = setTimeout(() => {
+  //       setIsMessageSent(false);
+  //       setIsError(false);
+  //     }, 3000); 
 
-      return () => clearTimeout(timer);
-    }
-  }, [isMessageSent, isError]);
+  //     return () => clearTimeout(timer);
+  //   }
+  // }, [isMessageSent, isError]);
 
-  // API Post Request
-  async function handleSubmit(e: ChangeEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-
-    formData.append('access_key', `${process.env.NEXT_PUBLIC_WEB3FORM_KEY}`);
-
-    const object = Object.fromEntries(formData);
-    const json = JSON.stringify(object);
-
-    try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: json,
-      });
-
-      const result = await response.json();
-
-      if (result.success) {
-        setIsMessageSent(true);
-      } else {
-        setIsError(true);
-      }
-    } catch (error) {
-      setIsError(true);
-    }
-  }
 
   return (
     <form
@@ -61,11 +27,7 @@ const ContactForm = () => {
       onSubmit={handleSubmit}
     >
       {/* Toast Message */}
-      {isMessageSent && (
-        <Toast theme={theme} message="Message sent successfully!" type="success" />
-      )}
-      {isError && <Toast theme={theme} message="Failed to send message!" type="error" />}
-      
+
       {/* Name */}
       <Input
         theme={theme}
@@ -119,7 +81,11 @@ const ContactForm = () => {
       
       {/* Submit Button */}
       <div className="mt-4 self-center xl:self-start">
-        <Button type="submit" variant={`${theme ? 'secondary' : 'primary'}`}>
+        <Button 
+          type="submit" 
+          variant={`${theme ? 'secondary' : 'primary'}`}
+          loading={loading}
+        >
           Submit
         </Button>
       </div>
