@@ -1,33 +1,24 @@
 "use client";
 import Input from '@/app/(reusables)/Input';
 import Button from '@/app/(reusables)/Button';
-import { User2, MailCheck, Pencil } from 'lucide-react';
+import { User2, MailCheck, Pencil, CircleCheck, CircleX } from 'lucide-react';
 import { useAppSelector } from '@/app/redux';
 import useSubmitMessage from './useSubmitMessage';
 
 const ContactForm = () => {
   const theme = useAppSelector((state) => state.global.theme);
-  const { loading, error , status, handleSubmit } = useSubmitMessage();
-  // Toast Timer
-  // useEffect(() => {
-  //   if (isMessageSent || isError) {
-  //     const timer = setTimeout(() => {
-  //       setIsMessageSent(false);
-  //       setIsError(false);
-  //     }, 3000); 
+  const { loading, error, status, handleSubmit, clearStatus } = useSubmitMessage();
 
-  //     return () => clearTimeout(timer);
-  //   }
-  // }, [isMessageSent, isError]);
-
+  // Refresh status 
+  if (status) {
+    clearStatus();
+  }
 
   return (
     <form
       className="relative mt-2 flex flex-col max-w-[80%] mx-auto xl:mx-0 gap-12"
       onSubmit={handleSubmit}
     >
-      {/* Toast Message */}
-
       {/* Name */}
       <Input
         theme={theme}
@@ -78,15 +69,23 @@ const ContactForm = () => {
           <Pencil size="22" className={`${theme ? 'text-primary' : 'text-teal-600'}`} />
         </div>
       </div>
-      
+
       {/* Submit Button */}
       <div className="mt-4 self-center xl:self-start">
         <Button 
           type="submit" 
           variant={`${theme ? 'secondary' : 'primary'}`}
           loading={loading}
+          width="w-[250px]"
         >
-          Submit
+          {status !== null ? (
+            <div className='flex gap-4 items-center justify-center'>
+              <p>{status}</p>
+              <p>{error ? <CircleX /> : <CircleCheck />}</p>
+            </div>
+          ) : (
+            "Submit"
+          )}
         </Button>
       </div>
     </form>

@@ -1,9 +1,8 @@
 import { ChangeEvent, useState } from "react";
 
-
 const useSubmitMessage = () => {
     const [loading,setLoading] = useState<boolean>(false);
-    const [error, setError] = useState<string | null>(null);
+    const [error, setError] = useState<boolean>(false);
     const [status, setStatus] = useState<string|null>(null);
 
     const handleSubmit = async  (e: ChangeEvent<HTMLFormElement>) => {
@@ -31,13 +30,16 @@ const useSubmitMessage = () => {
           if (result.success) {
             setStatus("Message Sent");
           } else {
-            setError(error);
+            setError(true);
+            setStatus("Failed to Send");
           }
         } catch (error: unknown) {
             if(error instanceof Error){
-                setStatus("Failed to send the message");
+                setError(true);
+                setStatus("Failed to Send");
             }else{
-                setError("An unknown error occured");
+                setError(true);
+                setStatus("An unknown error occured");
             }
         }
         finally{
@@ -45,7 +47,14 @@ const useSubmitMessage = () => {
         }
       };
 
-      return { loading, error , status, handleSubmit }
+      const clearStatus = () => {
+        setTimeout(()=>{
+          setStatus(null);
+          setError(false);
+        },2500)
+      }
+
+      return { loading, status,error, handleSubmit, clearStatus }
     
 }
 
