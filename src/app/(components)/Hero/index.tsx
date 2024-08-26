@@ -2,8 +2,6 @@
 // Libraries
 import { useAppSelector } from "@/app/redux";
 import { useRouter } from "next/navigation";
-import {motion} from "framer-motion";
-import { Ellipsis } from "lucide-react";
 
 // Components
 import Button from "@/app/(reusables)/Button";
@@ -15,6 +13,7 @@ import { adventPro } from "@/utils/font";
 import { projects } from "./projectInfo";
 import WaveUp from "./WaveUp";
 import TextAnimation from "./TextAnimation";
+import SectionHeader from '@/app/(reusables)/SectionHeader';
 
 const Hero = () => {
     const router = useRouter();
@@ -68,21 +67,16 @@ const Hero = () => {
                 <WaveUp />
           </div>
         </section>
-        <motion.div 
-          initial={{opacity:0}}
-          whileInView={{opacity:1, x:[0,100,0]}}
-          transition={{duration:1.5}}
-          className="mt-8 max-w-[90%] md:max-w-[80%] mx-auto space-y-4 md:space-y-8"
-          >
-        <h1 className={`text-5xl xl:text-7xl tracking-wider ${adventPro.className}`}>Top Projects</h1> 
+        <div className="mt-8 max-w-[90%] md:max-w-[80%] mx-auto space-y-4 md:space-y-8">
+        <SectionHeader title="Top Projects" />
         <article className="flex sticky top-2 right-10 z-20 place-content-center xl:place-content-start mr-4 xl:ml-4 my-8">
-            <Button width="w-fit" type="button" action={()=>{router.push("/projects")}}>
-              <span className="text-xs xl:text-base">More Project Details...</span>
+            <Button type="button" action={()=>{router.push("/projects")}}>
+              <span className="text-sm md:text-base">More Details...</span>
             </Button>
 
         </article>
              <Timeline projects={projects}/> 
-        </motion.div>
+        </div>
     </div>
   )
 }

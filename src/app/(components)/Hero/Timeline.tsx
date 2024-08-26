@@ -4,6 +4,8 @@ import { ExternalLink , FileJson, LucideIcon } from "lucide-react";
 import { useAppSelector } from "@/app/redux";
 import { projectsProps } from "./projectInfo";
 import IconButton from "@/app/(reusables)/IconButton";
+import ClipContainer from "@/app/(reusables)/ClipContainer";
+import {motion, useScroll, useSpring, useTransform } from "framer-motion";
 
 interface TimelineBlockProps {
   alignment: "left" | "right";
@@ -28,12 +30,26 @@ interface CirclePointProps {
 
 const Timeline = ({ projects }: TimelineProps) => {
   const theme = useAppSelector((state)=>state.global.theme);
+  const {scrollYProgress} = useScroll();
+
+  const scaleProgress = useSpring(scrollYProgress, {
+    stiffness: 80,
+    damping: 50,
+  });
+
+  const lineHeight = useTransform(scaleProgress, [0, 1], ["0%", "100%"]);
 
   return (
     <section className="relative grid grid-cols-1 xl:grid-cols-2 grid-rows-6 gap-4 w-full">
-      <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 h-full w-[3px] bg-gray-400" />
+      {/* Vertical Line */}
+      <motion.div 
+        style={{ height: lineHeight, top: 0,}}
+        className={`hidden xl:block absolute left-1/2 transform -translate-x-1/2 h-full w-[3px]
+        ${theme ? "bg-teal-400":"bg-secondary"}
+        `} /> 
+
        
-      {projects.map((proj) => (
+      {projects.map((proj) => (    
         <TimelineBlock
           key={proj.id}
           theme={theme}
@@ -62,70 +78,89 @@ const TimelineBlock = ({
   rowConfig,
   language
 }: TimelineBlockProps) => {
+  const cardVariants = {
+    hidden: { opacity: 0, x: alignment === "left" ? 100 : -100 },
+    loaded: { opacity: 1, x: 0, transition: {duration: 0.8, ease: "easeOut"}}
+  };
 
   return (
-    
-    <div
+    <motion.div
+      variants={cardVariants}
+      initial="hidden"
+      whileInView="loaded"
+      viewport={{once:true, amount:0.8}}
       className={`relative rounded-xl shadow-md p-2 w-full 
         ${rowConfig}
         ${alignment === "left" ? `xl:col-start-1` : `xl:col-start-2`}
-        ${theme ? "bg-dark-primary":"bg-gray-400/40"}
+        ${theme ? "bg-dark-primary/90":"bg-sky-700/40"}
       `}
     >
-      <section className="grid grid-cols-2 gap-2 p-4 ">
-        {/*  Project Info Column */}
-        <div className={`${alignment === "left" ? "order-2":"order-none"}`}>
-          <div className="flex gap-4 items-center mb-4">
-            <div className={`p-3 border rounded-full ${theme ? "bg-teal-500 bg-sky-500/80":"border-secondary bg-sky-500/40"}`}>
-              <Icon size="28" />
-            </div>
-            <h1 className="font-semibold text-3xl  text-center xl:text-left xl:text-4xl tracking-wide">{projectTitle}</h1>
-          </div>
-            <h3 className="text-lg">{projectSubtitle}</h3>
-            <div className="mt-8 flex justify-evenly items-center">
-              <ul className="flex gap-2 items-center">
-                {language.map((lang,index)=> (
-                  <li key={index} className={`${theme ? "text-dark-primary bg-teal-400 ":"bg-secondary text-white"} rounded-2xl shadow-md px-4 py-2`}>
-                    {lang}
-                  </li>
-                ))}
-              </ul>
-              <div className={`w-fit py-2 px-2.5 rounded-full border ${theme ? "bg-amber-500/80 text-white":"bg-yellow-400/60 text-dark-primary"}`}>
-                <IconButton icon={ExternalLink} link={demoLink} tooltip="Live Demo 🍿" iconSize="25" />
+      <ClipContainer overlayStyle={`${theme ? "bg-sky-500/80":"bg-secondary text-white"} rounded-2xl`}>
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-2 p-4 ">
+          {/*  Project Info Column */}
+          <div className={`${alignment === "left" ? "md:order-2":"order-none"}`}>
+            <div className="flex gap-4 items-center mb-4">
+              <div className={`p-3 border rounded-full ${theme ? "bg-teal-500 bg-sky-500/80":"border-secondary bg-sky-500/40"}`}>
+                <Icon size="28" />
               </div>
+              <h1 className="font-semibold text-3xl  text-center xl:text-left xl:text-4xl tracking-wide">{projectTitle}</h1>
             </div>
-        </div>
+              <h3 className="text-lg">{projectSubtitle}</h3>
+              <div className="mt-8 mb-4 flex justify-evenly items-center">
+                <ul className="flex gap-2 items-center">
+                  {language.map((lang,index)=> (
+                    <li key={index} className={`${theme ? "text-dark-primary bg-teal-400 ":"bg-teal-700 text-white"} tracking-wide rounded-2xl shadow-md px-4 py-2`}>
+                      {lang}
+                    </li>
+                  ))}
+                </ul>
+                <div className={`w-fit py-2 px-2.5 rounded-full border ${theme ? "bg-amber-500/80 text-white":"bg-yellow-400/60 text-dark-primary"}`}>
+                  <IconButton icon={ExternalLink} link={demoLink} tooltip="Live Demo 🍿" iconSize="25" />
+                </div>
+              </div>
+          </div>
 
-        {/* Image Column */}
-        <div className="rounded-xl shadow-md">
-          <Image 
-            src={imgPath} 
-            alt={`preview-${projectTitle}`}
-            width="600"
-            height="500"
-            />
-        </div>
-      </section>
+          {/* Image Column */}
+          <div className="rounded-xl shadow-md">
+            <Image 
+              src={imgPath} 
+              alt={`preview-${projectTitle}`}
+              width="600"
+              height="500"
+              />
+          </div>
+        </section>
+      </ClipContainer>
       <CirclePoint theme={theme} position={alignment} />
-    </div>
+    </motion.div>
     
   );
 };
 
 const CirclePoint = ({ position,theme }: CirclePointProps) => {
-  const pointClasses =
+  const pointPos =
     position === "left"
-      ? "left-full -translate-x-1/2"
-      : "right-full translate-x-1/2";
+      ? "right-[-4%]"
+      : "left-[-4%]";
+
+  const circleVariants = {
+    start:{rotate:"0deg"}, 
+    loaded:{rotate:"360deg"}
+  };
+
 
   return (
-    <div
-      className={`hidden xl:block absolute top-1/2 transform -translate-y-1/2 ${pointClasses} size-14 p-2 rounded-full
+    <motion.div
+      variants={circleVariants}
+      initial="start"
+      animate="loaded"
+      transition={{duration:2, ease:"easeOut"}}
+      className={`hidden xl:block absolute top-1 transform  ${pointPos} size-14 p-2 rounded-full
       ${theme ? "bg-sky-900 text-teal-400":"bg-white"}
       `}
     >
       <FileJson className="absolute top-3 left-3"/>
-    </div>
+    </motion.div>
   );
 };
 
