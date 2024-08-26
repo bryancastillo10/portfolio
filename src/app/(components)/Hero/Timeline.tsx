@@ -20,11 +20,9 @@ interface CirclePointProps {
 
 const Timeline = ({ projects }: TimelineProps) => {
   return (
-    <section className="relative grid grid-cols-1 lg:grid-cols-2 grid-rows-6 gap-4 w-full">
+    <section className="relative grid grid-cols-1 xl:grid-cols-2 grid-rows-6 gap-4 w-full">
       <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 h-full w-[3px] bg-gray-400" />
-
-
-         
+       
       {projects.map((project) => (
         <TimelineBlock
           key={project.id}
@@ -84,7 +82,7 @@ const CirclePoint = ({ position }: CirclePointProps) => {
 
   return (
     <div
-      className={`hidden lg:block absolute top-1/2 transform -translate-y-1/2 ${pointClasses} size-8 bg-white rounded-full`}
+      className={`hidden xl:block absolute top-1/2 transform -translate-y-1/2 ${pointClasses} size-8 bg-white rounded-full`}
     >
       Icon
     </div>
