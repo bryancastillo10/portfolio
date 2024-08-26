@@ -68,7 +68,7 @@ const Hero = () => {
         </section>
         <div className="mt-8 max-w-[90%] md:max-w-[80%] mx-auto space-y-4 md:space-y-8">
         <SectionHeader title="Top Projects" />
-        <article className="flex sticky top-2 right-10 z-20 place-content-center xl:place-content-start mr-4 xl:ml-4 my-8">
+        <article className="flex sticky top-2  w-fit mx-44 md:mx-64 right-10 z-20 place-content-center xl:place-content-start mr-4 xl:ml-4 my-8">
             <Button type="button" action={()=>{router.push("/projects")}}>
               <span className="text-sm md:text-base">More Details...</span>
             </Button>
