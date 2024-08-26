@@ -1,12 +1,19 @@
 interface HexagonProps {
-    fillColor: string;
+    fillColor?: string;
     width: string;
     height: string;
+    className?:string;
   }
   
-  const Hexagon = ({ fillColor, width, height }: HexagonProps) => {
+  const Hexagon = ({ 
+    fillColor="none", 
+    width, 
+    height, 
+    className 
+  }: HexagonProps) => {
     return (
       <svg
+        className={className}
         width={width}
         height={height}
         viewBox="0 0 130 150"

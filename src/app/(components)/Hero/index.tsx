@@ -33,8 +33,7 @@ const Hero = () => {
        <section style={backgroundStyle}>
           <div className="max-w-[80%] mx-auto container pt-20">
             {/* Hero Header */}
-            <div className={`my-4 md:p-4 flex flex-col gap-4 text-center md:text-left  rounded-2xl 
-              ${isSidebarCollapse ? "md:max-w-[50%]":"md:max-w-[60%]"}
+            <div className={`my-4 md:p-4 flex flex-col gap-4 text-center md:text-left  rounded-2xl max-w-[80%] xl:max-w-[50%] mx-auto
               ${theme ? "bg-secondary":"bg-primary/80"}`}>
               <RevealText isLeft>
               <h1 className={`mt-8 md:mt-4 font-bold text-7xl tracking-wide ${adventPro.className}`}>
