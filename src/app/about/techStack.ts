@@ -3,7 +3,7 @@ import CSSIcon from "@/asset/techstack/CSS.svg";
 import JavascriptIcon from "@/asset/techstack/JavaScript.svg";
 import TailwindIcon from "@/asset/techstack/Tailwind.svg";
 import PythonIcon from "@/asset/techstack/Python.svg";
-import TypescriptIcon from "@/asset/techstack/Typescript.svg";
+import TypescriptIcon from "@/asset/techstack/TypeScript.svg";
 import ReactIcon from "@/asset/techstack/React.svg";
 import NextIcon from "@/asset/techstack/NextJS.svg";
 import NodeIcon from "@/asset/techstack/NodeJS.svg";
