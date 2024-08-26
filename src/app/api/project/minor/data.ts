@@ -1,7 +1,7 @@
 import NPKCalcImg from "@/asset/projectpreview/npkcalcapp.png";
 import AirBnbImg from "@/asset/projectpreview/airbnbclone.png";
 import BioBytesImg from "@/asset/projectpreview/biobytes.png";
-import CO2Dashboard from "@/asset/projectpreview/co2dashboard.png";
+import AnaerodashImg from "@/asset/projectpreview/anaerodash.png";
 export interface MinorProjectTypes{
     id:number;
     title:string;
@@ -57,12 +57,14 @@ const minorProjectsData:MinorProjectTypes[] = [
     },
     {
         id:4,
-        title:"Global CO₂ Emission Analysis",
-        subtitle:"Small Data Science Project",
-        imgPath:CO2Dashboard.src,
-        language:["Python","Microsoft Power BI"],
-        skillLearned:"This is not a web application but more on data analysis as I attempt to understand on how to work on data and create dashboards by which I can also integrate further on my software development\
-        skill. On my own opinion, data is the building blocks of a software which has the same analogy as atoms in the chemistry field or cells in life science. In conclusion to that, understanding how to perform data analysis and its interpretation\
+        title:"Anaerodash",
+        subtitle:"Data Analytics Dashboard",
+        imgPath:AnaerodashImg.src,
+        language:["Python"],
+        skillLearned:"A lightweight web application that can be used to ease the evaluation of a popular treatment technology in the environmental engineering discipline. I built this project to make the plotting of my laboratory results and calculations which then provide fast insights on the anaerobic digestion process. \
+        As a researcher, this provides me convenience in being able to visualize data right away after gathering those raw data from this treatment process. This is one of the products that I bring solutions to some common problems by automating some tasks through my knowledge in computer programming.\
+        In my own opinion, data is the building blocks of a software which has the same analogy as atoms in the chemistry field or cells in life science. \
+        In conclusion to that, understanding how to perform data analysis and its interpretation\
         is an essential skill that can create effective software applications.",
         demoLink:"",
         gitRepo:"https://github.com/bryancastillo10/co2-emissions-analysis/",
