@@ -3,9 +3,10 @@ import TechStack from "@/app/about/(sections)/TechStack";
 import Education from "@/app/about/(sections)/Education";
 import Work from "@/app/about/(sections)/Work";
 import SectionHeader from "../(reusables)/SectionHeader";
+import { baseUrl } from "@/utils/baseUrl";
 
 const  About = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}/api/about`, {
+  const res = await fetch(`${baseUrl}/api/about`, {
     cache: 'no-store'
   });
 

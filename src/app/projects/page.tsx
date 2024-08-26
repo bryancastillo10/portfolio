@@ -1,10 +1,10 @@
 import BentoLayout from "@/app/projects/(components)/BentoLayout";
-
+import { baseUrl } from "@/utils/baseUrl";
 const Projects = async () => {
   const [majorProjRes, minorProjRes, techSkillsRes] = await Promise.all([
-    fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}/api/project/major`),
-    fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}/api/project/minor`),
-    fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}/api/skills`),
+    fetch(`${baseUrl}/api/project/major`),
+    fetch(`${baseUrl}/api/project/minor`),
+    fetch(`${baseUrl}/api/skills`),
     {cache: 'no-store'}
   ]);
 
