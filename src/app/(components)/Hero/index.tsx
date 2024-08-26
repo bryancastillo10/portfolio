@@ -70,7 +70,7 @@ const Hero = () => {
         </section>
         <motion.div 
           initial={{opacity:0}}
-          whileInView={{opacity:1}}
+          whileInView={{opacity:1, x:[0,100,0]}}
           transition={{duration:1.5}}
           className="mt-8 max-w-[90%] md:max-w-[80%] mx-auto space-y-4 md:space-y-8"
           >
