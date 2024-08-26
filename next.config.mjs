@@ -19,6 +19,11 @@ const nextConfig = {
 
     return config;
   },
+  env: {
+    NEXT_PUBLIC_API_URL: process.env.VERCEL_URL 
+      ? `https://${process.env.VERCEL_URL}` 
+      : 'https://bryan-castillo-portfolio.vercel.app',
+  },
   images: {
     remotePatterns: [{
       protocol:"https",
