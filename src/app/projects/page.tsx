@@ -3,11 +3,10 @@ import { baseUrl } from "@/utils/baseUrl";
 
 const Projects = async () => {
   const [majorProjRes, minorProjRes, techSkillsRes] = await Promise.all([
-    fetch(`${baseUrl}/api/project/major`, {next: {revalidate: 0}}),
-    fetch(`${baseUrl}/api/project/minor`, {next: {revalidate: 0}}),
-    fetch(`${baseUrl}/api/skills`, {next: {revalidate: 0}})
+    fetch(`${baseUrl}/api/project/major`, {cache: 'no-store'}),
+    fetch(`${baseUrl}/api/project/minor`, {cache: 'no-store'}),
+    fetch(`${baseUrl}/api/skills`, {cache: 'no-store'})
   ]);
-
 
   const majorProjData = await majorProjRes.json();
   const minorProjData = await minorProjRes.json();

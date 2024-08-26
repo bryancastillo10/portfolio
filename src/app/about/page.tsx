@@ -7,7 +7,7 @@ import { baseUrl } from "@/utils/baseUrl";
 
 const  About = async () => {
   const res = await fetch(`${baseUrl}/api/about`, {
-    cache: 'no-store',next: {revalidate: 0}
+    cache: 'no-store',
   });
 
   const workAndEducationData = await res.json();
