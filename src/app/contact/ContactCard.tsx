@@ -12,12 +12,12 @@ const ContactCard = () => {
   }
   
   return (
-    <section className="min-h-[70vh] bg-white/90 shadow-md rounded-2xl">
+    <section className="h-[90vh] overflow-y-clip lg:max-h-[70vh] bg-white/90 shadow-md rounded-2xl">
         <div className="relative size-fit w-full h-[50%]">
           <Image src="/skills/frontend.png" className="rounded-2xl" alt="contact-img" fill/>
         </div>
-        <div className="flex flex-col xl:flex-row">
-          <div className="w-[50%] hidden xl:block xl:h-[255px] bg-light-secondary/90 xl:rounded-bl-2xl backdrop-blur-md"/>          
+        <div className="flex flex-col xl:flex-row overflow-hidden">
+          <div className="w-[50%] hidden xl:block lg:h-[332px]  bg-light-secondary/90 xl:rounded-bl-2xl backdrop-blur-md"/>          
           <article className="m-2 w-full flex flex-col  items-center">
             <div className={`duration-300 ease-in ${showInfo ? "mt-0":"mt-20 xl:mt-32"}`}>
               <Button 
@@ -35,7 +35,7 @@ const ContactCard = () => {
                 animate={{rotate:"360deg", scale:1, y:[0,150,-150,-150,0]}}
                 exit={{rotate:"0deg", scale:0, y:0}}
                 transition={{duration:1,ease:"backInOut",times:[0,0.25,0.5,0.75,1]}}
-                className="mt-4 mx-2 grid grid-cols-3 items-center p-3 rounded-xl bg-light-secondary
+                className="mt-4 w-[90%]  xl:w-full mx-2 grid grid-cols-3 items-center p-3 rounded-xl bg-light-secondary
                   text-white"
                 >
                 <ContactInfoContent/>

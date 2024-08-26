@@ -12,9 +12,11 @@ const TechStack = () => {
     <div className="mt-4">
       <div className="py-4 w-full">
         <SectionHeader title="My Tools for Development"/>
-        <p className="pt-4 text-base leading-relaxed w-fittext-center md:text-left lg:max-w-[70%]">
-        <RevealText withSlider isLeft={false}>Here are some of the technologies, libraries, and frameworks that I had
-        experience to utilize in order to build meaningful software applications.</RevealText></p>
+        <RevealText withSlider isLeft={false}>
+          <p className="pt-4 text-base leading-relaxed w-fittext-center md:text-left lg:max-w-[70%]">
+          Here are some of the technologies, libraries, and frameworks that I had
+          experience to utilize in order to build meaningful software applications.</p>
+        </RevealText>
         {/* TechStack Hexagons  */}
         <div className="mt-8 flex flex-wrap justify-center lg:justify-start gap-y-6">
           {techStacks.map((stack) => (
