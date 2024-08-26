@@ -1,9 +1,9 @@
 "use client";
 import { useState } from "react";
-import Image from "next/image";
 import {motion, AnimatePresence} from "framer-motion";
 import Button from "@/app/(reusables)/Button";
 import {Mail,Phone,MapPin,Home } from "lucide-react";
+import ContactFiller from './ContactFiller';
 
 const ContactCard = () => {
   const [showInfo, setShowInfo] = useState<boolean>(false);
@@ -14,7 +14,7 @@ const ContactCard = () => {
   return (
     <section className="h-[90vh] overflow-y-clip lg:max-h-[70vh] bg-white/90 shadow-md rounded-2xl">
         <div className="relative size-fit w-full h-[50%]">
-          <Image src="/skills/frontend.png" className="rounded-2xl" alt="contact-img" fill/>
+          <ContactFiller/>
         </div>
         <div className="flex flex-col xl:flex-row overflow-hidden">
           <div className="w-[50%] hidden xl:block lg:h-[332px]  bg-light-secondary/90 xl:rounded-bl-2xl backdrop-blur-md"/>          
