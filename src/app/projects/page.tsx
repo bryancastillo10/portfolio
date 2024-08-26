@@ -1,23 +1,16 @@
 import BentoLayout from "@/app/projects/(components)/BentoLayout";
-import { baseUrl } from "@/utils/baseUrl";
+import majorProjectsData from "@/app/api/project/major/data";
+import minorProjectsData from "@/app/api/project/minor/data";
+import techSkills from "@/app/api/skills/data";
 
 const Projects = async () => {
-  const [majorProjRes, minorProjRes, techSkillsRes] = await Promise.all([
-    fetch(`${baseUrl}/api/project/major`, {cache: 'no-store'}),
-    fetch(`${baseUrl}/api/project/minor`, {cache: 'no-store'}),
-    fetch(`${baseUrl}/api/skills`, {cache: 'no-store'})
-  ]);
-
-  const majorProjData = await majorProjRes.json();
-  const minorProjData = await minorProjRes.json();
-  const techSkillsData = await techSkillsRes.json();
 
   return (
     <section className="pt-10 w-[94%] mx-auto">
       <BentoLayout 
-        majorData={majorProjData.responseData}
-        minorData={minorProjData.responseData}
-        skillsData={techSkillsData.responseData}
+        majorData={majorProjectsData}
+        minorData={minorProjectsData}
+        skillsData={techSkills}
       />
     </section>
   )

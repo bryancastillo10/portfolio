@@ -3,14 +3,12 @@ import TechStack from "@/app/about/(sections)/TechStack";
 import Education from "@/app/about/(sections)/Education";
 import Work from "@/app/about/(sections)/Work";
 import SectionHeader from "../(reusables)/SectionHeader";
-import { baseUrl } from "@/utils/baseUrl";
+
+import { workExperienceData } from "@/app/api/about/data";
+import { educationData } from "@/app/api/about/data";
+
 
 const  About = async () => {
-  const res = await fetch(`${baseUrl}/api/about`, {
-    cache: 'no-store',
-  });
-
-  const workAndEducationData = await res.json();
   return (
     <section className='p-4'>
       <div className="max-w-[88%] mx-auto container">
@@ -18,8 +16,8 @@ const  About = async () => {
       <AboutInfo/>
       <TechStack/>
         <article className="mt-4 flex flex-col-reverse xl:flex-row justify-center gap-4 ">
-          <Education data={workAndEducationData.education}/>
-          <Work data={workAndEducationData.workExperience}/>
+          <Education data={educationData}/>
+          <Work data={workExperienceData}/>
         </article>   
       </div> 
     </section>
