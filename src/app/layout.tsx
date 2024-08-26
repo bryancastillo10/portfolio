@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { Poppins } from "next/font/google";
 import "./globals.css";
-import { plusJakartaSans } from "../utils/font";
+import Container from "@/app/(components)/Container";
 
-import Navbar from "@/components/navbar";
-import { ThemeContextProvider } from "@/context/ThemeContext";
-import ThemeProvider from "@/provider/ThemeProvider";
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400","600","800"]
+});
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -17,21 +19,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={plusJakartaSans.className}
-      suppressHydrationWarning
-    >
-      <head>
+    <html lang="en">
+       <head>
         <link rel="icon" href="/logo.ico" />
       </head>
-      <body>
-        <ThemeContextProvider>
-          <ThemeProvider>
-            <Navbar />
-            {children}
-          </ThemeProvider>
-        </ThemeContextProvider>
+      <body className={poppins.className}>
+        <Container>
+          {children}
+        </Container>
       </body>
     </html>
   );
