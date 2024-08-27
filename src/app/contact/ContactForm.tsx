@@ -16,7 +16,7 @@ const ContactForm = () => {
 
   return (
     <form
-      className="relative mt-2 flex flex-col max-w-[80%] mx-auto xl:mx-0 gap-12"
+      className="relative my-8 flex flex-col max-w-[80%] mx-auto xl:mx-0 gap-12"
       onSubmit={handleSubmit}
     >
       {/* Name */}

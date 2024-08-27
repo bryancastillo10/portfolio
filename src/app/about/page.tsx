@@ -10,7 +10,7 @@ import { educationData } from "@/app/api/about/data";
 
 const  About = async () => {
   return (
-    <section className='p-4'>
+    <section className='p-4 overflow-x-hidden'>
       <div className="max-w-[88%] mx-auto container">
       <SectionHeader title="About Bryan"/>
       <AboutInfo/>
