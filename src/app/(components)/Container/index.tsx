@@ -1,15 +1,23 @@
 "use client";
 import {useEffect, ReactNode } from "react";
+
 import Navbar from "@/app/(components)/Navbar";
 import Sidebar from "@/app/(components)/Sidebar";
-import StoreProvider, { useAppSelector } from "@/app/redux";
+import StoreProvider, { useAppSelector, useAppDispatch } from "@/app/redux";
+import { setIsSidebarCollapse } from "@/state";
 
 interface ContainerProps{
     children: ReactNode;
 }
 
 const MainLayout = ({children}:ContainerProps) => {
+  const dispatch = useAppDispatch();
   const isSideBarCollapsed = useAppSelector((state) => state.global.isSidebarCollapse);
+
+  const toggleSidebar = () => {
+    dispatch(setIsSidebarCollapse(!isSideBarCollapsed));
+  };
+
   const theme = useAppSelector((state) => state.global.theme);
 
   useEffect(()=>{
@@ -24,8 +32,14 @@ const MainLayout = ({children}:ContainerProps) => {
   return (
   <div className={`${theme ? "bg-secondary text-primary": "bg-primary text-secondary"}
   flex w-full min-h-screen ease-in-out duration-500`}>
-    <Sidebar/>
-    <main className={`flex flex-col w-full h-full pb-4 ${isSideBarCollapsed ? 'md:pl-10': 'md:pl-64'}`}>
+    <Sidebar 
+      theme={theme}
+      isSidebarCollapse={isSideBarCollapsed}
+      toggleSidebar={toggleSidebar} 
+    />
+    <main 
+      onClick={toggleSidebar} 
+      className={`flex flex-col w-full h-full pb-4 ${isSideBarCollapsed ? 'md:pl-10': 'md:pl-64'}`}>
       <Navbar/>
       {children}
     </main>

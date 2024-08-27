@@ -112,7 +112,7 @@ const TimelineBlock = ({
           <div className={`${alignment === "left" ? "md:order-2":"order-none"}`}>
             <div className="flex gap-4 items-center mb-4">
               <div className={`p-2.5 border rounded-full ${theme ? "bg-teal-500 bg-sky-500/80":"border-secondary bg-sky-500/40"}  ${alignment === "right" ? "lg:ml-2.5":"lg:ml-1"}`}>
-                <Icon size="26" />
+                <Icon size="20" />
               </div>
               <h1 className="font-semibold text-3xl  text-center xl:text-left xl:text-4xl tracking-wide">{projectTitle}</h1>
             </div>

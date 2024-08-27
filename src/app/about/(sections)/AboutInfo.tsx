@@ -1,12 +1,15 @@
 "use client";
 import { useEffect } from "react";
 import Image from "next/image";
-import Button from "@/app/(reusables)/Button";
-import Hexagon from "@/app/(reusables)/Hexagon";
-import RevealText from "@/app/(reusables)/RevealText";
+
 import { useRouter } from "next/navigation";
 import { useAppSelector } from "@/app/redux";
 import {motion, useAnimate } from "framer-motion";
+
+import Button from "@/app/(reusables)/Button";
+import Hexagon from "@/app/(reusables)/Hexagon";
+import RevealText from "@/app/(reusables)/RevealText";
+import SectionHeader from "@/app/(reusables)/SectionHeader";
 
 type AnimateFunction = ReturnType<typeof useAnimate>[1];
 
@@ -72,7 +75,10 @@ const AboutInfo = () => {
   return (
     <section className="flex flex-col-reverse lg:flex-row justify-center items-center w-full gap-4 ">
         {/* About Description */}
-        <article className="xl:mt-[-50px] p-4 text-wrap w-[70%]">
+        <article className="xl:mt-[-50px] px-4 pt-8 text-wrap w-[70%]">
+          <div className="mb-8 md:mb-6 xl:mb-4">
+            <SectionHeader title="About"/>
+          </div>
           <RevealText withSlider isLeft={false}><p className='text-base text-center md:text-left'>Bryan adapts to the rapidly changing digital world and discovers 
               that producing and maintaining software can solve some real-world problems.</p></RevealText>
               <RevealText withSlider isLeft><p className='text-base text-center md:text-left mt-4'>He became a self-taught programmer capable 
@@ -113,7 +119,7 @@ const AboutInfo = () => {
             <Hexagon fillColor="#3C6997" width="150" height="130" />
             </motion.div>
         </div>
-    </section>
+    </section>    
   )
 }
 

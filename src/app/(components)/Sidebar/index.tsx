@@ -1,22 +1,17 @@
 "use client";
-import { useAppDispatch, useAppSelector } from "@/app/redux";
-import { setIsSidebarCollapse } from "@/state";
 
 import SidebarHeader from "./SidebarHeader";
 import SidebarLink from './SidebarLink';
 
 import { Home, User, FolderCode, Phone } from "lucide-react";
 
+interface SidebarProps{
+  theme:boolean;
+  isSidebarCollapse:boolean;
+  toggleSidebar:()=>void;
+}
 
-const Sidebar = () => {
-  const dispatch = useAppDispatch();
-  const isSidebarCollapse = useAppSelector((state) => state.global.isSidebarCollapse);
-  const theme = useAppSelector((state) => state.global.theme);
-
-  const toggleSideBar = () => {
-    dispatch(setIsSidebarCollapse(!isSidebarCollapse));
-  };
-  
+const Sidebar = ({theme, isSidebarCollapse, toggleSidebar}:SidebarProps) => {
   return (
     <div className={`fixed flex flex-col transition-all duration-500 
     overflow-hidden h-full shadow-md z-40
@@ -24,7 +19,7 @@ const Sidebar = () => {
     ${isSidebarCollapse ? 'w-0 md:w-16':'w-72 md:w-64 opacity-90'}
     `}>
       {/* Sidebar Header */}
-      <SidebarHeader isSidebarCollapsed={isSidebarCollapse} toggle={toggleSideBar}/>
+      <SidebarHeader isSidebarCollapsed={isSidebarCollapse} toggle={toggleSidebar}/>
       {/* Sidebar Menu */}
       <div className={`flex-grow mt-8 ${isSidebarCollapse ? "px-0":"px-8"}`}>
         <SidebarLink id="/" name="Home" icon={Home} isSidebarCollapsed={isSidebarCollapse} theme={theme} />

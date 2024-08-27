@@ -33,7 +33,7 @@ const ContactForm = () => {
       {/* Email */}
       <Input
         theme={theme}
-        label="Enter your email"
+        label="Your email"
         name="email"
         disabled={false}
         type="email"
@@ -63,7 +63,7 @@ const ContactForm = () => {
             ${theme ? 'text-teal-400' : 'text-teal-700'}
             `}
         >
-          Your Message
+          Your Message...
         </label>
         <div className="absolute right-2 bottom-3">
           <Pencil size="22" className={`${theme ? 'text-primary' : 'text-teal-600'}`} />
