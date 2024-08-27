@@ -40,7 +40,7 @@ const Timeline = ({ projects }: TimelineProps) => {
   const lineHeight = useTransform(scaleProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section className="relative grid grid-cols-1 lg:grid-cols-2 grid-rows-6 gap-4 w-full overflow-x-hidden">
+    <section className="relative grid grid-cols-1 lg:grid-cols-2 grid-rows-6 gap-4 w-full">
       {/* Vertical Line */}
       <motion.div 
         style={{ height: lineHeight, top: 0,}}
