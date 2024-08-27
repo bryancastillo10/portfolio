@@ -12,12 +12,11 @@ const ContactCard = () => {
   }
   
   return (
-    <section className="h-[90vh] overflow-y-clip lg:max-h-[70vh] bg-white/90 shadow-md rounded-2xl">
-        <div className="relative size-fit w-full h-[50%]">
+    <section className="bg-white/70 h-screen shadow-md rounded-2xl">
+        <div className="size-fit w-full h-[50%]">
           <ContactFiller/>
         </div>
-        <div className="flex flex-col xl:flex-row overflow-hidden">
-          <div className="w-[50%] hidden xl:block lg:h-[332px]  bg-light-secondary/90 xl:rounded-bl-2xl backdrop-blur-md"/>          
+        <div className="flex flex-col items-center xl:flex-row">       
           <article className="m-2 w-full flex flex-col  items-center">
             <div className={`duration-300 ease-in ${showInfo ? "mt-0":"mt-20 xl:mt-32"}`}>
               <Button 

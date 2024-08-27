@@ -79,7 +79,7 @@ const TimelineBlock = ({
   language
 }: TimelineBlockProps) => {
   const cardVariants = {
-    hidden: { opacity: 0, x: alignment === "left" ? 100 : -100 },
+    hidden: { opacity: 0, x: alignment === "left" ? 50 : -50 },
     loaded: { opacity: 1, x: 0, transition: {duration: 0.8, ease: "easeOut"}}
   };
 
@@ -89,7 +89,7 @@ const TimelineBlock = ({
       initial="hidden"
       whileInView="loaded"
       viewport={{once:true, amount:0.8}}
-      className={`relative rounded-xl shadow-md p-2 w-full 
+      className={`relative rounded-xl shadow-md p-2 w-full
         ${rowConfig}
         ${alignment === "left" ? `lg:col-start-1` : `lg:col-start-2`}
         ${theme ? "bg-dark-primary/90":"bg-sky-700/40"}
@@ -125,8 +125,8 @@ const TimelineBlock = ({
             <Image 
               src={imgPath} 
               alt={`preview-${projectTitle}`}
-              width="600"
-              height="500"
+              width="400"
+              height="350"
               />
           </div>
         </section>

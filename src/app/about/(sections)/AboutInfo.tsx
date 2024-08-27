@@ -81,7 +81,7 @@ const AboutInfo = () => {
           <RevealText withSlider isLeft={false}>
             <div className={`py-10 flex ${isSidebarCollapse ? "flex-col md:flex-row" :"md:flex-col"} gap-4`}>              
                 <Button type="button" width="w-[70%] mx-auto" action={()=> router.push("/projects")} variant="primary">View Projects</Button>
-                <Button type="button" width="w-[70%] mx-auto" action={()=>router.push("/contact")} variant="secondary">Contact Me</Button>            
+                <Button type="button" width="w-[70%] mx-auto" action={()=>router.push("/contact")} variant="secondary">Contact Bryan</Button>            
             </div>
           </RevealText> 
         </article>

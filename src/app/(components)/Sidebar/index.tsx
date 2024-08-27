@@ -26,7 +26,7 @@ const Sidebar = () => {
       {/* Sidebar Header */}
       <SidebarHeader isSidebarCollapsed={isSidebarCollapse} toggle={toggleSideBar}/>
       {/* Sidebar Menu */}
-      <div className={`flex-grow mt-8 ${isSidebarCollapse ? "px-0":"px-10"}`}>
+      <div className={`flex-grow mt-8 ${isSidebarCollapse ? "px-0":"px-8"}`}>
         <SidebarLink id="/" name="Home" icon={Home} isSidebarCollapsed={isSidebarCollapse} theme={theme} />
         <SidebarLink id="/about" name="About" icon={User} isSidebarCollapsed={isSidebarCollapse} theme={theme} />
         <SidebarLink id="/projects" name="Projects" icon={FolderCode} isSidebarCollapsed={isSidebarCollapse} theme={theme} />

@@ -19,7 +19,7 @@ const hexagonPositions = [
 const ContactFiller = () => {
     const theme = useAppSelector((state)=> state.global.theme);
   return (
-    <section className="relative w-full h-full">
+    <section className="relative w-full h-[80%] xl:h-full">
       <div
         className="w-full h-full overflow-hidden absolute rounded-t-xl"
         style={{

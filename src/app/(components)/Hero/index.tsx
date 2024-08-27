@@ -58,7 +58,7 @@ const Hero = () => {
 
           {/* Hero Subheader */}
           <div className="flex justify-center md:max-w-[50%] mx-auto md:mx-0 md:ml-auto pb-8">
-            <div className={`${theme ? "bg-secondary":"bg-primary/80"} w-[85%] xl:w-[65%] text-[20px] xl:text-[32px] rounded-2xl my-8 py-4 px-8`}>
+            <div className={`${theme ? "bg-secondary":"bg-primary/80"} w-[85%] xl:w-[65%] text-[24px] xl:text-[32px] rounded-2xl my-8 py-4 px-8`}>
               <TextAnimation text1="Software Developer" text2="Envi. Engineer" text3="Biological Engineer" text4="Chemist" />
             </div>
           </div>
