@@ -5,6 +5,7 @@ import Button from "@/app/(reusables)/Button";
 import Hexagon from "@/app/(reusables)/Hexagon";
 import RevealText from "@/app/(reusables)/RevealText";
 import { useRouter } from "next/navigation";
+import { useAppSelector } from "@/app/redux";
 import {motion, useAnimate } from "framer-motion";
 
 type AnimateFunction = ReturnType<typeof useAnimate>[1];
@@ -15,6 +16,7 @@ interface AnimateHexagonProps {
 }
 const AboutInfo = () => {
   const router = useRouter();
+  const isSidebarCollapse = useAppSelector((state)=> state.global.isSidebarCollapse);
 
   const [scope1, animate1] = useAnimate();
   const [scope2, animate2] = useAnimate();
@@ -77,9 +79,9 @@ const AboutInfo = () => {
                 of creating valuable software applications due to his resourcefulness and perseverance in his 
                 career development.</p></RevealText>
           <RevealText withSlider isLeft={false}>
-            <div className="py-10 flex flex-col md:flex-row gap-4">              
-                <Button type="button" action={()=> router.push("/projects")} variant="primary">View Projects</Button>
-                <Button type="button" action={()=>router.push("/contact")} variant="secondary">Contact Me</Button>            
+            <div className={`py-10 flex ${isSidebarCollapse ? "flex-col md:flex-row" :"md:flex-col"} gap-4`}>              
+                <Button type="button" width="w-[70%] mx-auto" action={()=> router.push("/projects")} variant="primary">View Projects</Button>
+                <Button type="button" width="w-[70%] mx-auto" action={()=>router.push("/contact")} variant="secondary">Contact Me</Button>            
             </div>
           </RevealText> 
         </article>
@@ -88,7 +90,7 @@ const AboutInfo = () => {
             <motion.div 
               ref={scope1}
               initial={{ scale: 0, rotate: 0 }}
-              className="absolute z-10 top-[5%] left-[-12%] md:top-[-15%] lg:top-[-5%] lg:left-[-5%] xl:top-[5%] xl:left-[5%]">
+              className="absolute z-10 top-[5%] left-[-7%] md:top-[-15%] lg:top-[-5%] lg:left-[-5%] xl:top-[5%] xl:left-[5%]">
               <Hexagon fillColor="#119DA4" width="150" height="130" />
             </motion.div>
             <motion.div
@@ -107,7 +109,7 @@ const AboutInfo = () => {
             <motion.div
               ref={scope2}
               initial={{ scale: 0, rotate: 0 }} 
-              className="absolute bottom-0 right-[-12%] md:bottom-[-15%] lg:bottom-[-5%] lg:right-[-5%] xl:right-[10%] xl:bottom-0">
+              className="absolute bottom-0 right-[-8%] md:bottom-[-15%] lg:bottom-[-5%] lg:right-[-5%] xl:right-[10%] xl:bottom-0">
             <Hexagon fillColor="#3C6997" width="150" height="130" />
             </motion.div>
         </div>
