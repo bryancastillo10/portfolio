@@ -38,7 +38,6 @@ const MainLayout = ({children}:ContainerProps) => {
       toggleSidebar={toggleSidebar} 
     />
     <main 
-      onClick={toggleSidebar} 
       className={`flex flex-col w-full h-full pb-4 ${isSideBarCollapsed ? 'md:pl-10': 'md:pl-64'}`}>
       <Navbar/>
       {children}
