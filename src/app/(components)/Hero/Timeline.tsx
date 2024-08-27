@@ -40,11 +40,11 @@ const Timeline = ({ projects }: TimelineProps) => {
   const lineHeight = useTransform(scaleProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section className="relative grid grid-cols-1 xl:grid-cols-2 grid-rows-6 gap-4 w-full">
+    <section className="relative grid grid-cols-1 lg:grid-cols-2 grid-rows-6 gap-4 w-full overflow-x-hidden">
       {/* Vertical Line */}
       <motion.div 
         style={{ height: lineHeight, top: 0,}}
-        className={`hidden xl:block absolute left-1/2 transform -translate-x-1/2 h-full w-[3px]
+        className={`hidden lg:block absolute left-1/2 transform -translate-x-1/2 h-full w-[3px]
         ${theme ? "bg-teal-400":"bg-secondary"}
         `} /> 
 
@@ -91,7 +91,7 @@ const TimelineBlock = ({
       viewport={{once:true, amount:0.8}}
       className={`relative rounded-xl shadow-md p-2 w-full 
         ${rowConfig}
-        ${alignment === "left" ? `xl:col-start-1` : `xl:col-start-2`}
+        ${alignment === "left" ? `lg:col-start-1` : `lg:col-start-2`}
         ${theme ? "bg-dark-primary/90":"bg-sky-700/40"}
       `}
     >
@@ -100,8 +100,8 @@ const TimelineBlock = ({
           {/*  Project Info Column */}
           <div className={`${alignment === "left" ? "md:order-2":"order-none"}`}>
             <div className="flex gap-4 items-center mb-4">
-              <div className={`p-3 border rounded-full ${theme ? "bg-teal-500 bg-sky-500/80":"border-secondary bg-sky-500/40"}`}>
-                <Icon size="28" />
+              <div className={`p-2.5 border rounded-full ${theme ? "bg-teal-500 bg-sky-500/80":"border-secondary bg-sky-500/40"}  ${alignment === "right" ? "lg:ml-2.5":"lg:ml-1"}`}>
+                <Icon size="26" />
               </div>
               <h1 className="font-semibold text-3xl  text-center xl:text-left xl:text-4xl tracking-wide">{projectTitle}</h1>
             </div>
