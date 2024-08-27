@@ -78,11 +78,22 @@ const TimelineBlock = ({
   rowConfig,
   language
 }: TimelineBlockProps) => {
-  const cardVariants = {
-    hidden: { opacity: 0, x: alignment === "left" ? 50 : -50 },
-    loaded: { opacity: 1, x: 0, transition: {duration: 0.8, ease: "easeOut"}}
-  };
+  const isMdScreen = window.matchMedia("(min-width: 768px)").matches;
 
+  const cardVariants = {
+    hidden: { 
+      opacity: 0, 
+      x: isMdScreen ? (alignment === "left" ? 50 : -50) : 0, 
+      y: !isMdScreen ? -30 : 0 
+    },
+    loaded: { 
+      opacity: 1, 
+      x: 0, 
+      y: 0, 
+      transition: { duration: 0.8, ease: "easeOut" }
+    }
+  };
+  
   return (
     <motion.div
       variants={cardVariants}
