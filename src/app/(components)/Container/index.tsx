@@ -30,19 +30,24 @@ const MainLayout = ({children}:ContainerProps) => {
   })
 
   return (
-  <div className={`${theme ? "bg-secondary text-primary": "bg-primary text-secondary"}
-  flex w-full min-h-screen ease-in-out duration-500`}>
-    <Sidebar 
-      theme={theme}
-      isSidebarCollapse={isSideBarCollapsed}
-      toggleSidebar={toggleSidebar} 
-    />
-    <main 
-      className={`flex flex-col w-full h-full pb-4 ${isSideBarCollapsed ? 'md:pl-10': 'md:pl-64'}`}>
-      <Navbar/>
-      {children}
-    </main>
-  </div>)
+      <div className={`${theme ? "bg-secondary text-primary": "bg-primary text-secondary"}
+      flex w-full min-h-screen ease-in-out duration-500`}>
+        <Sidebar 
+          theme={theme}
+          isSidebarCollapse={isSideBarCollapsed}
+          toggleSidebar={toggleSidebar} 
+        />
+          <main 
+            className={`flex flex-col w-full h-full pb-4 ${isSideBarCollapsed ? 'md:pl-10': 'md:pl-64'}`}>
+              <section 
+                onClick={toggleSidebar}
+                className={`${isSideBarCollapsed ? 'hidden': 'fixed '} inset-0 z-30 bg-teal-500 
+                bg-transparent backdrop-blur-[2px]`}/>
+              <Navbar/>
+              {children}
+          </main>
+      </div>
+  )
 }
 
 const Container = ({children}:ContainerProps) => {
