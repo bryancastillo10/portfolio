@@ -41,7 +41,7 @@ const majorProjectsData:MajorProjectTypes[] = [
         id:2,
         title:"SpaceChat",
         subtitle:"Chat Application",
-        objective:"Effective Realtime Chat Application",
+        objective:"Realtime Data Transfer by Web Sockets",
         imgPath:[SpaceChatPreview1.src, SpaceChatPreview2.src, SpaceChatPreview3.src,SpaceChatPreview4.src],
         techStack:["MERN Stack", "Typescript", "Socket IO","Tailwind CSS", "Zustand"],
         language:["TypeScript","JavaScript"],
