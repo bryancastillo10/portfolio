@@ -24,8 +24,8 @@ const minorProjectsData:MinorProjectTypes[] = [
         This serves as a prototype for a project on my job as a researcher in Taiwan. Take note that this is multi-lingual project since Mandarin Chinese is the native language in Taiwan.\
         The algorithm or flow of the logic on how the calculation result obtained is based on real data gathered from several laboratory\
         analysis on different organic waste materials suitable to be a fertilizer. NPK ratio and the desired amount (in kilograms) were the input of the user and the calculator would provide different combinations of those raw materials\
-        on the database togeter with the weighted average calculation of the overall NPK while also providing some comments based on the results. Taking a step further, it would be planned to be actually integrated with artificial intelligence as\
-        long as sufficient amount of data can train an appropriate model for this task.",
+        on the database together with the weighted average calculation of the overall NPK while also providing some comments based on the results. Taking a step further, it would be planned to be actually integrated with artificial intelligence as\
+        long as sufficient amount of data can train an appropriate model for this task. This project is still in progress as I integrate more features such as the AI response capability.",
         demoLink:"https://npk-calculator.onrender.com/",
         gitRepo:"",
     },
@@ -39,13 +39,13 @@ const minorProjectsData:MinorProjectTypes[] = [
         Through this clone project, it helps me improve my understanding on database designs, ORM tool which is entirely beneficial for me who can only write minimal SQL queries. It  also provide me the\
         understanding between one-to-many and one-to-one schema relationships as I first attempted to create this with a relational database but had decided to change it to a document based database like MongoDB for faster production.\
         As a result, I was able to mimic the key features such as authentication, reservations, liking an accomodation, and booking a reservation",
-        demoLink:"https://github.com/bryancastillo10/airbnb-clone",
-        gitRepo:"https://airbnb-testclone.verce/l.app/",
+        demoLink:"https://airbnb-testclone.verce/l.app/",
+        gitRepo:"https://github.com/bryancastillo10/airbnb-clone",
     },
     {
         id:3,
         title:"BioBytes PairSync",
-        subtitle:"Python GUI App for Molecular Biology",
+        subtitle:"Molecular Biology Toolkit",
         imgPath:BioBytesImg.src,
         language:["Python"],
         skillLearned:"At the onset of my programming journey, Python was my second programming language learned. My first ever programming is R which is a domain-specific language for statistics that I used during my master degree. However, I seek for\
