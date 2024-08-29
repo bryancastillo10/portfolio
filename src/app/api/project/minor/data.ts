@@ -67,7 +67,7 @@ const minorProjectsData:MinorProjectTypes[] = [
         In conclusion to that, understanding how to perform data analysis and its interpretation\
         is an essential skill that can create effective software applications.",
         demoLink:"",
-        gitRepo:"https://github.com/bryancastillo10/co2-emissions-analysis/",
+        gitRepo:"https://github.com/bryancastillo10/anaerodash",
     },
 ]
 
