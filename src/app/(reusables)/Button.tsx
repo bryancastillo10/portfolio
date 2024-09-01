@@ -17,13 +17,13 @@ const Button = ({children,variant,action,loading,type,layout,width = "fit"}:Butt
             case 'primary':
                 return "px-8 py-2 bg-light-secondary text-white hover:bg-dark-primary";
             case 'secondary':
-                return "px-8 py-2 border-[2px] text-teal-500 border-teal-500 hover:text-white hover:bg-teal-500/80"
+                return "px-8 py-2 border-[2px] text-teal-500 border-teal-500 hover:text-white hover:bg-teal-main/80"
             case 'hero-primary':
                 return "px-8 py-2 bg-light-secondary text-primary hover:bg-primary hover:text-light-secondary";
             case 'hero-secondary':
                 return "px-8 py-2 bg-primary text-dark-primary hover:bg-dark-primary hover:text-primary";
             default:
-                return "px-4 py-2 bg-sky-600 text-slate-100  hover:bg-teal-500 p-0";
+                return "px-4 py-2 bg-sky-600 text-slate-100  hover:bg-teal-main p-0";
         }
     }
     return (

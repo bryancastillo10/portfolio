@@ -28,7 +28,7 @@ const TechStack = () => {
               <stack.iconComponent className="duration-500 ease-in-out hover:scale-110 " fill={theme ? "#050F0D" :"#3C6997"} />
               {hoveredId === stack.id && (
                 <div className={`absolute z-10 top-full left-8 p-6 rounded-md shadow-lg w-80
-                ${theme ? "bg-dark-primary/80 text-white" :"bg-light-secondary/80 text-primary"}`}>
+                ${theme ? "bg-[#070066] text-white" :"bg-light-secondary/80 text-primary"}`}>
                   <h3 className="font-semibold">{stack.name}</h3>
                   <p className="mt-2 italic">{stack.category}</p>
                   <p className="mt-2 text-sm text-wrap text-left">{stack.description}</p>

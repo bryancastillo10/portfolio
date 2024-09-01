@@ -29,12 +29,12 @@ const Input = ({name,type,label,disabled,required,icon:Icon,theme}:InputProps) =
        />
        <label className={`absolute z-10 top-2 left-4 origin-[0] text-lg duration-150 font-semibold
          transform -translate-y-10 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0
-         ${theme ? "text-teal-400":"text-teal-700"}
+         ${theme ? "text-teal-500":"text-teal-700"}
          `}>
          {label}
       </label>
       {Icon &&(<p className="absolute top-2 right-3">
-        <Icon size="22" className={`${theme ? "text-primary":"text-teal-600"}`}/>
+        <Icon size="22" className="text-teal-main"/>
       </p>)}
     </div>
   )

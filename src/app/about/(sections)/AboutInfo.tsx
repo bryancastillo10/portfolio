@@ -97,7 +97,7 @@ const AboutInfo = () => {
               ref={scope1}
               initial={{ scale: 0, rotate: 0 }}
               className="absolute z-10 top-[5%] left-[-7%] md:top-[-15%] lg:top-[-5%] lg:left-[-5%] xl:top-[5%] xl:left-[5%]">
-              <Hexagon fillColor="#119DA4" width="150" height="130" />
+              <Hexagon fillColor="#12A594" width="150" height="130" />
             </motion.div>
             <motion.div
               variants={hexagonVariant}

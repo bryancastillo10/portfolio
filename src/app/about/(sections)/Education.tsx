@@ -37,7 +37,7 @@ const Education = ({data}: EducationProps) => {
                                     <h3 className={`${theme ?"bg-teal-400 text-dark-primary" :"bg-light-secondary text-primary"} shadow-md  w-fit py-2 px-4 rounded-2xl`}>{educ.school}</h3>
                                     <h3 className={`${theme ?"bg-teal-400 text-dark-primary" :"bg-light-secondary text-primary"} shadow-md  w-fit py-2 px-4 rounded-2xl`}>{educ.location}</h3>
                                 </div>
-                                <div className={`my-4 md:my-0 p-4 rounded-full border shadow-sm ${theme ? "bg-teal-500/80" :"bg-teal-500/20"}`} >
+                                <div className={`my-4 md:my-0 p-4 rounded-full border shadow-sm ${theme ? "bg-teal-main/80" :"bg-teal-main/20"}`} >
                                     {Icon && <Icon className="size-10 xl:size-12" />}
                                 </div>
                             </div>                   

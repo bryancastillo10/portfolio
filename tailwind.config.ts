@@ -11,10 +11,11 @@ const config: Config = {
     extend: {
       colors:{
         "white":"#F4F3F2",
-        "primary":"#c7ede4",
+        "primary":"#E0F5F0",
         "dark-primary":"#050F0D",
-        "secondary":"#07004d",
-        "light-secondary":"#3C6997"
+        "secondary":"#07004D",
+        "light-secondary":"#3C6997",
+        "teal-main":"#12A594"
       },
       fontWeight: {
         base: '400',

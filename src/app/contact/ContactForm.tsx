@@ -66,7 +66,7 @@ const ContactForm = () => {
           Your Message...
         </label>
         <div className="absolute right-2 bottom-3">
-          <Pencil size="22" className={`${theme ? 'text-primary' : 'text-teal-600'}`} />
+          <Pencil size="22" className="text-teal-main" />
         </div>
       </div>
 
