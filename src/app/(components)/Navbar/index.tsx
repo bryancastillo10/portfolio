@@ -16,7 +16,7 @@ const Navbar = () => {
 
   return (
     <nav className={`flex justify-between items-center px-12 py-4 sticky top-0 z-20 
-    ${theme ? 'bg-dark-primary/80 text-primary':'bg-light-secondary/80 text-primary'}
+    ${theme ? 'bg-dark-primary/80 text-primary':'bg-light-secondary/90 text-primary'}
     `}>
       <div className="flex justify-between items-center gap-5">
           <div

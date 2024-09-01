@@ -30,7 +30,7 @@ const enteringKeyFrame: Record<Side,string[]> = {
   };
 
   
-const ClipContainer = ({children, overlayStyle = "bg-teal-500"}:ClipContainerProps) => {
+const ClipContainer = ({children, overlayStyle = "bg-teal-main"}:ClipContainerProps) => {
     const [scope,animate] = useAnimate();
 
     const handleMouseEnter = (e:MouseEvent<HTMLDivElement>) => {

@@ -44,7 +44,7 @@ const RevealText = ({children,isLeft, width= "fit-content", withSlider=null}:Rev
       </motion.div>
     {withSlider && (<motion.div
         className={`absolute z-20 inset-y-4 inset-x-0 
-           ${theme ? "bg-teal-500/80":"bg-light-secondary/80 "}
+           ${theme ? "bg-teal-main/80":"bg-light-secondary/80 "}
             ${isLeft ? "rounded-r-lg": "rounded-l-lg"}`}
         variants={{
             initial:isLeft ? { right:0} : {left:0},

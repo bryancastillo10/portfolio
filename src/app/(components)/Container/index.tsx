@@ -41,7 +41,7 @@ const MainLayout = ({children}:ContainerProps) => {
             className={`flex flex-col w-full h-full pb-4 ${isSideBarCollapsed ? 'md:pl-10': 'md:pl-64'}`}>
               <section 
                 onClick={toggleSidebar}
-                className={`${isSideBarCollapsed ? 'hidden': 'fixed '} inset-0 z-30 bg-teal-500 
+                className={`${isSideBarCollapsed ? 'hidden': 'fixed '} inset-0 z-30 bg-teal-main 
                 bg-transparent backdrop-blur-[2px]`}/>
               <Navbar/>
               {children}
