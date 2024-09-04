@@ -69,5 +69,13 @@ export const workExperienceData:WorkExpDataProps[] = [
         dateRange:"2022-present",
         icon:"wrench",
         description:"Perform laboratory experiments on evaluating wastewater treatment plant systems, Build UI templates for some technical project proposals, seeking for innovations in water technology",
+    },{
+        id:3,
+        company:"Codebility",
+        location:"Manila City, Philippines",
+        position:"Frontend Developer Intern",
+        dateRange:"2024-present",
+        icon:"wrench",
+        description:"Joined a non-profit organization which has voluntary collaboration with other developers to develop real-world software applications. Assigned as a frontend developer on a mobile app project."
     }
 ]

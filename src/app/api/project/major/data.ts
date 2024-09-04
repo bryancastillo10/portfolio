@@ -27,7 +27,7 @@ const majorProjectsData:MajorProjectTypes[] = [
         subtitle:"Chemical Inventory Management App",
         objective:"Addressing common issues in a chemical laboratory",
         imgPath:[ChmStashPreview1.src, ChmStashPreview2.src, ChmStashPreview3.src, ChmStashPreview4.src],
-        techStack:["MERN Stack", "Recharts", "Socket IO","Tailwind CSS", "React-Redux","MUI Table"],
+        techStack:["MERN Stack", "Recharts", "React-Redux", "MUI Table","Collaboration Project"],
         language:["JavaScript"],
         skillLearned:"This project helps me improve my usage of Git since it is a collaboration with another developer.\
          Another significant aspect is that it provide some insights on backend development by crafting API endpoints using Express at Node JS.\
