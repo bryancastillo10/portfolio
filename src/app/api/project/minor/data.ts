@@ -66,7 +66,7 @@ const minorProjectsData:MinorProjectTypes[] = [
         In my own opinion, data is the building blocks of a software which has the same analogy as atoms in the chemistry field or cells in life science. \
         In conclusion to that, understanding how to perform data analysis and its interpretation\
         is an essential skill that can create effective software applications.",
-        demoLink:"",
+        demoLink:"https://anaerodash.streamlit.app/",
         gitRepo:"https://github.com/bryancastillo10/anaerodash",
     },
 ]
