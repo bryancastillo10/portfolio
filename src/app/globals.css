@@ -15,7 +15,7 @@
   --color-accent-dark: var(--accent-dark);
   --color-accent-light: var(--accent-light);
   --font-sans: var(--font-quicksand);
-  --font-mono: var(--font-merienda);
+  --font-mono: var(--font-quantico);
 }
 
 /* @media (prefers-color-scheme: dark) {

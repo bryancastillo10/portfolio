@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Quicksand, Merienda } from "next/font/google";
+import { Quicksand, Quantico } from "next/font/google";
 import "./globals.css";
 
 const quicksand = Quicksand({
@@ -7,9 +7,10 @@ const quicksand = Quicksand({
   subsets: ["latin"],
 });
 
-const merienda = Merienda({
-  variable: "--font-merienda",
-  subsets: ["latin"],
+const quantico = Quantico({
+  variable: "--font-quantico",
+  weight: ["400", "700"],
+  subsets:["latin"]
 });
 
 export const metadata: Metadata = {
@@ -25,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${quicksand.variable} ${merienda.variable} antialiased`}
+        className={`${quicksand.variable} ${quantico.variable} antialiased`}
       >
         {children}
       </body>
