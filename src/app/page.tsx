@@ -1,0 +1,19 @@
+import Footer from "@/components/navigation/Footer";
+import { Hero, Projects, TechStacks, Education, Work } from "@/components/sections";
+
+export default function Home() {
+  return (
+  <main className="w-full h-screen">
+     <section className="w-full max-w-5xl mx-auto flex flex-col items-center">
+        <Hero/>
+        <Projects/>
+        <TechStacks/>
+        <section className="grid grid-cols-1 lg:grid-cols-2 border w-full">
+          <Work/>
+          <Education />
+        </section>
+    </section>
+    <Footer/>
+  </main>
+  );
+}
