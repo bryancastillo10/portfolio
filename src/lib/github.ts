@@ -44,6 +44,8 @@ export const getGitHubOrgs = async () => {
 // For GitHub Repositories
 const repoNames = ["airbnb-clone", "water-analytics", "dna-seq-explorer", "space-chat", "co2-emissions-analysis"]
 
+// const repoNames = ["water-analytics"]
+
 export const getGitHubRepos = async () => {
 	if(!username || !token) {
 		throw new Error('GitHub username or token is not defined at the env variables');
