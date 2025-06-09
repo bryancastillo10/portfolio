@@ -5,7 +5,7 @@ export interface ViewerQuery {
   login: string;
   avatarUrl: string;
   bio: string;
-  location?: string;
+  location: string;
   publicRepos: { totalCount: number };
   followers: { totalCount: number };
   following: { totalCount: number };

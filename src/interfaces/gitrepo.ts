@@ -20,6 +20,7 @@ export interface GithubRepoRes<T> {
   createdAt: T;
   stargazersCount: number;
   htmlUrl: T;
+  imageUrl: T;
   homepage: T;
   topics: T[];
 }
