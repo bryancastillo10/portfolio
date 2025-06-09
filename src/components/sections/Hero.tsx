@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { Typewriter } from "react-simple-typewriter";
-import Image from "next/image";
+import { Typewriter } from 'react-simple-typewriter';
+import Image from 'next/image';
 
-import { MapPin, User } from "lucide-react";
-import { FolderGit2, UserPlus, UserCheck, Building2 } from "lucide-react";
+import { MapPin, User } from 'lucide-react';
+import { FolderGit2, UserPlus, UserCheck, Building2 } from 'lucide-react';
 
-import HeroRowInfo from "@/components/common/HeroRowInfo";
-import GithubStats from "@/components/common/GithubStats";
+import HeroRowInfo from '@/components/common/HeroRowInfo';
+import GithubStats from '@/components/common/GithubStats';
 
 const Hero = () => {
   return (
@@ -38,10 +38,10 @@ const Hero = () => {
             <h1 className="font-mono text-2xl">
               <Typewriter
                 words={[
-                  "Full Stack Developer",
-                  "Environmental Engineer",
-                  "Biological Engineer",
-                  "Chemist",
+                  'Full Stack Developer',
+                  'Environmental Engineer',
+                  'Biological Engineer',
+                  'Chemist',
                 ]}
                 loop={0}
                 cursor

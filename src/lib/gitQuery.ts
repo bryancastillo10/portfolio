@@ -41,8 +41,8 @@ export const GET_PROFILE_AND_REPOS = (repoNames: string[]) => `
           }
         }
       }
-    `
+    `,
       )
-      .join("")}
+      .join('')}
   }
 `;

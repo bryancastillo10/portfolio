@@ -1,20 +1,20 @@
-import type { Metadata } from "next";
-import { Quicksand, Quantico } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from 'next';
+import { Quicksand, Quantico } from 'next/font/google';
+import './globals.css';
 
 const quicksand = Quicksand({
-  variable: "--font-quicksand",
-  subsets: ["latin"],
+  variable: '--font-quicksand',
+  subsets: ['latin'],
 });
 
 const quantico = Quantico({
-  variable: "--font-quantico",
-  weight: ["400", "700"],
-  subsets:["latin"]
+  variable: '--font-quantico',
+  weight: ['400', '700'],
+  subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
-  title: "Developer Portfolio",
+  title: 'Developer Portfolio',
   description: "Bryan's Developer Portfolio",
 };
 
