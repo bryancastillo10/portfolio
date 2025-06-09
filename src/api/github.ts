@@ -2,13 +2,7 @@ import { githubClient } from '@/lib/github';
 import { GET_PROFILE_AND_REPOS } from '@/lib/gitQuery';
 import { GitHubProfile } from '@/interfaces/githubprofile';
 
-const repoNames = [
-  'airbnb-clone',
-  'water-analytics',
-  'dna-seq-explorer',
-  'space-chat',
-  'co2-emissions-analysis',
-];
+const repoNames = ['airbnb-clone', 'water-analytics', 'dna-seq-explorer'];
 
 export const getGithubData = async () => {
   const query = GET_PROFILE_AND_REPOS(repoNames);
@@ -26,6 +20,7 @@ export const getGithubData = async () => {
       stargazersCount: repo.stargazers.totalCount,
       htmlUrl: repo.url,
       homepage: repo.homepageUrl,
+      imageUrl: `/projects/${repo.name}.png`,
       topics: repo.repositoryTopics.nodes.map((node: any) => node.topic.name),
     };
   });
