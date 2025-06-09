@@ -7,7 +7,11 @@ import {
   Work,
 } from '@/components/sections';
 
+// import { getGithubData } from '@/api/github';
+
 export default async function Home() {
+  // const { profile, repos } = await getGithubData();
+
   return (
     <main className="w-full h-screen text-accent-dark">
       <section className="w-full max-w-5xl mx-auto flex flex-col items-center">
