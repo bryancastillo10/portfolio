@@ -1,72 +1,9 @@
-const username = process.env.GITHUB_USERNAME;
-const token = process.env.GITHUB_TOKEN;
+import { GraphQLClient } from 'graphql-request';
 
-// For Github Profile and Organizations
-export const getGitHubProfile = async () =>{
-	if(!username || !token) {
-		throw new Error('GitHub username or token is not defined at the env variables');
-	}
+const GITHUB_GRAPHQL_API = 'https://api.github.com/graphql';
 
-	const res = await fetch(`https://api.github.com/users/${username}`, {
-		headers: {
-			'Authorization': `token ${token}`,
-		},
-		next: { revalidate: 3600},
-	});
-
-	if (!res.ok) {
-		throw new Error('Failed to fetch GitHub profile data');
-	}
-
-	return res.json();
-}
-
-export const getGitHubOrgs = async () => {
-		if(!username || !token) {
-		throw new Error('GitHub username or token is not defined at the env variables');
-	}
-
-	const res = await fetch(`https://api.github.com/users/${username}/orgs`, {
-		headers: {
-			'Authorization': `token ${token}`,
-		},
-		next: { revalidate: 3600},
-	});
-
-	if (!res.ok) {
-		throw new Error('Failed to fetch GitHub organizations data');
-	}
-
-	return res.json();
-}
-
-
-// For GitHub Repositories
-const repoNames = ["airbnb-clone", "water-analytics", "dna-seq-explorer", "space-chat", "co2-emissions-analysis"]
-
-// const repoNames = ["water-analytics"]
-
-export const getGitHubRepos = async () => {
-	if(!username || !token) {
-		throw new Error('GitHub username or token is not defined at the env variables');
-	}
-
-	  const fetches = repoNames.map((repo) =>
-    fetch(`https://api.github.com/repos/${username}/${repo}`, {
-      headers: {
-        Authorization: `token ${token}`,
-      },
-      next: { revalidate: 3600 },
-    }).then(async (res) => {
-      if (!res.ok) {
-        console.error(`Failed to fetch ${repo}`);
-        return null; // Skip invalid repos
-      }
-      return res.json();
-    })
-  );
-
-  const results = await Promise.all(fetches);
-
-  return results.filter(Boolean);
-}
+export const githubClient = new GraphQLClient(GITHUB_GRAPHQL_API, {
+  headers: {
+    Authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`,
+  },
+});

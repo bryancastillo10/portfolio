@@ -1,21 +1,30 @@
+import TextHeader from '@/components/common/TextHeader';
+import ProjectCard from '@/components/ui/ProjectCard';
 
-import TextHeader from "@/components/common/TextHeader"
-import ProjectCard from "@/components/ui/ProjectCard"
+import { GithubRepoRes } from '@/interfaces/gitrepo';
+import { collabProjRepo } from '@/constants/collabRepo';
 
-const Projects = async () => {
-
+const Projects = ({ repos }: { repos: GithubRepoRes<string>[] }) => {
   return (
-	<section className="w-full">
-		<TextHeader title="Personal Projects"/>
+    <section className="w-full">
+      <TextHeader title="Personal Projects" />
 
-		<div className="grid grid-cols-1 md:grid-cols-2 place-items-center lg:place-items-start  gap-2 xl:gap-4 py-3">
-			<ProjectCard/>
-			<div className="w-md xl:w-lg min-h-80 border">Project 2</div>
-			<div className="w-md xl:w-lg min-h-80 border">Project 3</div>
-			<div className="w-md xl:w-lg min-h-80 border">Project 4</div>
-		</div>
-	</section>
-  )
-}
+      <div className="grid grid-cols-1 md:grid-cols-2 place-items-center lg:place-items-start  gap-2 xl:gap-4 py-3">
+        {repos.map(repo => {
+          return <ProjectCard key={repo.id} repo={repo} />;
+        })}
+      </div>
 
-export default Projects
+      <div className="mt-4">
+        <TextHeader title="Collab Projects" />
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 place-items-center lg:place-items-start  gap-2 xl:gap-4 py-3">
+        {collabProjRepo.map(repo => {
+          return <ProjectCard key={repo.id} repo={repo} />;
+        })}
+      </div>
+    </section>
+  );
+};
+
+export default Projects;
