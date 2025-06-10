@@ -8,6 +8,7 @@ import {
 } from '@/components/sections';
 
 import { getGithubData } from '@/api/github';
+import GithubActivity from '@/components/sections/GithubActivity';
 
 export default async function Home() {
   const { profile, repos } = await getGithubData();
@@ -17,6 +18,7 @@ export default async function Home() {
       <section className="w-full max-w-5xl mx-auto flex flex-col items-center">
         <Hero profile={profile} />
         <Projects repos={repos} />
+        <GithubActivity />
         <TechStacks />
         <section className="grid grid-cols-1 lg:grid-cols-2 w-full">
           <Work />

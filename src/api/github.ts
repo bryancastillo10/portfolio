@@ -1,6 +1,9 @@
 import { githubClient } from '@/lib/github';
 import { GET_PROFILE_AND_REPOS } from '@/lib/gitQuery';
+import { GET_GITHUB_CONTRIBUTIONS } from '@/lib/gitContribQuery';
 import { GitHubProfile } from '@/interfaces/githubprofile';
+
+import { GithubContributionsResponse } from '@/interfaces/githubContrib';
 
 const repoNames = ['airbnb-clone', 'water-analytics', 'dna-seq-explorer'];
 
@@ -37,4 +40,17 @@ export const getGithubData = async () => {
   };
 
   return { profile, repos: formattedRepos };
+};
+
+export const getGithubContributions = async () => {
+  try {
+    const query = GET_GITHUB_CONTRIBUTIONS();
+    const response =
+      await githubClient.request<GithubContributionsResponse>(query);
+
+    return response.user.contributionsCollection.contributionCalendar.weeks;
+  } catch (error) {
+    console.error('Error fetching Github contributions', error);
+    return;
+  }
 };

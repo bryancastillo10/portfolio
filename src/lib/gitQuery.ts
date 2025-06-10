@@ -20,7 +20,7 @@ export const GET_PROFILE_AND_REPOS = (repoNames: string[]) => `
     ${repoNames
       .map(
         (repo, i) => `
-      repo_${i}: repository(owner: "${process.env.GITHUB_USERNAME}", name: "${repo}") {
+      repo_${i}: repository(owner: "${process.env.NEXT_PUBLIC_GITHUB_USERNAME}", name: "${repo}") {
         id
         name
         description
