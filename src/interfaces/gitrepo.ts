@@ -19,7 +19,7 @@ export interface GithubRepoRes<T> {
   language: T | null;
   createdAt: T;
   stargazersCount: number;
-  htmlUrl: T;
+  htmlUrl: T | null;
   imageUrl: T;
   homepage: T;
   topics: T[];

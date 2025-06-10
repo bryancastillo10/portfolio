@@ -2,9 +2,9 @@ import TextHeader from '@/components/common/TextHeader';
 import ProjectCard from '@/components/ui/ProjectCard';
 
 import { GithubRepoRes } from '@/interfaces/gitrepo';
+import { collabProjRepo } from '@/constants/collabRepo';
 
 const Projects = ({ repos }: { repos: GithubRepoRes<string>[] }) => {
-  console.log(repos);
   return (
     <section className="w-full">
       <TextHeader title="Personal Projects" />
@@ -15,7 +15,14 @@ const Projects = ({ repos }: { repos: GithubRepoRes<string>[] }) => {
         })}
       </div>
 
-      <TextHeader title="Collab Projects" />
+      <div className="mt-4">
+        <TextHeader title="Collab Projects" />
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 place-items-center lg:place-items-start  gap-2 xl:gap-4 py-3">
+        {collabProjRepo.map(repo => {
+          return <ProjectCard key={repo.id} repo={repo} />;
+        })}
+      </div>
     </section>
   );
 };

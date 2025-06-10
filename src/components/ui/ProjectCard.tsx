@@ -29,11 +29,13 @@ const ProjectCard = ({ repo }: ProjectCardProps) => {
             <li className="flex flex-col items-center">
               <Star /> {repo.stargazersCount === 0 ? '' : repo.stargazersCount}
             </li>
-            <Link href={repo.htmlUrl}>
-              <li className="hover:scale-90 duration-200 ease-in-out">
-                <FolderGit2 />
-              </li>
-            </Link>
+            {repo.htmlUrl && (
+              <Link href={repo.htmlUrl}>
+                <li className="hover:scale-90 duration-200 ease-in-out">
+                  <FolderGit2 />
+                </li>
+              </Link>
+            )}
             <Link href={repo.homepage}>
               <li className="hover:scale-90 duration-200 ease-in-out">
                 <MonitorPlay />
