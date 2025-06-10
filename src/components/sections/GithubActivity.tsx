@@ -5,6 +5,7 @@ import { getGithubContributions } from '@/api/github';
 import { Week } from '@/interfaces/githubContrib';
 
 import ActivityCalendar from 'react-activity-calendar';
+import { customTheme } from '@/constants/heatmapTheme';
 
 interface CalendarData {
   date: string;
@@ -43,13 +44,21 @@ const GithubActivity = () => {
     fetchData();
   }, []);
   return (
-    <div>
+    <section className="flex my-4 w-xs sm:w-[90%] md:w-full">
       {calendarData.length > 0 ? (
-        <ActivityCalendar data={calendarData} />
+        <ActivityCalendar
+          data={calendarData}
+          theme={customTheme}
+          blockSize={14}
+        />
       ) : (
-        <h1 className="text-2xl">Loading contributions...</h1>
+        <div className="h-50 w-full px-4 flex justify-center items-center bg-accent-dark animate-pulse rounded-lg">
+          <h1 className="text-2xl text-white font-semibold">
+            Loading contributions...
+          </h1>
+        </div>
       )}
-    </div>
+    </section>
   );
 };
 

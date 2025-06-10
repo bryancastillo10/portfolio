@@ -17,8 +17,8 @@ export default async function Home() {
     <main className="w-full h-screen text-accent-dark">
       <section className="w-full max-w-5xl mx-auto flex flex-col items-center">
         <Hero profile={profile} />
-        <Projects repos={repos} />
         <GithubActivity />
+        <Projects repos={repos} />
         <TechStacks />
         <section className="grid grid-cols-1 lg:grid-cols-2 w-full">
           <Work />
