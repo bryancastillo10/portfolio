@@ -1,3 +1,4 @@
+import TechStackContainer from '@/components/common/TechStackContainer';
 import StackIcon from '@/components/ui/StackIcon';
 
 import { FrontendIcons, LanguageIcons } from '@/assets';
@@ -13,49 +14,49 @@ export const tabData: tabDataProps[] = [
     label: 'Languages',
     value: 'language',
     content: (
-      <div className="py-8 px-4 border-accent-dark flex flex-wrap gap-8 rounded-md shadow-inner">
+      <TechStackContainer>
         <StackIcon icon={LanguageIcons.TypescriptIcon} text="TypeScript" />
         <StackIcon icon={LanguageIcons.PythonIcon} text="Python" />
         <StackIcon icon={LanguageIcons.GoIcon} text="Go Lang" />
-      </div>
+      </TechStackContainer>
     ),
   },
   {
     label: 'Frontend',
     value: 'frontend',
     content: (
-      <div className="py-8 px-4 border-accent-dark flex flex-wrap gap-8 rounded-md shadow-inner">
+      <TechStackContainer>
         <StackIcon icon={FrontendIcons.HtmlIcon} text="HTML" />
         <StackIcon icon={FrontendIcons.CSSIcon} text="CSS" />
         <StackIcon icon={FrontendIcons.JSIcon} text="JavaScript" />
-      </div>
+      </TechStackContainer>
     ),
   },
   {
     label: 'Backend',
     value: 'backend',
     content: (
-      <div className="p-4 border-accent-dark rounded-md shadow-inner">
+      <TechStackContainer>
         'Node.js, Express, GoLang, PostgreSQL, Prisma, etc.'
-      </div>
+      </TechStackContainer>
     ),
   },
   {
     label: 'Dev Tools',
     value: 'tools',
     content: (
-      <div className="p-4 border-accent-dark rounded-md shadow-inner">
+      <TechStackContainer>
         'Git, VSCode, Docker, Figma, Postman, etc.'
-      </div>
+      </TechStackContainer>
     ),
   },
   {
     label: 'AI / Data Science',
     value: 'ai',
     content: (
-      <div className="p-4 border-accent-dark rounded-md shadow-inner">
+      <TechStackContainer>
         'Python, Pandas, Jupyter, FastAPI, LangChain, Gemini, etc.'
-      </div>
+      </TechStackContainer>
     ),
   },
 ];
