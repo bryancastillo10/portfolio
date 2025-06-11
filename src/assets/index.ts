@@ -19,13 +19,16 @@ import PostgresIcon from './stacks/PostgresIcon';
 import PrismaIcon from './stacks/PrismaIcon';
 
 import DockerIcon from './stacks/DockerIcon';
+import GithubIcon from './stacks/GithubIcon';
 import FigmaIcon from './stacks/FigmaIcon';
 import GitIcon from './stacks/GitIcon';
 import PostmanIcon from './stacks/PostmanIcon';
 
 import LangChainIcon from './stacks/LangChainIcon';
+import PandasIcon from './stacks/PandasIcon';
 import NumpyIcon from './stacks/NumpyIcon';
 import ScikitLearnIcon from './stacks/ScikitLearnIcon';
+import GeminiIcon from './stacks/GeminiIcon';
 
 export const LanguageIcons = { GoIcon, JSIcon, PythonIcon, TypescriptIcon };
 
@@ -49,6 +52,18 @@ export const BackendIcons = {
   PrismaIcon,
 };
 
-export const DevToolsIcons = { DockerIcon, FigmaIcon, GitIcon, PostmanIcon };
+export const DevToolsIcons = {
+  DockerIcon,
+  GithubIcon,
+  FigmaIcon,
+  GitIcon,
+  PostmanIcon,
+};
 
-export const DataScienceIcons = { LangChainIcon, NumpyIcon, ScikitLearnIcon };
+export const DataScienceIcons = {
+  LangChainIcon,
+  PandasIcon,
+  NumpyIcon,
+  ScikitLearnIcon,
+  GeminiIcon,
+};
