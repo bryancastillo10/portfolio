@@ -1,4 +1,11 @@
-import { Code2, Star, FolderGit2, MonitorPlay, Calendar } from 'lucide-react';
+import {
+  Code2,
+  Star,
+  FolderGit2,
+  MonitorPlay,
+  Calendar,
+  Ellipsis,
+} from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -11,7 +18,7 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ repo }: ProjectCardProps) => {
   return (
-    <div className="w-sm md:w-md xl:w-lg h-110 lg:h-100 border rounded-xl shadow-lg grid grid-cols-2 p-2">
+    <div className="relative w-sm md:w-md xl:w-lg  lg:h-100 border rounded-xl shadow-lg grid grid-cols-1 lg:grid-cols-2 p-2">
       {/* Left Side */}
       <div>
         <Image
@@ -72,6 +79,11 @@ const ProjectCard = ({ repo }: ProjectCardProps) => {
             );
           })}
         </div>
+        <Link href="#">
+          <div className="absolute top-4 lg:top-auto lg:bottom-4 right-8 cursor-pointer hover:scale-110 duration-500 ease-out">
+            <Ellipsis size={28} />
+          </div>
+        </Link>
       </div>
     </div>
   );

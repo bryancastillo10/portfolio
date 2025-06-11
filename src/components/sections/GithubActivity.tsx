@@ -44,7 +44,7 @@ const GithubActivity = () => {
     fetchData();
   }, []);
   return (
-    <section className="flex my-4 w-xs sm:w-[90%] md:w-full">
+    <section className="flex my-4 w-xs md:w-[90%] sm:w-[90%] xl:w-full">
       {calendarData.length > 0 ? (
         <ActivityCalendar
           data={calendarData}

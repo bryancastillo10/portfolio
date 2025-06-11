@@ -6,19 +6,20 @@ import { collabProjRepo } from '@/constants/collabRepo';
 
 const Projects = ({ repos }: { repos: GithubRepoRes<string>[] }) => {
   return (
-    <section className="w-full">
-      <TextHeader title="Personal Projects" />
-
-      <div className="grid grid-cols-1 md:grid-cols-2 place-items-center lg:place-items-start  gap-2 xl:gap-4 py-3">
+    <section className="w-full lg:px-4">
+      <div className="flex justify-center lg:justify-start">
+        <TextHeader title="Personal Projects" />
+      </div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center lg:place-items-start  gap-2 xl:gap-4 py-3">
         {repos.map(repo => {
           return <ProjectCard key={repo.id} repo={repo} />;
         })}
       </div>
 
-      <div className="mt-4">
+      <div className="flex justify-center lg:justify-start mt-4">
         <TextHeader title="Collab Projects" />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 place-items-center lg:place-items-start  gap-2 xl:gap-4 py-3">
+      <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center lg:place-items-start  gap-2 xl:gap-4 py-3">
         {collabProjRepo.map(repo => {
           return <ProjectCard key={repo.id} repo={repo} />;
         })}

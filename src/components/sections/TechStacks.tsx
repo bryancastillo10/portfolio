@@ -8,9 +8,10 @@ const TechStacks = () => {
   const [selectedTab, setSelectedTab] = useState('frontend');
 
   return (
-    <section className="w-full">
-      <TextHeader title="My Tools for Development" />
-
+    <section className="w-full lg:px-4">
+      <div className="flex justify-center lg:justify-start">
+        <TextHeader title="My Tools for Development" />
+      </div>
       <div className="my-4 flex gap-4 pb-2">
         {tabData.map(tab => (
           <button
