@@ -18,8 +18,8 @@ const Hero = ({ profile }: { profile: GithubProfileRes<string, number> }) => {
           <Image
             src={profile.avatarUrl}
             alt="avatar"
-            width={250}
-            height={250}
+            width={200}
+            height={200}
             className="rounded-full shadow-lg"
             loading="lazy"
           />
@@ -31,7 +31,7 @@ const Hero = ({ profile }: { profile: GithubProfileRes<string, number> }) => {
       </div>
       <div className="flex flex-col items-center justify-center">
         <div
-          className="p-4 h-[250px] w-sm md:w-md xl:w-lg bg-[url('/images/emptymac.png')] bg-cover border  
+          className="p-4 h-[250px] w-xs md:w-md xl:w-lg bg-[url('/images/emptymac.png')] bg-cover border  
 			flex flex-col justify-between rounded-md shadow-lg"
         >
           <div className="mt-4">
@@ -54,7 +54,7 @@ const Hero = ({ profile }: { profile: GithubProfileRes<string, number> }) => {
             </h1>
           </div>
           <div className="mb-2">
-            <p className="text-gray text-base">{profile.bio}</p>
+            <p className="text-gray text-justify text-base">{profile.bio}</p>
           </div>
         </div>
 
