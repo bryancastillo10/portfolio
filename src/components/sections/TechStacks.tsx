@@ -8,7 +8,7 @@ const TechStacks = () => {
   const [selectedTab, setSelectedTab] = useState('frontend');
 
   return (
-    <section className="w-full lg:px-4">
+    <section className="w-full lg:px-4 xl:px-0">
       <div className="flex justify-center lg:justify-start">
         <TextHeader title="My Tools for Development" />
       </div>

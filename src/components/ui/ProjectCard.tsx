@@ -18,7 +18,7 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ repo }: ProjectCardProps) => {
   return (
-    <div className="relative w-sm md:w-md xl:w-lg  lg:h-100 border rounded-xl shadow-lg grid grid-cols-1 lg:grid-cols-2 p-2">
+    <div className="relative w-sm md:w-md lg:h-100 border rounded-xl shadow-lg grid grid-cols-1 lg:grid-cols-2 p-2">
       {/* Left Side */}
       <div>
         <Image

@@ -6,7 +6,7 @@ import { collabProjRepo } from '@/constants/collabRepo';
 
 const Projects = ({ repos }: { repos: GithubRepoRes<string>[] }) => {
   return (
-    <section className="w-full lg:px-4">
+    <section className="w-full lg:px-4 xl:px-0">
       <div className="flex justify-center lg:justify-start">
         <TextHeader title="Personal Projects" />
       </div>
