@@ -2,29 +2,7 @@
 
 import { useState } from 'react';
 import TextHeader from '@/components/common/TextHeader';
-
-const tabData = [
-  {
-    label: 'Frontend',
-    value: 'frontend',
-    content: 'React, Next.js, Tailwind CSS, Vite, etc.',
-  },
-  {
-    label: 'Backend',
-    value: 'backend',
-    content: 'Node.js, Express, GoLang, PostgreSQL, Prisma, etc.',
-  },
-  {
-    label: 'Dev Tools',
-    value: 'tools',
-    content: 'Git, VSCode, Docker, Figma, Postman, etc.',
-  },
-  {
-    label: 'AI / Data Science',
-    value: 'ai',
-    content: 'Python, Pandas, Jupyter, FastAPI, LangChain, Gemini, etc.',
-  },
-];
+import { tabData } from '@/constants/tabData';
 
 const TechStacks = () => {
   const [selectedTab, setSelectedTab] = useState('frontend');
@@ -49,7 +27,7 @@ const TechStacks = () => {
         ))}
       </div>
 
-      <div className="relative overflow-hidden min-h-[120px]">
+      <div className="relative overflow-hidden h-[300px] border">
         {tabData.map(tab => (
           <div
             key={tab.value}
@@ -61,9 +39,7 @@ const TechStacks = () => {
               }
             `}
           >
-            <div className="p-4 border-accent-dark rounded-md shadow-inner">
-              {tab.content}
-            </div>
+            {tab.content}
           </div>
         ))}
       </div>
