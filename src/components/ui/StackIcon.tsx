@@ -1,10 +1,13 @@
-import ReactIcon from '@/assets/stacks/ReactIcon';
+interface StackIconProps {
+  text: string;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+}
 
-const StackIcon = () => {
+const StackIcon = ({ text, icon: Icon }: StackIconProps) => {
   return (
     <div className="flex flex-col w-fit gap-2">
-      <ReactIcon fill="#136f63" />
-      <p className="text-xl text-center text-gray font-mono">React</p>
+      <Icon fill="#136f63" />
+      <p className="text-xl text-center text-gray font-mono">{text}</p>
     </div>
   );
 };

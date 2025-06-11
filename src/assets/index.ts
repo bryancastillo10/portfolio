@@ -1,0 +1,54 @@
+import GoIcon from './stacks/GoIcon';
+import PythonIcon from './stacks/PythonIcon';
+import TypescriptIcon from './stacks/TypescriptIcon';
+
+import HtmlIcon from './stacks/HtmlIcon';
+import CSSIcon from './stacks/CSSIcon';
+import TailwindIcon from './stacks/TailwindIcon';
+import JSIcon from './stacks/JSIcon';
+import ReactIcon from './stacks/ReactIcon';
+import NextJSIcon from './stacks/NextJSIcon';
+import MaterialUIIcon from './stacks/MaterialUIIcon';
+import ViteIcon from './stacks/ViteIcon';
+
+import NodeJSIcon from './stacks/NodeJSIcon';
+import GinIcon from './stacks/GinIcon';
+import FastApiIcon from './stacks/FastApiIcon';
+import MongoDBIcon from './stacks/MongoDBIcon';
+import PostgresIcon from './stacks/PostgresIcon';
+import PrismaIcon from './stacks/PrismaIcon';
+
+import DockerIcon from './stacks/DockerIcon';
+import FigmaIcon from './stacks/FigmaIcon';
+import GitIcon from './stacks/GitIcon';
+import PostmanIcon from './stacks/PostmanIcon';
+
+import LangChainIcon from './stacks/LangChainIcon';
+import NumpyIcon from './stacks/NumpyIcon';
+import ScikitLearnIcon from './stacks/ScikitLearnIcon';
+
+export const LanguageIcons = { GoIcon, JSIcon, PythonIcon, TypescriptIcon };
+
+export const FrontendIcons = {
+  HtmlIcon,
+  CSSIcon,
+  JSIcon,
+  ReactIcon,
+  ViteIcon,
+  TailwindIcon,
+  NextJSIcon,
+  MaterialUIIcon,
+};
+
+export const BackendIcons = {
+  NodeJSIcon,
+  FastApiIcon,
+  GinIcon,
+  MongoDBIcon,
+  PostgresIcon,
+  PrismaIcon,
+};
+
+export const DevToolsIcons = { DockerIcon, FigmaIcon, GitIcon, PostmanIcon };
+
+export const DataScienceIcons = { LangChainIcon, NumpyIcon, ScikitLearnIcon };
