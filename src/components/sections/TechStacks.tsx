@@ -8,16 +8,16 @@ const TechStacks = () => {
   const [selectedTab, setSelectedTab] = useState('frontend');
 
   return (
-    <section className="w-full lg:px-4 xl:px-0">
+    <section className="w-full mt-8">
       <div className="flex justify-center lg:justify-start">
         <TextHeader title="My Tools for Development" />
       </div>
-      <div className="my-4 flex gap-4 pb-2">
+      <div className="my-4 flex flex-wrap gap-4 p-2 lg:p-0">
         {tabData.map(tab => (
           <button
             key={tab.value}
             onClick={() => setSelectedTab(tab.value)}
-            className={`px-4 py-1 cursor-pointer rounded-t-md font-semibold transition-all duration-200 ${
+            className={`px-3 lg:px-0 text-center py-1 cursor-pointer rounded-t-md font-semibold transition-all duration-200 ${
               selectedTab === tab.value
                 ? 'border-b-2 border-accent-dark text-accent-dark'
                 : 'text-gray hover:text-accent-light'
@@ -28,7 +28,7 @@ const TechStacks = () => {
         ))}
       </div>
 
-      <div className="relative overflow-hidden h-[300px] border">
+      <div className="relative h-[660px] md:h-[350px] rounded-lg shadow-sm m-4 lg:mx-0">
         {tabData.map(tab => (
           <div
             key={tab.value}

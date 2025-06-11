@@ -23,6 +23,7 @@ import GithubIcon from './stacks/GithubIcon';
 import FigmaIcon from './stacks/FigmaIcon';
 import GitIcon from './stacks/GitIcon';
 import PostmanIcon from './stacks/PostmanIcon';
+import VSCodeIcon from './stacks/VSCodeIcon';
 
 import LangChainIcon from './stacks/LangChainIcon';
 import PandasIcon from './stacks/PandasIcon';
@@ -58,6 +59,7 @@ export const DevToolsIcons = {
   FigmaIcon,
   GitIcon,
   PostmanIcon,
+  VSCodeIcon,
 };
 
 export const DataScienceIcons = {
