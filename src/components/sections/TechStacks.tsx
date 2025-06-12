@@ -1,11 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import useTechStackTabs from '@/hooks/useTechStackTabs';
 import TextHeader from '@/components/common/TextHeader';
 import { tabData } from '@/constants/tabData';
 
 const TechStacks = () => {
-  const [selectedTab, setSelectedTab] = useState('frontend');
+  const { selectedTab, handleChangeTab } = useTechStackTabs();
 
   return (
     <section className="w-full mt-8">
@@ -16,7 +16,7 @@ const TechStacks = () => {
         {tabData.map(tab => (
           <button
             key={tab.value}
-            onClick={() => setSelectedTab(tab.value)}
+            onClick={() => handleChangeTab(tab.value)}
             className={`px-3 lg:px-0 text-center py-1 cursor-pointer rounded-t-md font-semibold transition-all duration-200 ${
               selectedTab === tab.value
                 ? 'border-b-2 border-accent-dark text-accent-dark'
