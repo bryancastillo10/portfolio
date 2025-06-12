@@ -18,7 +18,7 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ repo }: ProjectCardProps) => {
   return (
-    <div className="relative w-sm md:w-md lg:h-100 border rounded-xl shadow-lg grid grid-cols-1 lg:grid-cols-2 p-2">
+    <div className="relative w-sm md:w-md lg:h-100 rounded-xl shadow-lg grid grid-cols-1 lg:grid-cols-2 p-2">
       {/* Left Side */}
       <div>
         <Image
@@ -68,7 +68,7 @@ const ProjectCard = ({ repo }: ProjectCardProps) => {
           <h1 className="font-semibold text-xl font-mono uppercase">
             {repo.name}
           </h1>
-          <p className="text-xs text-left">{repo.description}</p>
+          <p className="text-sm text-left">{repo.description}</p>
         </div>
         {repo.tagName && (
           <div className="flex items-center bg-accent-light rounded-lg w-fit h-fit px-4 py-1 gap-2">

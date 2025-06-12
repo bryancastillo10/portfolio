@@ -4,7 +4,7 @@ import {
   Leaf,
   LucideIcon,
   TestTubeDiagonal,
-  Wrench,
+  BookOpen,
 } from 'lucide-react';
 
 export interface ICareerRecords {
@@ -74,7 +74,7 @@ export const careerRecords: ICareerRecords[] = [
       {
         id: 1,
         position: 'Associate Researcher',
-        icon: Wrench,
+        icon: BookOpen,
         startDate: '2022-11-01T00:00:00Z',
         endDate: 'present',
         org: 'Industrial Technology Research Institute',
