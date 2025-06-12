@@ -3,6 +3,7 @@ import {
   Star,
   FolderGit2,
   MonitorPlay,
+  Tag,
   Calendar,
   Ellipsis,
 } from 'lucide-react';
@@ -32,10 +33,13 @@ const ProjectCard = ({ repo }: ProjectCardProps) => {
             <Code2 size="18" />
             <p className="text-sm">{repo.language || 'Javascript'}</p>
           </div>
-          <ul className="grid grid-cols-3 gap-2 my-3">
-            <li className="flex flex-col items-center">
-              <Star /> {repo.stargazersCount === 0 ? '' : repo.stargazersCount}
-            </li>
+          <ul className="grid grid-cols-3 gap-2 my-4">
+            {repo.stargazersCount !== 0 && (
+              <li className="flex items-center gap-1">
+                <Star />
+                {repo.stargazersCount}
+              </li>
+            )}
             {repo.htmlUrl && (
               <Link href={repo.htmlUrl}>
                 <li className="hover:scale-90 duration-200 ease-in-out">
@@ -54,19 +58,21 @@ const ProjectCard = ({ repo }: ProjectCardProps) => {
 
       {/* Right Side */}
       <div className="p-2 flex flex-col gap-2">
-        <h1 className="font-semibold text-xl font-mono uppercase">
-          {repo.name}
-        </h1>
-        <p className="text-xs text-left">{repo.description}</p>
-        <div className="flex items-center gap-2">
-          <div className="flex flex-col">
-            <Calendar />
-            <p className="text-xs">Start</p>
-          </div>
-          <p className="text-sm place-self-start">
-            {formatDate(repo.createdAt)}
-          </p>
+        <div className="mb-4">
+          <h1 className="font-semibold text-xl font-mono uppercase">
+            {repo.name}
+          </h1>
+          <p className="text-xs text-left">{repo.description}</p>
         </div>
+        {repo.tagName && (
+          <div className="flex items-center bg-accent-light rounded-lg w-fit h-fit px-4 py-1 gap-2">
+            <Tag size="18" />
+            <div className="flex gap-2 text-sm">
+              <p className="font-semibold place-self-start">{repo.tagName}</p>
+            </div>
+          </div>
+        )}
+
         <div className="flex flex-wrap gap-2">
           {repo.topics.map((tag, idx) => {
             return (

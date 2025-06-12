@@ -27,7 +27,6 @@ export const GET_PROFILE_AND_REPOS = (repoNames: string[]) => `
         primaryLanguage {
           name
         }
-        createdAt
         stargazers {
           totalCount
         }
@@ -38,6 +37,12 @@ export const GET_PROFILE_AND_REPOS = (repoNames: string[]) => `
             topic {
               name
             }
+          }
+        }
+        releases(first: 1, orderBy: {field: CREATED_AT, direction: DESC}) {
+          nodes {
+            tagName
+            publishedAt
           }
         }
       }

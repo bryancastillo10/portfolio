@@ -3,12 +3,17 @@ export interface IRepository<T> {
   name: T;
   description: T;
   primaryLanguage: { name: T } | null;
-  createdAt: T;
   stargazers: { totalCount: number };
   url: T;
   homepageUrl: T;
   repositoryTopics: {
     nodes: { topic: { name: string } }[];
+  };
+  releases: {
+    nodes: {
+      tagName: T;
+      publishedAt: T;
+    }[];
   };
 }
 
@@ -17,10 +22,11 @@ export interface GithubRepoRes<T> {
   name: T;
   description: T;
   language: T | null;
-  createdAt: T;
   stargazersCount: number;
   htmlUrl: T | null;
   imageUrl: T;
   homepage: T;
   topics: T[];
+  tagName: T;
+  publishedAt: T;
 }

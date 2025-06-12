@@ -3,7 +3,7 @@ export function formatDate(dateString: string): string {
 
   return date.toLocaleDateString('en-GB', {
     day: '2-digit',
-    month: 'long',
+    month: 'short',
     year: 'numeric',
   });
 }

@@ -6,7 +6,6 @@ export const collabProjRepo = [
     language: 'JavaScript',
     stargazersCount: 0,
     htmlUrl: null,
-    createdAt: '2024-05-23T05:30:12Z',
     imageUrl: '/projects/chemstash.png',
     homepage: 'https://mern-with-auth-rba5.onrender.com/',
     topics: [
@@ -15,5 +14,7 @@ export const collabProjRepo = [
       'collaboration-project',
       'ui/ux-design',
     ],
+    tagName: 'v1.0.0',
+    publishedAt: '2024-08-15T05:30:12Z',
   },
 ];
