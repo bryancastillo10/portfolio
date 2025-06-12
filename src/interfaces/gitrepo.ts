@@ -27,4 +27,5 @@ export interface GithubRepoRes<T> {
   homepage: T;
   topics: T[];
   tagName: T;
+  organization?: T;
 }

@@ -5,12 +5,12 @@ import {
   MonitorPlay,
   Tag,
   Ellipsis,
+  Network,
 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 
 import { GithubRepoRes } from '@/interfaces/gitrepo';
-import { formatDate } from '@/utils/formatDate';
 
 interface ProjectCardProps {
   repo: GithubRepoRes<string>;
@@ -32,6 +32,13 @@ const ProjectCard = ({ repo }: ProjectCardProps) => {
             <Code2 size="18" />
             <p className="text-sm">{repo.language || 'Javascript'}</p>
           </div>
+
+          {repo.organization && (
+            <div className="flex items-center gap-2 rounded-md shadow-md bg-accent-light text-gray w-fit px-3 py-0.5 my-2">
+              <Network size="18" />
+              <p className="text-sm">{repo.organization}</p>
+            </div>
+          )}
           <ul className="grid grid-cols-3 gap-2 my-4">
             {repo.stargazersCount !== 0 && (
               <li className="flex items-center gap-1">

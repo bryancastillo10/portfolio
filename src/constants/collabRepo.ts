@@ -2,7 +2,8 @@ export const collabProjRepo = [
   {
     id: '1',
     name: 'chemstash',
-    description: 'Chemical Inventory Management App Built With MERN Stack',
+    description:
+      'Chemical Inventory Management App Built With MERN Stack. Collaboration project with formal UI/UX design to be followed in frontend development',
     language: 'JavaScript',
     stargazersCount: 0,
     htmlUrl: null,
@@ -16,5 +17,6 @@ export const collabProjRepo = [
     ],
     tagName: 'v1.0.0',
     publishedAt: '2024-08-15T05:30:12Z',
+    organization: 'MERNCOLLAB',
   },
 ];
