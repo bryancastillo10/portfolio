@@ -2,11 +2,11 @@ export const collabProjRepo = [
   {
     id: '1',
     name: 'chemstash',
-    description: 'Chemical Inventory Management App Built With MERN Stack',
+    description:
+      'Chemical Inventory Management App Built With MERN Stack. Collaboration project with formal UI/UX design to be followed in frontend development',
     language: 'JavaScript',
     stargazersCount: 0,
     htmlUrl: null,
-    createdAt: '2024-05-23T05:30:12Z',
     imageUrl: '/projects/chemstash.png',
     homepage: 'https://mern-with-auth-rba5.onrender.com/',
     topics: [
@@ -15,5 +15,8 @@ export const collabProjRepo = [
       'collaboration-project',
       'ui/ux-design',
     ],
+    tagName: 'v1.0.0',
+    publishedAt: '2024-08-15T05:30:12Z',
+    organization: 'MERNCOLLAB',
   },
 ];

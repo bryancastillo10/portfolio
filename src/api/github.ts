@@ -19,12 +19,12 @@ export const getGithubData = async () => {
       name: repo.name,
       description: repo.description,
       language: repo.primaryLanguage?.name ?? null,
-      createdAt: repo.createdAt,
       stargazersCount: repo.stargazers.totalCount,
       htmlUrl: repo.url,
       homepage: repo.homepageUrl,
       imageUrl: `/projects/${repo.name}.png`,
       topics: repo.repositoryTopics.nodes.map((node: any) => node.topic.name),
+      tagName: repo.releases.nodes[0]?.tagName ?? null,
     };
   });
 
