@@ -25,7 +25,6 @@ export const getGithubData = async () => {
       imageUrl: `/projects/${repo.name}.png`,
       topics: repo.repositoryTopics.nodes.map((node: any) => node.topic.name),
       tagName: repo.releases.nodes[0]?.tagName ?? null,
-      publishedAt: repo.releases.nodes[0]?.publishedAt ?? null,
     };
   });
 

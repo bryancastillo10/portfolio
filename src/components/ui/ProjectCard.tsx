@@ -4,7 +4,6 @@ import {
   FolderGit2,
   MonitorPlay,
   Tag,
-  Calendar,
   Ellipsis,
 } from 'lucide-react';
 import Link from 'next/link';

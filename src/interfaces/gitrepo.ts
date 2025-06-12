@@ -12,7 +12,6 @@ export interface IRepository<T> {
   releases: {
     nodes: {
       tagName: T;
-      publishedAt: T;
     }[];
   };
 }
@@ -28,5 +27,4 @@ export interface GithubRepoRes<T> {
   homepage: T;
   topics: T[];
   tagName: T;
-  publishedAt: T;
 }
