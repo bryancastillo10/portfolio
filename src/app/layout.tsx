@@ -14,8 +14,11 @@ const quantico = Quantico({
 });
 
 export const metadata: Metadata = {
-  title: 'Developer Portfolio',
+  title: "Bryan's Portfolio",
   description: "Bryan's Developer Portfolio",
+  icons: {
+    icon: '/logo.ico',
+  },
 };
 
 export default function RootLayout({
