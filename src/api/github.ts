@@ -1,6 +1,6 @@
-import { githubClient } from '@/lib/github';
-import { GET_PROFILE_AND_REPOS } from '@/lib/gitQuery';
-import { GET_GITHUB_CONTRIBUTIONS } from '@/lib/gitContribQuery';
+import { githubClient } from '@/lib/graphql/github';
+import { GET_PROFILE_AND_REPOS } from '@/lib/graphql/gitQuery';
+import { GET_GITHUB_CONTRIBUTIONS } from '@/lib/graphql/gitContribQuery';
 import { GitHubProfile } from '@/interfaces/githubprofile';
 
 import { GithubContributionsResponse } from '@/interfaces/githubContrib';
