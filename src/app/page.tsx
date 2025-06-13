@@ -9,12 +9,14 @@ import {
 
 import { getGithubData } from '@/api/github';
 import GithubActivity from '@/components/sections/GithubActivity';
+import Sidebar from '@/components/navigation/Sidebar';
 
 export default async function Home() {
   const { profile, repos } = await getGithubData();
 
   return (
-    <main className="w-full h-screen text-accent-dark overflow-x-hidden">
+    <>
+      <Sidebar />
       <section className="w-full max-w-5xl mx-auto flex flex-col items-center">
         <Hero profile={profile} />
         <GithubActivity />
@@ -25,7 +27,6 @@ export default async function Home() {
           <Education />
         </section>
       </section>
-      <Footer />
-    </main>
+    </>
   );
 }

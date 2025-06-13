@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { Quicksand, Quantico } from 'next/font/google';
 import './globals.css';
 
+import Footer from '@/components/navigation/Footer';
+
 const quicksand = Quicksand({
   variable: '--font-quicksand',
   subsets: ['latin'],
@@ -31,7 +33,10 @@ export default function RootLayout({
       <body
         className={`${quicksand.variable} ${quantico.variable} antialiased`}
       >
-        {children}
+        <main className="w-full h-screen relative text-accent-dark overflow-x-hidden">
+          {children}
+          <Footer />
+        </main>
       </body>
     </html>
   );
