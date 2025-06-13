@@ -33,7 +33,7 @@ export default function RootLayout({
       <body
         className={`${quicksand.variable} ${quantico.variable} antialiased`}
       >
-        <main className="w-full h-screen text-accent-dark overflow-x-hidden">
+        <main className="w-full h-screen relative text-accent-dark overflow-x-hidden">
           {children}
           <Footer />
         </main>
