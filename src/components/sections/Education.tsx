@@ -1,3 +1,5 @@
+'use client';
+
 import TextHeader from '@/components/common/TextHeader';
 
 import { careerRecords } from '@/constants/careers';
@@ -10,17 +12,19 @@ const Education = () => {
         <TextHeader title="Educational Background" />
       </div>
 
-      {careerRecords
-        .filter(record => record.career === 'education')
-        .flatMap(record =>
-          record.content.map(item => (
-            <CareerCard
-              key={`education-${item.id}`}
-              career={record.career}
-              content={item}
-            />
-          )),
-        )}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 w-full items-center">
+        {careerRecords
+          .filter(record => record.career === 'education')
+          .flatMap(record =>
+            record.content.map(item => (
+              <CareerCard
+                key={`education-${item.id}`}
+                career={record.career}
+                content={item}
+              />
+            )),
+          )}
+      </div>
     </section>
   );
 };
