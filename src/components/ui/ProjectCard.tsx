@@ -1,3 +1,5 @@
+'use client';
+
 import {
   Code2,
   Star,
@@ -10,15 +12,23 @@ import {
 import Link from 'next/link';
 import Image from 'next/image';
 
+import { useAppSelector } from '@/lib/redux/hooks';
 import { GithubRepoRes } from '@/interfaces/gitrepo';
+import ProjectTag from '@/components/common/ProjectTag';
 
 interface ProjectCardProps {
   repo: GithubRepoRes<string>;
 }
 
 const ProjectCard = ({ repo }: ProjectCardProps) => {
+  const isDarkMode = useAppSelector(state => state.theme.isDarkMode);
+
   return (
-    <div className="relative w-sm md:w-md lg:h-100 rounded-xl shadow-lg grid grid-cols-1 lg:grid-cols-2 p-2">
+    <div
+      className={`relative w-sm md:w-md lg:h-100 rounded-xl shadow-lg 
+      ${isDarkMode ? 'bg-gray border-none text-background' : 'border border-gray'}
+      grid grid-cols-1 lg:grid-cols-2 p-2`}
+    >
       {/* Left Side */}
       <div>
         <Image
@@ -28,16 +38,10 @@ const ProjectCard = ({ repo }: ProjectCardProps) => {
           height={250}
         />
         <div className="px-2">
-          <div className="flex items-center gap-2 rounded-md shadow-md bg-accent-light text-gray w-fit px-3 py-0.5 my-2">
-            <Code2 size="18" />
-            <p className="text-sm">{repo.language || 'Javascript'}</p>
-          </div>
+          <ProjectTag icon={Code2} text={repo.language || 'JavaScript'} />
 
           {repo.organization && (
-            <div className="flex items-center gap-2 rounded-md shadow-md bg-accent-light text-gray w-fit px-3 py-0.5 my-2">
-              <Network size="18" />
-              <p className="text-sm">{repo.organization}</p>
-            </div>
+            <ProjectTag icon={Network} text={repo.organization} />
           )}
           <ul className="grid grid-cols-3 gap-2 my-4">
             {repo.stargazersCount !== 0 && (
@@ -46,6 +50,7 @@ const ProjectCard = ({ repo }: ProjectCardProps) => {
                 {repo.stargazersCount}
               </li>
             )}
+
             {repo.htmlUrl && (
               <Link href={repo.htmlUrl}>
                 <li className="hover:scale-90 duration-200 ease-in-out">
@@ -70,21 +75,16 @@ const ProjectCard = ({ repo }: ProjectCardProps) => {
           </h1>
           <p className="text-sm text-left">{repo.description}</p>
         </div>
-        {repo.tagName && (
-          <div className="flex items-center bg-accent-light rounded-lg w-fit h-fit px-4 py-1 gap-2">
-            <Tag size="18" />
-            <div className="flex gap-2 text-sm">
-              <p className="font-semibold place-self-start">{repo.tagName}</p>
-            </div>
-          </div>
-        )}
+        {repo.tagName && <ProjectTag icon={Tag} text={repo.tagName} />}
 
         <div className="flex flex-wrap gap-2">
           {repo.topics.map((tag, idx) => {
             return (
               <p
                 key={idx}
-                className="text-xs bg-accent-light text-gray w-fit rounded-md shadow-md py-1 px-3"
+                className={`text-xs  w-fit rounded-md shadow-md py-1 px-3
+                ${isDarkMode ? 'bg-accent-light text-background' : 'bg-foreground text-[#fff8f1]'} 
+              `}
               >
                 {tag}
               </p>
