@@ -1,19 +1,19 @@
-"use client";
+'use client';
 
-import { useEffect } from "react";
-import { useAppSelector } from "@/lib/redux/hooks";
+import { useEffect } from 'react';
+import { useAppSelector } from '@/lib/redux/hooks';
 
 const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  const isDarkMode = useAppSelector((state) => state.theme.isDarkMode);
+  const isDarkMode = useAppSelector(state => state.theme.isDarkMode);
 
   useEffect(() => {
     const root = document.documentElement;
     if (isDarkMode) {
-      root.classList.add("dark");
-      root.classList.remove("light");
+      root.classList.add('dark');
+      root.classList.remove('light');
     } else {
-      root.classList.add("light");
-      root.classList.remove("dark");
+      root.classList.add('light');
+      root.classList.remove('dark');
     }
   }, [isDarkMode]);
 

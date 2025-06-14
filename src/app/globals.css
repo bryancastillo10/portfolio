@@ -8,7 +8,6 @@
   --accent-light: #3fdec9;
 }
 
-
 .light {
   --background: #fff8f1;
   --foreground: #136f63;
@@ -17,13 +16,12 @@
   --accent-light: #3fdec9;
 }
 
-
 .dark {
   --background: #100007;
   --foreground: #fff8f1;
   --gray: #b8b7b7;
   --accent-dark: #136f63;
-  --accent-light:#3fdec9 ;
+  --accent-light: #3fdec9;
 }
 @theme inline {
   --color-background: var(--background);
@@ -34,8 +32,6 @@
   --font-sans: var(--font-quicksand);
   --font-mono: var(--font-quantico);
 }
-
-
 
 body {
   background: var(--background);

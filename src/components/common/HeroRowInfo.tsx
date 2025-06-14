@@ -7,13 +7,13 @@ interface HeroRowInfoProps {
 }
 
 const HeroRowInfo = ({ icon: Icon, text }: HeroRowInfoProps) => {
-  const isDarkMode = useAppSelector((state) => state.theme.isDarkMode);
+  const isDarkMode = useAppSelector(state => state.theme.isDarkMode);
 
   return (
     <div className="flex items-center gap-3">
       <Icon
         size="36"
-        className={`${isDarkMode ? "bg-accent-light text-background border-accent-dark":"bg-accent-light text-foreground"} border shadow-md rounded-full p-2`}
+        className={`${isDarkMode ? 'bg-accent-light text-background border-accent-dark' : 'bg-accent-light text-foreground'} border shadow-md rounded-full p-2`}
       />
       <p className="tracking-wide text-base">{text}</p>
     </div>
