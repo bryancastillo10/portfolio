@@ -6,6 +6,8 @@ import { persistStore } from 'redux-persist';
 
 import store from "@/lib/redux/store";
 
+import ThemeProvider from "./ThemeProvider";
+
 interface ProviderProps {
 	children: React.ReactNode;
 }
@@ -15,7 +17,9 @@ const Providers = ({children}: ProviderProps) => {
   return (
 	<ReduxProvider store={store}>
 		<PersistGate loading={null} persistor={persistor}>
-		{children}
+			<ThemeProvider>
+				{children}
+			</ThemeProvider>
 		</PersistGate>
 	</ReduxProvider>
   )

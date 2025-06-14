@@ -18,7 +18,7 @@
   --font-mono: var(--font-quantico);
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   :root {
     --background: #100007;
     --foreground: #FFF8F1;
@@ -26,7 +26,7 @@
     --accent-dark: #136f63;
     --accent-light: #3FDEC9;
   }
-} */
+}
 
 body {
   background: var(--background);
