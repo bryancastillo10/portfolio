@@ -54,7 +54,7 @@ const Hero = ({ profile }: { profile: GithubProfileRes<string, number> }) => {
             </h1>
           </div>
           <div className="mb-2">
-            <p className="text-gray text-justify text-base">{profile.bio}</p>
+            <p className="dark:text-gray text-justify text-base">{profile.bio}</p>
           </div>
         </div>
 

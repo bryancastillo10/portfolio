@@ -12,7 +12,7 @@ const HeroRowInfo = ({ icon: Icon, text }: HeroRowInfoProps) => {
         size="36"
         className="border shadow-md text-gray bg-accent-light rounded-full p-2"
       />
-      <h1 className="tracking-wide text-base">{text}</h1>
+      <p className="tracking-wide text-base">{text}</p>
     </div>
   );
 };

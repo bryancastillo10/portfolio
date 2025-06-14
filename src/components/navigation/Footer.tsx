@@ -24,7 +24,7 @@ const Footer = () => {
     <footer className="w-full xl:h-24 bg-accent-dark text-white flex overflow-hidden">
       <section className="w-full max-w-5xl mx-auto flex flex-col items-center md:flex-row justify-between px-8 py-4">
         <div className="flex flex-col gap-1 items-center md:items-start">
-          <h1 className="font-semibold">
+          <h1 className="text-lg font-semibold">
             &copy; {currentYr} Bryan's Portfolio
           </h1>
           <p className="text-sm">All Rights Reserved</p>

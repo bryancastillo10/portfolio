@@ -8,6 +8,23 @@
   --accent-light: #3fdec9;
 }
 
+
+.light {
+  --background: #fff8f1;
+  --foreground: #136f63;
+  --gray: #3e3d3d;
+  --accent-dark: #100007;
+  --accent-light: #3fdec9;
+}
+
+
+.dark {
+  --background: #100007;
+  --foreground: #fff8f1;
+  --gray: #b8b7b7;
+  --accent-dark: #136f63;
+  --accent-light:#3fdec9 ;
+}
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -18,15 +35,7 @@
   --font-mono: var(--font-quantico);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #100007;
-    --foreground: #FFF8F1;
-    --gray: #3E3D3D;
-    --accent-dark: #136f63;
-    --accent-light: #3FDEC9;
-  }
-}
+
 
 body {
   background: var(--background);
