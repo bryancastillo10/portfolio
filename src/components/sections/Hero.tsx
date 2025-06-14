@@ -35,7 +35,9 @@ const Hero = ({ profile }: { profile: GithubProfileRes<string, number> }) => {
 			flex flex-col justify-between rounded-md shadow-lg"
         >
           <div className="mt-4">
-            <p className="text-lg">Hello, I'm {`${profile.name}` || 'Bryan'}</p>
+            <p className="text-lg">
+              Hello World, I'm {`${profile.name}` || 'Bryan'}
+            </p>
             <h1 className="font-mono text-2xl">
               <Typewriter
                 words={[
@@ -54,7 +56,9 @@ const Hero = ({ profile }: { profile: GithubProfileRes<string, number> }) => {
             </h1>
           </div>
           <div className="mb-2">
-            <p className="text-gray text-justify text-base">{profile.bio}</p>
+            <p className="dark:text-gray text-justify text-base">
+              {profile.bio}
+            </p>
           </div>
         </div>
 

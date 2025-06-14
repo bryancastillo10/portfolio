@@ -9,19 +9,26 @@ import Switch from '@/components/ui/Switch';
 import SidebarItem from '@/components/navigation/SidebarItem';
 
 const Sidebar = () => {
-  const isSidebarExpanded = useAppSelector((state) => state.sidebar.isSidebarExpanded);
+  const isSidebarExpanded = useAppSelector(
+    state => state.sidebar.isSidebarExpanded,
+  );
+  const isDarkMode = useAppSelector(state => state.theme.isDarkMode);
   const dispatch = useAppDispatch();
 
   const toggleSidebar = () => {
-      dispatch(setIsSidebarExpanded(!isSidebarExpanded));
+    dispatch(setIsSidebarExpanded(!isSidebarExpanded));
   };
 
   return (
     <aside
-      className={`hidden md:block fixed z-50 top-40 h-80 bg-accent-dark text-foreground md:opacity-80 lg:opacity-100  p-2 rounded-r-2xl shadow-md 
-		${isSidebarExpanded ? 'w-32' : 'w-12'} transition-all duration-500 ease-out`}
+      className={`hidden md:block fixed z-50 top-20 h-80 text-background md:opacity-80 lg:opacity-100  p-2 rounded-r-2xl shadow-md 
+		${isSidebarExpanded ? 'w-32' : 'w-12'} transition-all duration-500 ease-out
+    ${isDarkMode ? 'bg-accent-light' : 'bg-foreground'}
+    `}
     >
-      <div className={`flex flex-col gap-2 ${isSidebarExpanded ? "items-start": "items-center"}`}>
+      <div
+        className={`flex flex-col gap-2 ${isSidebarExpanded ? 'items-start' : 'items-center'}`}
+      >
         <div
           onClick={toggleSidebar}
           className="cursor-pointer hover:bg-accent-light rounded-full w-fit p-1"
@@ -29,14 +36,14 @@ const Sidebar = () => {
           {isSidebarExpanded ? <ArrowLeft /> : <ArrowRight />}
         </div>
         <ul className="flex flex-col gap-2">
-            <SidebarItem name="Home" icon={User} />
-            <SidebarItem name="Projects" icon={CodeXml} />
-            <SidebarItem name="Tools" icon={Wrench} />
-            <SidebarItem name="About" icon={Info} />
+          <SidebarItem name="Home" icon={User} />
+          <SidebarItem name="Projects" icon={CodeXml} />
+          <SidebarItem name="Tools" icon={Wrench} />
+          <SidebarItem name="About" icon={Info} />
         </ul>
 
         <div className="my-2">
-          <Switch/>
+          <Switch />
         </div>
       </div>
     </aside>

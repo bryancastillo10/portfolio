@@ -21,10 +21,10 @@ const Footer = () => {
   const currentYr = new Date().getFullYear();
 
   return (
-    <footer className="w-full xl:h-24 bg-accent-dark text-white flex overflow-hidden">
+    <footer className="w-full xl:h-24 bg-[#136f63] text-[#fff8f1] flex overflow-hidden">
       <section className="w-full max-w-5xl mx-auto flex flex-col items-center md:flex-row justify-between px-8 py-4">
         <div className="flex flex-col gap-1 items-center md:items-start">
-          <h1 className="font-semibold">
+          <h1 className="text-lg font-semibold">
             &copy; {currentYr} Bryan's Portfolio
           </h1>
           <p className="text-sm">All Rights Reserved</p>
@@ -32,7 +32,7 @@ const Footer = () => {
         <div className="flex flex-col lg:flex-row items-center my-8 gap-4">
           <div className="flex items-center gap-2">
             <p>Reach me out</p>
-            <hr className="hidden lg:block border border-white h-8" />
+            <hr className="hidden lg:block border border-[#fff8f1] h-8" />
           </div>
           <ul className="flex flex-wrap gap-4">
             <SocialLinkItem link="#" icon={Facebook} />

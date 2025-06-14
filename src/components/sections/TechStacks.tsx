@@ -19,7 +19,7 @@ const TechStacks = () => {
             onClick={() => handleChangeTab(tab.value)}
             className={`px-3 lg:px-0 text-center py-1 cursor-pointer rounded-t-md font-semibold transition-all duration-200 ${
               selectedTab === tab.value
-                ? 'border-b-2 border-accent-dark text-accent-dark'
+                ? 'border-b-2'
                 : 'text-gray hover:text-accent-light'
             }`}
           >
@@ -28,7 +28,7 @@ const TechStacks = () => {
         ))}
       </div>
 
-      <div className="relative h-[660px] md:h-[350px] rounded-lg shadow-sm m-4 lg:mx-0">
+      <div className="relative h-[660px] md:h-[350px] bg-gray/20 rounded-lg shadow-sm m-4 lg:mx-0">
         {tabData.map(tab => (
           <div
             key={tab.value}
