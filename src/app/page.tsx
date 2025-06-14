@@ -1,4 +1,4 @@
-import Footer from '@/components/navigation/Footer';
+import Providers from '@/components/provider/Providers';
 import {
   Hero,
   Projects,
@@ -15,7 +15,7 @@ export default async function Home() {
   const { profile, repos } = await getGithubData();
 
   return (
-    <>
+    <Providers>
       <Sidebar />
       <section className="w-full max-w-5xl mx-auto flex flex-col items-center">
         <Hero profile={profile} />
@@ -27,6 +27,6 @@ export default async function Home() {
           <Education />
         </section>
       </section>
-    </>
+    </Providers>
   );
 }

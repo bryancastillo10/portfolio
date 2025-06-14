@@ -1,13 +1,17 @@
 'use client';
-
-import { useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
 
+import { useAppSelector, useAppDispatch } from '@/lib/redux/hooks';
+import { setIsSidebarExpanded } from '@/lib/redux/slices/sidebarSlice';
+
+import Switch from '@/components/ui/Switch';
+
 const Sidebar = () => {
-  const [isSidebarExpanded, setIsSidebarExpanded] = useState<boolean>(false);
+  const isSidebarExpanded = useAppSelector((state) => state.sidebar.isSidebarExpanded);
+  const dispatch = useAppDispatch();
 
   const toggleSidebar = () => {
-    setIsSidebarExpanded(!isSidebarExpanded);
+      dispatch(setIsSidebarExpanded(!isSidebarExpanded));
   };
 
   return (
@@ -22,6 +26,8 @@ const Sidebar = () => {
         >
           {isSidebarExpanded ? <Minus /> : <Plus />}
         </div>
+
+        <Switch/>
       </div>
     </aside>
   );
