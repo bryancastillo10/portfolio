@@ -27,7 +27,7 @@ const CareerCard = ({ career, content }: CareerCardProps) => {
   return (
     <div
       className={`my-6 rounded-xl shadow-md w-[95%] lg:w-[85%] xl:w-[90%] lg:mx-0 h-120 xl:h-90 mx-auto
-        ${isDarkMode ? 'bg-gray text-accent-dark' : 'bg-background'}
+        ${isDarkMode ? 'bg-gray text-accent-dark border-none' : 'bg-background border border-gray'} 
       `}
     >
       <div className="p-6">
