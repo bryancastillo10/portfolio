@@ -26,7 +26,7 @@ const AppLayout = ({ profile, repos }: AppLayoutProps) => {
         <GithubActivity />
         <Projects repos={repos} />
         <TechStacks />
-        <section className="grid grid-cols-1 lg:grid-cols-2 w-full">
+        <section id="about" className="grid grid-cols-1 lg:grid-cols-2 w-full">
           <Work />
           <Education />
         </section>
