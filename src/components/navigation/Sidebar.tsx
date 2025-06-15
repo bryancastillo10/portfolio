@@ -1,12 +1,11 @@
 'use client';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
-import { User, CodeXml, Info, Wrench } from 'lucide-react';
-
 import { useAppSelector, useAppDispatch } from '@/lib/redux/hooks';
 import { setIsSidebarExpanded } from '@/lib/redux/slices/sidebarSlice';
 
 import Switch from '@/components/ui/Switch';
 import SidebarItem from '@/components/navigation/SidebarItem';
+import { sidebarItems } from '@/constants/sidebaritems';
 
 const Sidebar = () => {
   const isSidebarExpanded = useAppSelector(
@@ -36,10 +35,16 @@ const Sidebar = () => {
           {isSidebarExpanded ? <ArrowLeft /> : <ArrowRight />}
         </div>
         <ul className="flex flex-col gap-2">
-          <SidebarItem name="Home" icon={User} />
-          <SidebarItem name="Projects" icon={CodeXml} />
-          <SidebarItem name="Tools" icon={Wrench} />
-          <SidebarItem name="About" icon={Info} />
+          {sidebarItems.map(side => {
+            return (
+              <SidebarItem
+                key={side.id}
+                id={side.id}
+                name={side.name}
+                icon={side.icon}
+              />
+            );
+          })}
         </ul>
 
         <div className="my-2">

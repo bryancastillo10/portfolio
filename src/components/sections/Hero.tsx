@@ -12,7 +12,10 @@ import { type GithubProfileRes } from '@/interfaces/githubprofile';
 
 const Hero = ({ profile }: { profile: GithubProfileRes<string, number> }) => {
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-2 gap-y-8 w-full py-4">
+    <section
+      id="home"
+      className="grid grid-cols-1 lg:grid-cols-2 gap-y-8 w-full py-4"
+    >
       <div className="flex flex-col items-center">
         <div className="p-3 mb-2">
           <Image

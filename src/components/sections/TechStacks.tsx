@@ -8,7 +8,7 @@ const TechStacks = () => {
   const { selectedTab, handleChangeTab } = useTechStackTabs();
 
   return (
-    <section className="w-full mt-8">
+    <section id="tools" className="w-full mt-8">
       <div className="flex justify-center lg:justify-start">
         <TextHeader title="My Tools for Development" />
       </div>
