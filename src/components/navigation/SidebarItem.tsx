@@ -15,12 +15,16 @@ const SidebarItem = ({ name, id, icon: Icon }: SidebarItemProps) => {
 
   return (
     <ScrollLink to={id}>
-      <li className="flex items-center gap-2  p-2">
+      <li
+        className={`flex items-center hover:bg-gray rounded-2xl p-2 duration-500 ease-in-out
+          ${isSidebarExpanded ? 'gap-x-2' : 'gap-x-0'}
+        `}
+      >
         <Icon />
         <p
-          className={`transition-all duration-500 ease-out overflow-hidden
-  ${isSidebarExpanded ? 'max-w-[200px] opacity-100' : 'max-w-0 opacity-0'}
-`}
+          className={`transition-all duration-500 ease-out overflow-hidden 
+          ${isSidebarExpanded ? 'max-w-[200px] opacity-100' : 'max-w-0 opacity-0'}
+        `}
         >
           {name}
         </p>
