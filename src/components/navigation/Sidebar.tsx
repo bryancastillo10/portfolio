@@ -36,10 +36,10 @@ const Sidebar = () => {
           {isSidebarExpanded ? <ArrowLeft /> : <ArrowRight />}
         </div>
         <ul className="flex flex-col gap-2">
-          <SidebarItem name="Home" icon={User} />
-          <SidebarItem name="Projects" icon={CodeXml} />
-          <SidebarItem name="Tools" icon={Wrench} />
-          <SidebarItem name="About" icon={Info} />
+          <SidebarItem name="Home" id="home" icon={User} />
+          <SidebarItem name="Projects" id="projects" icon={CodeXml} />
+          <SidebarItem name="Tools" id="tools" icon={Wrench} />
+          <SidebarItem name="About" id="about" icon={Info} />
         </ul>
 
         <div className="my-2">
