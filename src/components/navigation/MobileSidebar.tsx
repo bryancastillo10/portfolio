@@ -8,6 +8,7 @@ import SidebarItem from '@/components/navigation/SidebarItem';
 import { useAppDispatch, useAppSelector } from '@/lib/redux/hooks';
 import { setIsSidebarExpanded } from '@/lib/redux/slices/sidebarSlice';
 import { sidebarItems } from '@/constants/sidebaritems';
+import Switch from '@/components/ui/Switch';
 
 const MobileSidebar = () => {
   const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false);
@@ -45,6 +46,10 @@ const MobileSidebar = () => {
               );
             })}
           </ul>
+
+          <div className="ml-2">
+            <Switch isHorizontal={false} />
+          </div>
         </div>
       )}
     </aside>
