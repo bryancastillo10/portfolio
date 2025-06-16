@@ -13,10 +13,11 @@ const MoreProjectDetails = async ({ params }: MoreProjectParams) => {
   const { id } = await params;
 
   const repoName = repoMappings[id];
+
   if (!repoName) {
     return (
       <Providers>
-        <ProjectDetailsLayout>
+        <ProjectDetailsLayout otherRepos={[]}>
           <div className="flex flex-col justify-center items-center min-h-screen">
             <h1 className="text-2xl">🚧 Project Repository Not Found...</h1>
             <Link href="/">Go Back To Home to Reload </Link>
@@ -27,9 +28,17 @@ const MoreProjectDetails = async ({ params }: MoreProjectParams) => {
   }
 
   const { contentHtml } = await getMarkdownByName(repoName);
+
+  const otherRepos = Object.entries(repoMappings)
+    .filter(([repoId]) => repoId !== id)
+    .map(([repoId, name]) => ({
+      id: repoId,
+      name,
+    }));
+
   return (
     <Providers>
-      <ProjectDetailsLayout>
+      <ProjectDetailsLayout otherRepos={otherRepos}>
         <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
       </ProjectDetailsLayout>
     </Providers>
