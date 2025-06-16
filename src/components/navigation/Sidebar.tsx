@@ -20,8 +20,8 @@ const Sidebar = () => {
 
   return (
     <aside
-      className={`hidden md:block fixed z-50 top-20 h-80 text-background md:opacity-80 lg:opacity-100  p-2 rounded-r-2xl shadow-md 
-		${isSidebarExpanded ? 'w-32' : 'w-12'} transition-all duration-500 ease-out
+      className={`hidden md:block fixed z-50 top-20  text-background md:opacity-80 lg:opacity-100  p-2 rounded-r-2xl shadow-md 
+		${isSidebarExpanded ? 'w-32 h-72' : 'w-12 h-80'} transition-all duration-500 ease-out
     ${isDarkMode ? 'bg-accent-light' : 'bg-foreground'}
     `}
     >
@@ -48,7 +48,7 @@ const Sidebar = () => {
         </ul>
 
         <div className="my-2">
-          <Switch />
+          <Switch isHorizontal={isSidebarExpanded ? false : true} />
         </div>
       </div>
     </aside>
