@@ -5,6 +5,7 @@ import { GithubRepoRes } from '@/interfaces/gitrepo';
 import { collabProjRepo } from '@/constants/collabRepo';
 
 const Projects = ({ repos }: { repos: GithubRepoRes<string>[] }) => {
+  console.log(repos);
   return (
     <section id="projects" className="w-full mt-8 lg:px-4 xl:px-0">
       <div className="flex justify-center lg:justify-start">
