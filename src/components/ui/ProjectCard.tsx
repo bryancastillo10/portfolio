@@ -52,11 +52,11 @@ const ProjectCard = ({ repo }: ProjectCardProps) => {
             )}
 
             {repo.htmlUrl && (
-              <Link href={repo.htmlUrl}>
-                <li className="hover:scale-90 duration-200 ease-in-out">
+              <li className="hover:scale-90 duration-200 ease-in-out">
+                <Link href={repo.htmlUrl}>
                   <FolderGit2 />
-                </li>
-              </Link>
+                </Link>
+              </li>
             )}
             <Link href={repo.homepage}>
               <li className="hover:scale-90 duration-200 ease-in-out">
@@ -78,10 +78,10 @@ const ProjectCard = ({ repo }: ProjectCardProps) => {
         {repo.tagName && <ProjectTag icon={Tag} text={repo.tagName} />}
 
         <div className="flex flex-wrap gap-2">
-          {repo.topics.map((tag, idx) => {
+          {repo.topics.map(tag => {
             return (
               <p
-                key={idx}
+                key={tag}
                 className={`text-xs  w-fit rounded-md shadow-md py-1 px-3
                 ${isDarkMode ? 'bg-accent-light text-background' : 'bg-foreground text-[#fff8f1]'} 
               `}
@@ -91,7 +91,7 @@ const ProjectCard = ({ repo }: ProjectCardProps) => {
             );
           })}
         </div>
-        <Link href="#">
+        <Link href={`/projects/${repo.id}`}>
           <div className="absolute top-4 lg:top-auto lg:bottom-4 right-8 cursor-pointer hover:scale-110 duration-500 ease-out">
             <Ellipsis size={28} />
           </div>
