@@ -88,7 +88,7 @@ export const careerRecords: ICareerRecords[] = [
         icon: TestTubeDiagonal,
         startDate: '2018-12-01T00:00:00Z',
         endDate: '2020-07-01T00:00:00Z',
-        org: 'First Analytical Services and Technical Services Clark Branch',
+        org: 'FAST Laboratories Clark Branch',
         location: 'Angeles City, Pampanga, Philippines',
         description:
           'Water quality analyst wih a wide range of parameters, and also responsible with environmental compliances documentations',

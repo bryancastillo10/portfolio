@@ -42,12 +42,12 @@ const CareerCard = ({ career, content }: CareerCardProps) => {
         <div className="flex flex-col-reverse xl:flex-row xl:justify-between items-center">
           <div className="my-4 flex flex-col items-center xl:items-start space-y-4 md:space-y-4">
             <h3
-              className={` shadow-md text-base  w-fit py-2 px-4 xl:px-1 rounded-2xl bg-accent-light text-center xl:text-left `}
+              className={`shadow-md text-sm  w-fit py-2 px-4 rounded-2xl bg-accent-light text-center xl:text-left `}
             >
               {org}
             </h3>
             <h3
-              className={` shadow-md text-base w-fit py-2 px-4 xl:px-1 rounded-2xl bg-accent-light text-center xl:text-left`}
+              className={` shadow-md text-sm w-fit py-2 px-4 rounded-2xl bg-accent-light text-center xl:text-left`}
             >
               {location}
             </h3>
