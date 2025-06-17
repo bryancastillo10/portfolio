@@ -1,11 +1,12 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useAppSelector } from '@/lib/redux/hooks';
 import { getGithubContributions } from '@/api/github';
 import { Week } from '@/interfaces/githubContrib';
 
 import ActivityCalendar from 'react-activity-calendar';
-import { customTheme } from '@/constants/heatmapTheme';
+import { lightModeScale, darkModeScale } from '@/constants/heatmapTheme';
 
 interface CalendarData {
   date: string;
@@ -15,6 +16,7 @@ interface CalendarData {
 
 const GithubActivity = () => {
   const [calendarData, setCalendarData] = useState<CalendarData[]>([]);
+  const isDarkMode = useAppSelector(state => state.theme.isDarkMode);
 
   const formatContributions = (weeks: Week[]) => {
     return weeks.flatMap(week =>
@@ -43,17 +45,23 @@ const GithubActivity = () => {
 
     fetchData();
   }, []);
+
+  const currTheme = isDarkMode
+    ? { dark: darkModeScale }
+    : { light: lightModeScale };
+
   return (
     <section className="flex my-4 w-xs md:w-[90%] sm:w-[90%] xl:w-full">
       {calendarData.length > 0 ? (
         <ActivityCalendar
           data={calendarData}
-          theme={customTheme}
+          theme={currTheme}
+          colorScheme={isDarkMode ? 'dark' : 'light'}
           blockSize={14}
         />
       ) : (
         <div className="h-50 w-full px-4 flex justify-center items-center bg-accent-dark animate-pulse rounded-lg">
-          <h1 className="text-2xl text-white font-semibold">
+          <h1 className="text-2xl text-[#fff8f1] font-semibold">
             Loading contributions...
           </h1>
         </div>
