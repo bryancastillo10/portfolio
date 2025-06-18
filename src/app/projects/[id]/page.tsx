@@ -4,27 +4,19 @@ import { repoMappings } from '@/constants/repoMappings';
 import MoreDetailsNavbar from '@/components/navigation/MoreDetailsNavbar';
 import Providers from '@/components/provider/Providers';
 
-import { allDocs } from 'contentlayer/generated';
-import { notFound } from 'next/navigation';
+import { getProjectByRepo } from '@/lib/next-remote-client/projects';
+import dynamic from 'next/dynamic';
 
 interface MoreProjectDetailsParams {
   params: { id: string };
-}
-
-async function getDocFromParams(id: string) {
-  const doc = allDocs.find(doc => doc.slugAsParams === id);
-
-  if (!doc) {
-    notFound();
-  }
-  return doc;
 }
 
 const MoreProjectDetails = async ({ params }: MoreProjectDetailsParams) => {
   const { id } = await params;
   const repoName = repoMappings[id];
 
-  const doc = await getDocFromParams(repoName);
+  const { compiledCode } = await getProjectByRepo(repoName);
+  const MDXRender = dynamic(() => import('@/components/provider/MDXRender'));
 
   if (!repoName) {
     return (
@@ -53,7 +45,7 @@ const MoreProjectDetails = async ({ params }: MoreProjectDetailsParams) => {
       <div className="max-w-5xl shadow-md mx-auto flex flex-col bg-background">
         <MoreDetailsNavbar otherRepos={otherRepos} />
         <div className="min-h-screen px-4 py-8">
-          <p>{JSON.stringify(doc)}</p>
+          <MDXRender code={compiledCode} />
         </div>
       </div>
     </Providers>
