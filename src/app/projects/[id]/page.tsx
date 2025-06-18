@@ -1,14 +1,14 @@
-import { repoMappings } from '@/lib/remark/repoMappings';
-
-import ProjectDetailsLayout from '@/components/layout/ProjectDetailsLayout';
-import Providers from '@/components/provider/Providers';
 import Link from 'next/link';
 
-interface MoreProjectParams {
+import { repoMappings } from '@/constants/repoMappings';
+import MoreDetailsNavbar from '@/components/navigation/MoreDetailsNavbar';
+import Providers from '@/components/provider/Providers';
+
+interface MoreProjectDetailsParams {
   params: { id: string };
 }
 
-const MoreProjectDetails = async ({ params }: MoreProjectParams) => {
+const MoreProjectDetails = async ({ params }: MoreProjectDetailsParams) => {
   const { id } = await params;
 
   const repoName = repoMappings[id];
@@ -16,12 +16,14 @@ const MoreProjectDetails = async ({ params }: MoreProjectParams) => {
   if (!repoName) {
     return (
       <Providers>
-        <ProjectDetailsLayout otherRepos={[]}>
+        <div className="max-w-5xl shadow-md mx-auto flex flex-col bg-background">
           <div className="flex flex-col justify-center items-center min-h-screen">
             <h1 className="text-2xl">🚧 Project Repository Not Found...</h1>
-            <Link href="/">Go Back To Home to Reload </Link>
+            <Link className="hover:underline" href="/">
+              Go Back To Home to Reload
+            </Link>
           </div>
-        </ProjectDetailsLayout>
+        </div>
       </Providers>
     );
   }
@@ -35,9 +37,12 @@ const MoreProjectDetails = async ({ params }: MoreProjectParams) => {
 
   return (
     <Providers>
-      <ProjectDetailsLayout otherRepos={otherRepos}>
-        <h1>In Progress</h1>
-      </ProjectDetailsLayout>
+      <div className="max-w-5xl shadow-md mx-auto flex flex-col bg-background">
+        <MoreDetailsNavbar otherRepos={otherRepos} />
+        <div className="min-h-screen px-4 py-8">
+          <p>Markdown Rendering In Progress</p>
+        </div>
+      </div>
     </Providers>
   );
 };
