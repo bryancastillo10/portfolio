@@ -1,4 +1,3 @@
-import { getMarkdownByName } from '@/lib/remark/getMarkdownByName';
 import { repoMappings } from '@/lib/remark/repoMappings';
 
 import ProjectDetailsLayout from '@/components/layout/ProjectDetailsLayout';
@@ -27,8 +26,6 @@ const MoreProjectDetails = async ({ params }: MoreProjectParams) => {
     );
   }
 
-  const { contentHtml } = await getMarkdownByName(repoName);
-
   const otherRepos = Object.entries(repoMappings)
     .filter(([repoId]) => repoId !== id)
     .map(([repoId, name]) => ({
@@ -39,7 +36,7 @@ const MoreProjectDetails = async ({ params }: MoreProjectParams) => {
   return (
     <Providers>
       <ProjectDetailsLayout otherRepos={otherRepos}>
-        <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+        <h1>In Progress</h1>
       </ProjectDetailsLayout>
     </Providers>
   );
