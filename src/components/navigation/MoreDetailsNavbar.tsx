@@ -42,7 +42,9 @@ const MoreDetailsNavbar = ({ otherRepos }: MoreDetailsNavbarProps) => {
 
         <div
           onClick={toggleProjMenu}
-          className="md:hidden relative cursor-pointer hover:scale-110  duration-300 ease-out"
+          className={`md:hidden relative cursor-pointer hover:scale-110  px-1 rounded-lg duration-300 ease-out
+            ${isDarkMode ? 'hover:bg-gray hover:text-background' : 'hover:bg-accent-light hover:text-accent-dark'}
+          `}
         >
           {openProjMenu ? <X /> : <Ellipsis />}
         </div>

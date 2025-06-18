@@ -104,7 +104,7 @@ const ProjectCard = ({ repo }: ProjectCardProps) => {
           position="top-8 lg:top-auto lg:-bottom-4 right-0"
         >
           <Link href={`/projects/${repo.id}`}>
-            <div className="absolute top-2 lg:top-auto lg:bottom-2 right-8 cursor-pointer hover:scale-110 duration-500 ease-out">
+            <div className="absolute top-2 lg:top-auto lg:bottom-2 right-8 cursor-pointer hover:bg-accent-light px-1 py-0 rounded-lg hover:scale-110 duration-500 ease-out">
               <Ellipsis size={28} />
             </div>
           </Link>
