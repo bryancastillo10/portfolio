@@ -12,6 +12,7 @@ import MaterialUIIcon from './stacks/MaterialUIIcon';
 import ViteIcon from './stacks/ViteIcon';
 
 import NodeJSIcon from './stacks/NodeJSIcon';
+import ExpressIcon from './stacks/ExpressIcon';
 import GinIcon from './stacks/GinIcon';
 import FastApiIcon from './stacks/FastApiIcon';
 import MongoDBIcon from './stacks/MongoDBIcon';
@@ -46,6 +47,7 @@ export const FrontendIcons = {
 
 export const BackendIcons = {
   NodeJSIcon,
+  ExpressIcon,
   FastApiIcon,
   GinIcon,
   MongoDBIcon,

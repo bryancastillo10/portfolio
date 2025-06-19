@@ -49,6 +49,7 @@ export const tabData: tabDataProps[] = [
     content: (
       <TechStackContainer>
         <StackIcon icon={BackendIcons.NodeJSIcon} text="Node JS" />
+        <StackIcon icon={BackendIcons.ExpressIcon} text="Express" />
         <StackIcon icon={BackendIcons.FastApiIcon} text="FastAPI" />
         <StackIcon icon={BackendIcons.GinIcon} text="Gin" />
         <StackIcon icon={BackendIcons.MongoDBIcon} text="MongoDB" />
