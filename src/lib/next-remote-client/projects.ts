@@ -17,7 +17,6 @@ export async function getProjectByRepo(repo: string) {
 
   const compiled = await compile(content, {
     outputFormat: 'function-body',
-    useDynamicImport: true,
   });
 
   return {
