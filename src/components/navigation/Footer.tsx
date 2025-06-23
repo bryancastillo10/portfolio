@@ -1,6 +1,7 @@
 import { Facebook, Instagram, Github, LinkedIn } from '@/assets/socials';
 import Link from 'next/link';
 import React from 'react';
+import { Mail } from 'lucide-react';
 
 interface SocialLinkItemProps {
   link: string;
@@ -22,12 +23,19 @@ const Footer = () => {
 
   return (
     <footer className="w-full xl:h-24 bg-[#136f63] text-[#fff8f1] flex overflow-hidden">
-      <section className="w-full max-w-5xl mx-auto flex flex-col items-center md:flex-row justify-between px-8 py-4">
-        <div className="flex flex-col gap-1 items-center md:items-start">
-          <h1 className="text-lg font-semibold">
-            &copy; {currentYr} Bryan's Portfolio
-          </h1>
-          <p className="text-sm">All Rights Reserved</p>
+      <section className="w-full max-w-5xl mx-auto flex flex-col items-center md:flex-row justify-between py-6">
+        <div className="flex flex-col items-center md:items-start gap-2">
+          <div className="flex items-center gap-2 text-sm">
+            <Mail />
+            <p>bryanium.dev@gmail.com</p>
+          </div>
+
+          <div className="flex items-center gap-1">
+            <h1 className="text-lg font-semibold">
+              &copy; {currentYr} Bryan&apos;s Portfolio
+            </h1>
+            <p className="text-sm">All Rights Reserved</p>
+          </div>
         </div>
         <div className="flex flex-col lg:flex-row items-center my-8 gap-4">
           <div className="flex items-center gap-2">

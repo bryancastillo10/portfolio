@@ -12,7 +12,7 @@ const Education = () => {
         <TextHeader title="Educational Background" />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 w-full items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 w-full items-center lg:place-items-end">
         {careerRecords
           .filter(record => record.career === 'education')
           .flatMap(record =>
