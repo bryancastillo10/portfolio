@@ -21,13 +21,35 @@ const MoreProjectDetails = async ({ params }: MoreProjectDetailsParams) => {
     );
   }
 
-  const { compiledCode } = await getProjectByRepo(repoName);
+  const { frontmatter, compiledCode } = await getProjectByRepo(repoName);
+  const taghighlights: string[] = frontmatter.highlights;
+
   const MDXRender = dynamic(() => import('@/components/provider/MDXRender'));
 
   return (
     <Providers>
       <ProjectPage otherRepos={otherRepos}>
-        <MDXRender code={compiledCode} />
+        <div className="text-center lg:text-left mb-2">
+          <h1 className="font-semibold tracking-wide text-2xl">
+            {frontmatter.title}
+          </h1>
+          <p className="text-balance">{frontmatter.description}</p>
+          <ul className="flex flex-wrap justify-center lg:justify-start gap-4 py-0.5 my-4">
+            {taghighlights.map((tag, idx) => {
+              return (
+                <li
+                  className="bg-foreground text-background w-fit text-sm rounded-md px-2 py-1"
+                  key={idx}
+                >
+                  {tag}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+        <div className="prose prose-lg mx-auto">
+          <MDXRender code={compiledCode} />
+        </div>
       </ProjectPage>
     </Providers>
   );
