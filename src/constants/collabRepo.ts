@@ -1,6 +1,6 @@
 export const collabProjRepo = [
   {
-    id: '1',
+    id: 'ab760013357f3dae37',
     name: 'chemstash',
     description:
       'Chemical Inventory Management App Built With MERN Stack. Collaboration project with formal UI/UX design to be followed in frontend development',
