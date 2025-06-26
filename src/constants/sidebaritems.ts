@@ -1,4 +1,4 @@
-import { CodeXml, Info, LucideIcon, User, Wrench } from 'lucide-react';
+import { CodeXml, HardHat, Info, LucideIcon, User, Wrench } from 'lucide-react';
 
 interface SidebarItemProps {
   id: string;
@@ -16,6 +16,11 @@ export const sidebarItems: SidebarItemProps[] = [
     id: 'projects',
     name: 'Projects',
     icon: CodeXml,
+  },
+  {
+    id: 'architectures',
+    name: 'Designs',
+    icon: HardHat,
   },
   {
     id: 'tools',
