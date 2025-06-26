@@ -47,7 +47,7 @@ export const systemArchitectures: SystemArchitecture[] = [
   {
     id: 4,
     name: 'Schedly',
-    description: 'Collab Project In Progress',
+    description: 'Collab Project In Progress, Personal Calendar App',
     diagram: '/images/schedly_architecture.png',
     diagramAlt: 'schedly-architecture',
     schema: '/images/schedly_schema.png',

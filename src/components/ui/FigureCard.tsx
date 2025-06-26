@@ -17,23 +17,20 @@ const FigureCard = (props: SystemArchitecture) => {
     projectStatus,
   } = props;
   return (
-    <div
-      className={`relative grid grid-cols-3 max-w-lg xl:max-w-full mx-auto cursor-grab group hover:opacity-80  my-6 rounded-lg shadow-lg
-            ${isDarkMode ? 'text-accent-light bg-gray/20' : 'text-background bg-black'}
-
-        `}
-    >
-      <div className="col-span-2 flex justify-center items-center  w-full h-100">
+    <div className="relative grid grid-cols-1 lg:grid-cols-3 lg:max-w-full md:h-180 lg:h-auto mx-auto cursor-grab group hover:scale-95 transition-scale duration-700 ease-in-out my-6 rounded-lg shadow-lg bg-black">
+      <div className="col-span-2 flex justify-center items-center  w-full">
         <Image src={diagram} alt={diagramAlt} width={800} height={800} />
       </div>
 
-      <div className="absolute top-[40%] left-[25%] xl:left-[35%] opacity-0 group-hover:opacity-100 duration-500 ease-out">
-        <h1 className="text-5xl font-semibold tracking-widest opacity-100 text-shadow-foreground my-2">
-          {name}
-        </h1>
-        <p className="text-xl text-center font-semibold tracking-wider">
-          {description}
-        </p>
+      <div className="absolute inset-0 flex flex-col justify-center items-center text-center opacity-0 group-hover:opacity-100 duration-500 ease-out">
+        <div
+          className={` ${isDarkMode ? 'text-foreground' : 'text-background'} bg-accent-dark/50 py-3 px-2 rounded-md`}
+        >
+          <h1 className="text-4xl font-semibold tracking-widest opacity-100 my-2">
+            {name}
+          </h1>
+          <p className="text-xl font-semibold tracking-wider">{description}</p>
+        </div>
       </div>
 
       <div
