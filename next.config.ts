@@ -1,4 +1,5 @@
 import type { NextConfig } from 'next';
+import { hostname } from 'os';
 
 const nextConfig = {
   images: {
@@ -6,6 +7,10 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'avatars.githubusercontent.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'raw.githubusercontent.com',
       },
     ],
   },

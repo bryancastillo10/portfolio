@@ -6,6 +6,7 @@ import {
   TechStacks,
   Education,
   Work,
+  Architectures,
 } from '@/components/sections';
 
 import Sidebar from '@/components/navigation/Sidebar';
@@ -28,6 +29,7 @@ const AppLayout = ({ profile, repos }: AppLayoutProps) => {
         <Hero profile={profile} />
         <GithubActivity />
         <Projects repos={repos} />
+        <Architectures />
         <TechStacks />
         <section id="about" className="grid grid-cols-1 lg:grid-cols-2 w-full">
           <Work />
