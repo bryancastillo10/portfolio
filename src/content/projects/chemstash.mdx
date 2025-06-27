@@ -4,7 +4,7 @@ description:
   'A chemical inventory management app designed for managing the supply and
   organization of chemicals in a typical chemical laboratory. This is also my
   first collaboration project which gives me an experience on version control
-  systems & introduction to full stack development'
+  systems and introduced me to full-stack development.'
 highlights:
   - 'UI-UX Design'
   - 'Collaboration Project'
@@ -15,15 +15,14 @@ highlights:
 
 ## 🧠 Problem Statement
 
-Managing chemicals has been one of the most important tasks in maintaining a
-chemical laboratory especially in an industry wherein there is a continuous
-consumption of this supply for chemical analysis. This is a project idea of mine
-in solving real world problems and found a co-developer that is also interested
-in grasping more knowledge in web development, so we worked together in building
-this application. This project is vital to my journey in full stack development
-even though there are still a lot of improvements needed in this current project
-but this gave me an introduction to full-stack development, version control
-systems, and some of the best practices in software development project
+Managing chemicals is one of the most important tasks in maintaining a chemical
+laboratory, especially in industries where there is continuous consumption of
+supplies for chemical analysis. This project was my idea to solve a real-world
+problem, and I found a co-developer who was also interested in learning more
+about web development. We worked together to build this application. This
+project was vital to my journey in full-stack development. Although there are
+still many improvements to be made, it gave me an introduction to full-stack
+development, version control systems, and best practices in software project
 planning.
 
 <div className="flex justify-center md:justify-start gap-3 py-4">
@@ -48,16 +47,78 @@ planning.
 
 ## 📅 Database Schema
 
+<img
+  src="https://raw.githubusercontent.com/MERNCOLLAB/ChemStash/refs/heads/main/ChemStashSchema.png"
+  alt="chemstash-schema"
+  width="700"
+  height="400"
+/>
+
 ## 🔧 Tech Stack
+
+### 🖥️ Client
+
+- **React Redux** for global state management
+- **Recharts** for dashboard metrics visualization
+- **MUI Data Tables** for dynamic table rendering
+- **Socket.IO** for real-time data transfer in the interactive Kanban board
+
+### 🔗 Server
+
+- **MongoDB Atlas** as the cloud-hosted NoSQL database, offering seamless
+  integration and scalability for document-based storage
+- **Mongoose** as the object-relational mapping tool (ORM) for MongoDB
+- **Moment.js** as a utility library for handling date and time
 
 ## 🚀 Key Features
 
 - JWT Authentication
-- Role Based Access Control (Manager, Chemist, and Team Leader)
+- Role-Based Access Control (Manager, Chemist, and Team Leader)
 - Interactive Dashboard for Supply Management
-- Inventory Table that has CRUD operations
-- Realtime Task Management Board
+- Inventory Table with CRUD operations
+- Realtime Task Management Board (Kanban Board)
 
 ## ⚒️ Contributions
 
+- Provided the **project idea 💡** to solve a real-world problem in the chemical
+  industry and discussed the project requirements and user flow with my
+  co-developer
+- Developed sections of the frontend (dashboard, table, drawer forms) and
+  handled API calls using JavaScript fetch
+- Data modeling and implementation of some business logic in the API
+- Followed the Figma design provided by my co-developer to construct the layout
+  and styles using Tailwind CSS
+
 ## 🧩 Challenges & Learnings
+
+This was my first full-stack development project. As a beginner, it was quite
+challenging to handle the tasks, but the **most important thing I learned** was
+to view features/problems as large tasks and then technically split them into
+simpler, solvable problems to fully implement a feature.
+
+Version control in collaboration is vital. This project gave me firsthand
+experience in best practices: starting a branch, committing code changes,
+pushing changes from local to remote, creating pull requests, and merging
+changes.
+
+Although I had practiced following Figma designs on `frontendmentor.io`, this
+was one of my first projects where I engaged with a newly crafted design by my
+co-developer. Since our Figma file was personal, I was able to style our website
+in a **pixel-perfect** way, closely following his design.
+
+<div className='mt-4'>
+
+🔗 **_Links_**
+
+<div className="flex items-center gap-2">
+  🎥 **Live Demo:** [ChemStash Chemical Inventory Management
+  App](https://mern-with-auth-rba5.onrender.com/)
+</div>
+
+<div className="mt-1 w-lg text-xs">
+  <strong>⚠️Note:</strong>The source code for this project is private. If you
+  are interested in learning more or would like to request access, please
+  contact me directly.
+</div>
+
+</div>
