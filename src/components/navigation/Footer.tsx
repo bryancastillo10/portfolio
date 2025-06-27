@@ -1,7 +1,7 @@
-import { Facebook, Instagram, Github, LinkedIn } from '@/assets/socials';
 import Link from 'next/link';
 import React from 'react';
 import { Mail } from 'lucide-react';
+import { socialPlatform } from '@/constants/socialPlatform';
 
 interface SocialLinkItemProps {
   link: string;
@@ -23,8 +23,8 @@ const Footer = () => {
 
   return (
     <footer className="w-full xl:h-24 bg-[#136f63] text-[#fff8f1] flex overflow-hidden">
-      <section className="w-full max-w-5xl mx-auto flex flex-col items-center md:flex-row justify-between py-6">
-        <div className="flex flex-col items-center md:items-start gap-2">
+      <section className="w-full max-w-5xl mx-auto flex flex-col items-center lg:flex-row justify-between lg:px-4 xl:px-2 py-6">
+        <div className="flex flex-col items-center lg:items-start gap-2">
           <div className="flex items-center gap-2 text-sm">
             <Mail />
             <p>bryanium.dev@gmail.com</p>
@@ -43,10 +43,11 @@ const Footer = () => {
             <hr className="hidden lg:block border border-[#fff8f1] h-8" />
           </div>
           <ul className="flex flex-wrap gap-4">
-            <SocialLinkItem link="#" icon={Facebook} />
-            <SocialLinkItem link="#" icon={Instagram} />
-            <SocialLinkItem link="#" icon={Github} />
-            <SocialLinkItem link="#" icon={LinkedIn} />
+            {socialPlatform.map(soc => {
+              return (
+                <SocialLinkItem key={soc.id} link={soc.link} icon={soc.icon} />
+              );
+            })}
           </ul>
         </div>
       </section>

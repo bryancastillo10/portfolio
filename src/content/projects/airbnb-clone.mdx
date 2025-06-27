@@ -96,16 +96,29 @@ responsive layouts quickly and reduced the need for custom CSS.
 
 ---
 
-<div className='mt-4'>
 🔗 **_Links_**
 
-<div className='flex items-center gap-2'>
-**🌐 Github Repository:**
-
-[bryancastillo10/airbnb-clone](https://github.com/bryancastillo10/airbnb-clone)
-
-</div>
-<div className='flex items-center gap-2'>
-🎥 **Live Demo:** [Airbnb-Test-Clone](https://airbnb-testclone.vercel.app/)
-</div>
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+  <div className="flex flex-col lg:flex-row items-start lg:items-center gap-2">
+    <span className="font-semibold">🌐 Github Repository:</span>
+    <a
+      href="https://github.com/bryancastillo10/airbnb-clone"
+      className="text-teal-500 hover:text-teal-300 underline break-all"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      bryancastillo10/airbnb-clone
+    </a>
+  </div>
+  <div className="flex flex-col md:flex-row items-start md:items-center gap-2">
+    <span className="font-semibold">🎥 Live Demo:</span>
+    <a
+      href="https://airbnb-testclone.vercel.app/"
+      className="text-teal-500 hover:text-teal-300 underline break-all"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Airbnb-Test-Clone
+    </a>
+  </div>
 </div>
