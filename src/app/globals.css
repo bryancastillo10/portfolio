@@ -1,30 +1,56 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+:root {
+  --background: #fff8f1;
+  --foreground: #100007;
+  --gray: #3e3d3d;
+  --accent-dark: #136f63;
+  --accent-light: #3fdec9;
 }
 
-html,
-body,
-#root,
-.app {
-  @apply text-sm;
+.light {
+  --background: #fff8f1;
+  --foreground: #136f63;
+  --gray: #3e3d3d;
+  --accent-dark: #100007;
+  --accent-light: #3fdec9;
 }
 
-@layer utilities {
-  .bg-glassmorphism
-  {
-    @apply h-full w-full bg-secondary text-primary rounded-md bg-clip-padding 
-    backdrop-filter backdrop-blur-md bg-opacity-70 border border-gray-100;
-  }
+.dark {
+  --background: #100007;
+  --foreground: #fff8f1;
+  --gray: #b8b7b7;
+  --accent-dark: #136f63;
+  --accent-light: #3fdec9;
+}
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-gray: var(--gray);
+  --color-accent-dark: var(--accent-dark);
+  --color-accent-light: var(--accent-light);
+  --font-sans: var(--font-quicksand);
+  --font-mono: var(--font-quantico);
+}
 
-  .tooltip {
-    @apply absolute w-auto p-2 mt-1 min-w-max rounded-md shadow-md
-    text-white bg-secondary text-xs font-semibold transition-all
-    duration-100 origin-bottom scale-0;
-  }
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Quicksand, Helvetica, sans-serif;
+}
+
+.prose h2 {
+  @apply text-center md:text-left text-xl font-semibold tracking-wider py-3;
+}
+
+.prose h3 {
+  @apply text-center md:text-left text-lg font-semibold py-3;
+}
+
+.prose p {
+  @apply text-center md:text-left text-pretty text-base my-2;
+}
+
+.prose ul {
+  @apply list-disc list-inside;
 }

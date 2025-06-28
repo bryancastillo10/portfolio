@@ -1,16 +1,26 @@
-import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
-import "./globals.css";
-import Container from "@/app/(components)/Container";
+import type { Metadata } from 'next';
+import { Quicksand, Quantico } from 'next/font/google';
+import './globals.css';
 
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400","600","800"]
+import Footer from '@/components/navigation/Footer';
+
+const quicksand = Quicksand({
+  variable: '--font-quicksand',
+  subsets: ['latin'],
+});
+
+const quantico = Quantico({
+  variable: '--font-quantico',
+  weight: ['400', '700'],
+  subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
   title: "Bryan's Portfolio",
-  description: "Developer Portfolio",
+  description: "Bryan's Developer Portfolio",
+  icons: {
+    icon: '/logo.ico',
+  },
 };
 
 export default function RootLayout({
@@ -20,13 +30,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-       <head>
-        <link rel="icon" href="/logo.ico" />
-      </head>
-      <body className={poppins.className}>
-        <Container>
+      <body
+        className={`${quicksand.variable} ${quantico.variable} antialiased`}
+      >
+        <main className="w-full h-screen relative overflow-x-hidden">
           {children}
-        </Container>
+          <Footer />
+        </main>
       </body>
     </html>
   );

@@ -1,5 +1,14 @@
-import Hero from "@/app/(components)/Hero";
+import Providers from '@/components/provider/Providers';
 
-export default function Home() {
-  return  <Hero/>;
+import { getGithubData } from '@/api/github';
+import AppLayout from '@/components/layout/AppLayout';
+
+export default async function Home() {
+  const { profile, repos } = await getGithubData();
+
+  return (
+    <Providers>
+      <AppLayout profile={profile} repos={repos} />
+    </Providers>
+  );
 }

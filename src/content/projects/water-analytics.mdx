@@ -1,0 +1,168 @@
+---
+title: 'Water Analytics Web App'
+description:
+  'A full-stack TypeScript-based water quality monitoring dashboard app with
+  role-based access, customizable thresholds, and dynamic dashboards using
+  React, Node-Express, and Prisma.'
+highlights:
+  - 'MERN Stack'
+  - 'Role Based Access Control'
+  - 'JWT Authentication & Password Reset'
+  - 'Interactive Chart via API Requests'
+  - 'Client Domain Driven Folder Structure'
+  - 'Server Clean Architecture'
+---
+
+## 🧠 Problem Statement
+
+Water quality monitoring is a challenging aspect in the field of environmental
+engineering and it is essential to gain insights on the behavioral pattern of a
+natural water body or an engineered system. Through this app, a seamless
+experience of adding target monitoring site and adding water quality data with
+customizable thresholds can help engineers, researchers, or any technical
+personnel in the water industry perform their monitoring activity efficiently.
+
+<div className="flex justify-center md:justify-start gap-3 py-4">
+  <img src="https://img.shields.io/badge/React_Vite-%23646CFF?style=flat-square&logo=vite&labelColor=%23100007" />
+  <img src="https://img.shields.io/badge/Node_Express-%235FA04E?style=flat-square&logo=nodedotjs&labelColor=%233e3d3d" />
+  <img src="https://img.shields.io/badge/MongoDB-%2347A248?style=flat-square&logo=mongodb&labelColor=%233e3d3d" />
+  <img src="https://img.shields.io/badge/v1.0.0-%2376D04B?style=flat-square&labelColor=%23100007" />
+</div>
+
+## 📸 Screenshots
+
+<img
+  src="https://raw.githubusercontent.com/bryancastillo10/water-analytics/refs/heads/main/preview1.png"
+  alt="water-analytics-screenshot-1"
+/>
+
+<img
+  src="https://raw.githubusercontent.com/bryancastillo10/water-analytics/refs/heads/main/preview2.png"
+  alt="water-analytics-screenshot-2"
+/>
+
+## 📅 Database Schema
+
+<img
+  src="https://raw.githubusercontent.com/bryancastillo10/water-analytics/refs/heads/main/schema.png"
+  width="700"
+  height="400"
+/>
+
+## 🛖 Software Architecture and Design Decisions
+
+<img
+  src="https://raw.githubusercontent.com/bryancastillo10/water-analytics/refs/heads/main/architecture.png"
+  alt="water-analytics-architecture"
+/>
+
+This web application was designed with cost-efficiency and scalability in mind,
+leveraging **free-tier services** suitable for a portfolio project:
+
+- **MongoDB Atlas** was used as the cloud-hosted NoSQL database, offering
+  seamless integration and scalability for document-based storage.
+- **Cloudinary** handles image uploads (e.g., profile pictures and site images),
+  which is practical given its free storage tier.
+- **Nodemailer** with SMTP is used solely for password reset functionality,
+  ensuring minimal network traffic.
+
+On the frontend, tool selection was guided by a balance between **frequency of
+use** and **development efficiency**. Whenever a feature required excessive
+boilerplate or complexity in raw React, a dependency was introduced to
+streamline development:
+
+- **React Redux** is used for global state management.
+- **Redux Toolkit Query (RTK Query)** manages API state and caching efficiently.
+- **TanStack Table** handles dynamic table rendering and manipulation.
+- **Recharts** provides visualization capabilities, particularly for dashboard
+  metrics.
+- **Tailwind CSS** is used exclusively for styling, with no external UI
+  component libraries, allowing for full control over custom design.
+
+## 📁 Folder Structure Overview
+
+### Client (Frontend)
+
+The `src/` directory is organized for scalability and maintainability:
+
+- `components/`: Shared UI components across the app.
+- `lib/`: External libraries or setups (e.g., API clients).
+- `hooks/`: Reusable global hooks.
+- `utils/`: Global utility functions.
+- `assets/`: Static resources (images, fonts, etc.).
+- `features/`: Modular folders scoped per feature (e.g., `auth`, `dashboard`,
+  `user`) containing:
+  - Local components
+  - API requests
+  - Custom hooks
+  - Context providers
+
+### Server (Backend)
+
+The backend follows a hybrid of **feature-based structure** and **clean
+architecture principles**, emphasizing separation of concerns:
+
+📁`infrastructure/`: Low-level concerns like:
+
+- Database (Prisma)
+- Server setup (Express)
+- Middlewares
+- Custom error handling
+
+📁`features/`: Each domain feature (e.g., `auth`, `user`, `dashboard`) is
+divided into:
+
+- `routes`
+- `controller`
+- `service`
+- `repository`
+- `config`
+- `interfaces`
+- `entity`
+
+This architecture keeps business logic **decoupled**, enhances
+**maintainability**, and **eases debugging and testing**.
+
+## 🚀 Key Features
+
+- User Role Management
+- Readily Available Data Template
+- Monitoring Site Data Management
+- Intuitive Water Quality Table
+- Customizable Parameter Thresholds
+- Dashboard Analytics
+- Sticky Notes App
+
+## <br/>
+
+---
+
+<div className='mt-4'>
+
+🔗 **_Links_**
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+  <div className="flex flex-col lg:flex-row items-start lg:items-center gap-2">
+    <span className="font-semibold">🌐 Github Repository:</span>
+    <a
+      href="https://github.com/bryancastillo10/water-analytics"
+      className="text-teal-500 hover:text-teal-300 underline break-all"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      bryancastillo10/water-analytics
+    </a>
+  </div>
+  <div className="flex flex-col md:flex-row items-start md:items-center gap-2">
+    <span className="font-semibold">🎥 Live Demo:</span>
+    <a
+      href="https://water-analytics.fly.dev/"
+      className="text-teal-500 hover:text-teal-300 underline break-all"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Water Analytics App
+    </a>
+  </div>
+</div>
+</div>
