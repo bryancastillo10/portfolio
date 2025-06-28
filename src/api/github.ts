@@ -5,6 +5,12 @@ import { GitHubProfile } from '@/interfaces/githubprofile';
 
 import { GithubContributionsResponse } from '@/interfaces/githubContrib';
 
+type RepositoryTopicNode = {
+  topic: {
+    name: string;
+  };
+};
+
 const repoNames = ['airbnb-clone', 'water-analytics', 'dna-seq-explorer'];
 
 export const getGithubData = async () => {
@@ -23,7 +29,9 @@ export const getGithubData = async () => {
       htmlUrl: repo.url,
       homepage: repo.homepageUrl,
       imageUrl: `/projects/${repo.name}.png`,
-      topics: repo.repositoryTopics.nodes.map((node: any) => node.topic.name),
+      topics: repo.repositoryTopics.nodes.map(
+        (node: RepositoryTopicNode) => node.topic.name,
+      ),
       tagName: repo.releases.nodes[0]?.tagName ?? null,
     };
   });

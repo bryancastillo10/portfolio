@@ -39,7 +39,7 @@ const Hero = ({ profile }: { profile: GithubProfileRes<string, number> }) => {
         >
           <div className="mt-4">
             <p className="text-lg">
-              Hello World, I'm {`${profile.name}` || 'Bryan'}
+              Hello World, I&apos;m {`${profile.name}` || 'Bryan'}
             </p>
             <h1 className="font-mono text-2xl">
               <Typewriter
