@@ -6,4 +6,7 @@ export const githubClient = new GraphQLClient(GITHUB_GRAPHQL_API, {
   headers: {
     Authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`,
   },
+  fetch: (url, options) => {
+    return fetch(url, options);
+  },
 });
