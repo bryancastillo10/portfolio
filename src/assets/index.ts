@@ -17,6 +17,7 @@ import GinIcon from './stacks/GinIcon';
 import FastApiIcon from './stacks/FastApiIcon';
 import MongoDBIcon from './stacks/MongoDBIcon';
 import PostgresIcon from './stacks/PostgresIcon';
+import RedisIcon from './stacks/RedisIcon';
 import PrismaIcon from './stacks/PrismaIcon';
 
 import DockerIcon from './stacks/DockerIcon';
@@ -52,6 +53,7 @@ export const BackendIcons = {
   GinIcon,
   MongoDBIcon,
   PostgresIcon,
+  RedisIcon,
   PrismaIcon,
 };
 

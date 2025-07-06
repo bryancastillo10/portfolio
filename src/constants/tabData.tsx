@@ -54,6 +54,7 @@ export const tabData: tabDataProps[] = [
         <StackIcon icon={BackendIcons.GinIcon} text="Gin" />
         <StackIcon icon={BackendIcons.MongoDBIcon} text="MongoDB" />
         <StackIcon icon={BackendIcons.PostgresIcon} text="PostgreSQL" />
+        <StackIcon icon={BackendIcons.RedisIcon} text="Redis" />
         <StackIcon icon={BackendIcons.PrismaIcon} text="Prisma" />
       </TechStackContainer>
     ),
