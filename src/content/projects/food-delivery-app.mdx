@@ -1,0 +1,183 @@
+---
+title: 'Food Delivery App'
+description:
+  'A Food Delivery Service App that provides effective interaction between the
+  Driver, Customer, and Shop Owner'
+highlights:
+  - 'Go Lang Gin'
+  - 'GORM'
+  - 'Clean Architecture'
+  - 'PostgreSQL'
+  - 'Web Sockets'
+---
+
+## 🧠 Problem Statement
+
+In some rural areas in the Philippines, the use of food delivery platforms like
+**Food Panda** and **Grab Food** remains underdeveloped, despite the growing
+presence of local restaurant businesses within these communities. Recognizing
+this gap, our team set out to build an effective and accessible food delivery
+solution tailored for these underserved areas.
+
+As the sole backend developer on the team, I was responsible for building the
+entire server-side infrastructure. The current deployment serves as a
+preliminary production release that demonstrates my contribution and provides a
+foundation for the rest of the team.
+
+The backend was developed using **GoLang**, **Gin framework**, and **GORM ORM**
+which provides a modern, reliable and scalable API to connect **Customers**,
+**Drivers**, and **Shop Owners**. It follows **clean architecture principles**
+to ensure separation of concerns and long-term maintainability.
+
+With built-in support for **real-time order updates using WebSockets**, the
+system ensures seamless communication across all roles. While some members of
+the team are still in the early stages of learning frontend development, I
+continue to provide guidance as we work toward completing the full application
+collaboratively.
+
+<div className="flex justify-center md:justify-start gap-3 py-4">
+  <img src="https://img.shields.io/badge/Go-%2300ADD8?style=flat-square&logo=go&labelColor=%23100007" />
+  <img src="https://img.shields.io/badge/Gin_Framework-%23472b29?style=flat-square&labelColor=%233e3d3d" />
+  <img src="https://img.shields.io/badge/PostgreSQL-%23316192?style=flat-square&logo=postgresql&labelColor=%233e3d3d" />
+  <img src="https://img.shields.io/badge/Cloudinary-%23F1C40F?style=flat-square&logo=cloudinary&labelColor=%233e3d3d" />
+</div>
+
+## 🏛️ Software Architecture and Design
+
+<img
+  src="/images/food_delivery_architecture.png"
+  alt="food-delivery-app-architecture"
+/>
+
+## REST API Design for Food Delivery Transaction Feature
+
+<img
+  src="https://raw.githubusercontent.com/MERNCOLLAB/food-delivery-app-server/refs/heads/main/delivery_transaction.png"
+  alt="food-delivery-transaction"
+/>
+
+This backend is structured using a **Clean Architecture** approach, ensuring
+clear separation of concerns and long-term maintainability. The project is
+organized into the following key layers:
+
+### 🧩 Feature-Based Internal Modules
+
+Each feature (e.g. `auth`, `order`, `restaurant`, `user`, `notifications`) lives
+inside the `internal/` directory, and contains:
+
+- `handler.go` – defines HTTP handlers for the Gin router
+- `service.go` – implements business logic and use cases
+- `repo.go` – interacts with the database via GORM
+- `dto.go` – defines data transfer objects for request and response schemas
+
+This structure makes each feature independently testable, easy to maintain, and
+ready for scaling.
+
+### ⚙️ Infrastructure & Application Setup
+
+The core infrastructure code is separated outside the `internal/` folder and
+includes:
+
+`routes/` – centralized route definitions for all endpoints -`connectDb.go`
+–handles PostgreSQL database connection -`connectRedis.go` – manages Redis
+connection (for OTP feature) -`ginServer.go` – initializes and configures the
+Gin engine -`syncDb.go` – automates schema sync with GORM -`config/` –
+centralized config for:
+
+`loadEnv.go` – environment variable management
+
+`cors.go` – CORS policy setup
+
+`migration.go` – optional migration utilities
+
+`models/` - a separate folder dedicated for all the database schema declaration
+
+### 🛰️ Real-Time Support
+
+**WebSockets** were used to provide live updates about the order between owners,
+drivers, and customers
+
+This architecture follows idiomatic Go with clean architecture principles,
+making it ideal for teams even with varying skill levels to contribute and learn
+effectively.
+
+## 🚀 Key Features
+
+🔐 **Custom Authentication Flow**
+
+- **Customers** sign up via **OAuth** (e.g. Google) and must pass **SMS-based
+  OTP verification** before gaining access
+- **Drivers** and **Shop Owners** cannot self-register wherein they are created
+  and managed by an **Admin** via protected endpoints
+
+🛡️ **Role-Based Access Control (RBAC)**
+
+- Routes are protected and filtered depending on the authenticated user's role.
+- Each role (Customer, Driver, Owner, Admin) has access only to the appropriate
+  subset of API functionality
+
+🔁 **Full Food Delivery Transaction API**
+
+- **Customers**: browse restaurants, place orders, track order status
+- **Shop Owners**: manage their restaurants, update menu items, accept/reject
+  orders
+- **Drivers**: accept delivery assignments, update delivery status
+- **Admin**: onboard new owners and drivers, monitor platform activity
+
+📡 **Real-Time Order Tracking with WebSockets**
+
+- Instant updates between Customer, Owner, and Driver as the order progresses
+  from creation to delivery
+- WebSocket endpoints designed for role-specific listeners (e.g. live updates
+  for incoming orders or delivery status changes) x
+
+## ⚒️ Contributions
+
+- Collaborated with the team in conceptualizing the **technical side** of the
+  project, providing architectural insights, API structure, and data modeling
+  strategies
+- Took full ownership as the **sole backend developer**, building the entire
+  server-side logic using **GoLang**, **Gin**, and **GORM**, following clean
+  architecture principles
+- Designed and implemented the **database schema**, business logic, and
+  **role-based access control**, including a distinct authentication flow for
+  customers, and other roles
+- Deployed the backend to production using **Fly.io**, managing environment
+  configurations and database synchronization workflows
+- While capable of frontend development, I focused on backend responsibilities
+  to allow team members to grow their frontend skills. I will just provide them
+  **technical guidance and mentorship** throughout the development process
+
+## <br/>
+
+---
+
+<div className='mt-4'>
+
+🔗 **_Links_**
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+  <div className="flex flex-col lg:flex-row items-start lg:items-center gap-2">
+    <span className="font-semibold">🌐 Github Repository:</span>
+    <a
+      href="https://github.com/MERNCOLLAB/food-delivery-app-server"
+      className="text-teal-500 hover:text-teal-300 underline break-all"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      MERNCOLLAB/food-delivery-app-server
+    </a>
+  </div>
+  <div className="flex flex-col md:flex-row items-start md:items-center gap-2">
+    <span className="font-semibold">🎥 Live Demo:</span>
+    <a
+      href="https://food-delivery-app.fly.dev/"
+      className="text-teal-500 hover:text-teal-300 underline break-all"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Food Delivery App Server
+    </a>
+  </div>
+</div>
+</div>
