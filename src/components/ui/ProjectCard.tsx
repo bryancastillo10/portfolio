@@ -26,7 +26,7 @@ const ProjectCard = ({ repo }: ProjectCardProps) => {
 
   return (
     <div
-      className={`w-sm md:w-md lg:h-100 rounded-xl shadow-lg 
+      className={`w-full max-w-md h-fit rounded-xl shadow-lg
       ${isDarkMode ? 'bg-gray border-none text-background' : 'border border-gray'}
       grid grid-cols-1 lg:grid-cols-2 p-2`}
     >
@@ -91,7 +91,7 @@ const ProjectCard = ({ repo }: ProjectCardProps) => {
               <p
                 key={tag}
                 className={`text-xs  w-fit rounded-md shadow-md py-1 px-3
-                ${isDarkMode ? 'bg-accent-light text-background' : 'bg-foreground text-[#fff8f1]'} 
+                ${isDarkMode ? 'bg-accent-light text-background' : 'bg-foreground text-[#fff8f1]'}
               `}
               >
                 {tag}
