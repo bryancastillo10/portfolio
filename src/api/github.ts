@@ -11,7 +11,7 @@ type RepositoryTopicNode = {
   };
 };
 
-const repoNames = ['airbnb-clone', 'water-analytics', 'dna-seq-explorer'];
+const repoNames = ['airbnb-clone', 'water-analytics', 'dna-seq-explorer','smart-plc-control'];
 
 export const getGithubData = async () => {
   const query = GET_PROFILE_AND_REPOS(repoNames);
