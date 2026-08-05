@@ -1,0 +1,156 @@
+---
+title: 'CanePanion Cloud Server'
+description:
+  'A Go-based cloud service for a connected smart-cane platform that receives
+  safety telemetry, manages alerts and device health, and powers an AI voice
+  assistant for visually impaired cane users.'
+highlights:
+  - '2026 Hackathon Project'
+  - 'IoT Telemetry and Device Management'
+  - 'AI Voice Assistant Pipeline'
+  - 'Offline-Safe Event Ingestion'
+  - 'Go Gin and PostgreSQL'
+---
+
+## 🧠 Problem Statement
+
+People with visual impairments rely on mobility canes to move independently, but
+a conventional cane cannot notify a guardian after a fall, share a user's
+location during an emergency, or report that its connected hardware is losing
+power. **CanePanion** extends the cane with a connected strap and a shared
+safety platform while keeping the cane user in control.
+
+This repository contains the cloud server at the center of the system. It
+authenticates users and physical devices, receives events and location samples
+from the firmware, creates safety alerts, and keeps guardians informed. It also
+supports device health reporting and a voice workflow that lets a user record a
+question and receive an AI-generated spoken response.
+
+<div className="flex flex-wrap justify-center md:justify-start gap-3 py-4">
+  <img src="https://img.shields.io/badge/Go-%2300ADD8?style=flat-square&logo=go&logoColor=white&labelColor=%23100007" />
+  <img src="https://img.shields.io/badge/Gin-%2300896B?style=flat-square&logo=gin&logoColor=white&labelColor=%233e3d3d" />
+  <img src="https://img.shields.io/badge/PostgreSQL-%234169E1?style=flat-square&logo=postgresql&logoColor=white&labelColor=%233e3d3d" />
+  <img src="https://img.shields.io/badge/Google_Cloud-%234285F4?style=flat-square&logo=googlecloud&logoColor=white&labelColor=%233e3d3d" />
+  <img src="https://img.shields.io/badge/Gemini-%238E75B2?style=flat-square&logo=googlegemini&logoColor=white&labelColor=%233e3d3d" />
+</div>
+
+## 📸 Prototype
+
+<img
+  src="/projects/canepanion-prototype.png"
+  alt="canepanion smart-cane strap prototype"
+/>
+
+## 🏛️ Software Architecture and Design
+
+<figure className="my-6">
+  <img
+    src="/images/canepanion-architecture.png"
+    alt="CanePanion system architecture connecting smart-cane firmware, the Go cloud server, external AI and messaging services, and the mobile application"
+    className="w-full h-auto rounded-lg"
+    loading="lazy"
+  />
+  <figcaption className="mt-2 text-center text-sm text-gray-500">
+    CanePanion system architecture and communication flow
+  </figcaption>
+</figure>
+
+CanePanion uses a three-part architecture: cane firmware collects device and
+safety data, the Go cloud server validates and processes it, and a mobile
+application presents relevant information to cane users and guardians.
+
+The server is organized into feature modules such as `auth`, `firmware_auth`,
+`telemetry`, `devices`, `device_controls`, `audio`, `push`, and
+`firmware_updates`. Each module separates HTTP handlers, application services,
+repositories, and request/response DTOs. Gin provides the HTTP layer, GORM
+persists domain records in PostgreSQL, and distinct user and device tokens keep
+human and firmware access boundaries separate.
+
+### 📡 Reliable Firmware Communication
+
+The firmware API is designed for intermittent connectivity. A device can batch
+sensor events and location samples after reconnecting, while message and event
+identifiers make retries idempotent. Safety events and any alert derived from
+them are committed together, preventing an emergency record from being stored
+without its corresponding alert.
+
+Heartbeat requests update battery level, firmware version, connection state, and
+last-seen time. The server also provides foundations for remote configuration,
+device commands, acknowledgements, and signed firmware updates.
+
+### 🎙️ AI Voice Pipeline
+
+Voice recordings are uploaded to Cloudinary and processed asynchronously through
+**Google Speech-to-Text → Gemini → Text-to-Speech**. Firmware starts the job
+after completing an upload, polls its status, and plays the generated reply only
+when processing succeeds. This keeps slow AI and media operations outside the
+request-response path used for safety telemetry.
+
+### 🔔 Guardian Notifications
+
+Critical fall and SOS events create alerts from server-owned rules and
+templates. Firebase Cloud Messaging provides a delivery path for notifying users
+and guardians without allowing firmware to construct arbitrary alerts.
+
+## 🗄️ Database Schema
+
+<figure className="my-6">
+  <img
+    src="/images/canepanion-schema.png"
+    alt="CanePanion PostgreSQL database schema for users, devices, telemetry, locations, alerts, notifications, audio, and firmware communication"
+    className="w-full h-auto rounded-lg"
+    loading="lazy"
+  />
+  <figcaption className="mt-2 text-center text-sm text-gray-500">
+    Relational model for device ownership, safety telemetry, alerts, and audio
+    interactions
+  </figcaption>
+</figure>
+
+The data model keeps device activity traceable from the connected cane to the
+responsible user. Sensor events, locations, alerts, notifications, and audio
+records are stored as separate but related concerns, while ingestion batches
+preserve retry safety for firmware that reconnects after operating offline.
+
+## 🚀 Key Features
+
+- Separate JWT authentication flows for users and connected cane devices
+- Batched fall, SOS, obstacle, battery, location, and device-error telemetry
+- Idempotent ingestion for data buffered while a device is offline
+- Transactional alert creation for safety-critical events
+- Device heartbeat, health, firmware-version, and connectivity tracking
+- AI-assisted voice conversations with asynchronous audio processing
+- Cloudinary audio storage and Firebase push notifications
+- Cloud configuration, command, and firmware-update foundations
+
+## 🧩 Challenges & Learnings
+
+Connected assistive devices must remain dependable even when network access is
+unstable. This project required treating retry behavior, device identity,
+transaction boundaries, and failure states as core product concerns. The voice
+assistant introduced a second type of workload with different latency and file
+size constraints, reinforcing the value of separating safety ingestion from
+background media and AI processing.
+
+## <br/>
+
+---
+
+<div className='mt-4'>
+
+🔗 **_Links_**
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+  <div className="flex flex-col lg:flex-row items-start lg:items-center gap-2">
+    <span className="font-semibold">🌐 Github Repository:</span>
+    <a
+      href="https://github.com/Taiwan-2026-Hackathon-Team/canepanion-server"
+      className="text-teal-500 hover:text-teal-300 underline break-all"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Taiwan-2026-Hackathon-Team/canepanion-server
+    </a>
+  </div>
+</div>
+</div>
