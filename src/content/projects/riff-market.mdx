@@ -1,0 +1,149 @@
+---
+title: 'RiffMarket'
+description:
+  'A full-stack marketplace for buying and selling music gear, with role-based
+  workflows for customers, sellers, and administrators built on TanStack Start,
+  Prisma, and PostgreSQL.'
+highlights:
+  - 'Full-Stack TypeScript'
+  - 'Domain-Driven Architecture'
+  - 'Multi-Seller Order Workflow'
+  - 'Role-Based Marketplace'
+  - 'Automated Testing'
+---
+
+## 🧠 Problem Statement
+
+Buying and selling music equipment involves more than displaying a catalog.
+Customers need useful search and filters, sellers need inventory and order
+workflows, and administrators need a dependable way to moderate listings.
+Purchases can also contain products from multiple sellers, making stock,
+payment, fulfillment, and notification state more complex than a conventional
+single-store checkout.
+
+**RiffMarket** brings these workflows into one responsive marketplace for
+guitars, keyboards, pedals, and accessories. Customers can discover gear, manage
+a cart, place purchases, save favorites, and write reviews. Sellers can publish
+listings and process their portion of an order, while administrators control
+listing approval and platform access.
+
+<div className="flex flex-wrap justify-center md:justify-start gap-3 py-4">
+  <img src="https://img.shields.io/badge/TanStack_Start-%23FF4154?style=flat-square&logo=reactquery&logoColor=white&labelColor=%23100007" />
+  <img src="https://img.shields.io/badge/React_19-%2361DAFB?style=flat-square&logo=react&logoColor=black&labelColor=%233e3d3d" />
+  <img src="https://img.shields.io/badge/Prisma-%232D3748?style=flat-square&logo=prisma&logoColor=white&labelColor=%233e3d3d" />
+  <img src="https://img.shields.io/badge/PostgreSQL-%234169E1?style=flat-square&logo=postgresql&logoColor=white&labelColor=%233e3d3d" />
+  <img src="https://img.shields.io/badge/Cloudinary-%233448C5?style=flat-square&logo=cloudinary&logoColor=white&labelColor=%233e3d3d" />
+</div>
+
+## 🏛️ Software Architecture and Design
+
+<figure className="my-6">
+  <img
+    src="/images/riff-market-architecture.png"
+    alt="RiffMarket full-stack architecture showing the TanStack Start interface, domain and application layers, Prisma persistence, PostgreSQL, and Cloudinary"
+    className="w-full h-auto rounded-lg"
+    loading="lazy"
+  />
+  <figcaption className="mt-2 text-center text-sm text-gray-500">
+    RiffMarket application layers and external service boundaries
+  </figcaption>
+</figure>
+
+RiffMarket is a full-stack TypeScript application built with **TanStack Start**.
+File-based TanStack Router routes and server functions live in the same
+codebase, while TanStack Query manages server state and Zustand handles focused
+client state such as the cart, session-aware UI, notifications, theme, and
+dialogs.
+
+The codebase has evolved beyond a feature-only structure into domain modules for
+`accounts`, `listings`, `ordering`, `reviews`, `notifications`, and `media`.
+Business rules are kept in domain and application layers, while Prisma-backed
+adapters implement persistence. Shared value objects model concepts such as
+money, currency, image assets, actors, and result states without coupling core
+rules directly to the UI or database.
+
+### 🛒 Multi-Seller Ordering
+
+A customer checkout creates one purchase and separates its items into seller
+orders. Immutable snapshots preserve listing, seller, price, currency, and
+shipping data even if a listing or account later changes. Each seller can then
+move their own order through processing, shipping, delivery, or cancellation
+without changing another seller's fulfillment state.
+
+### 🛡️ Marketplace Trust and Media Lifecycle
+
+Listings follow a moderation lifecycle of pending, approved, declined, or
+withdrawn. Cloudinary stores listing and profile images, while a durable media
+cleanup job queue tracks retries and prevents abandoned assets from silently
+accumulating after listings or accounts are removed.
+
+### 🧪 Testing Strategy
+
+The repository includes unit and component tests with Vitest, database-backed
+Prisma integration tests, browser tests, and Playwright end-to-end coverage.
+Dedicated test database safeguards prevent integration tests from running
+against a non-test database by mistake.
+
+## 🗄️ Database Schema
+
+<figure className="my-6">
+  <img
+    src="/images/riff-market-schema.png"
+    alt="RiffMarket PostgreSQL database schema for accounts, listings, purchases, seller orders, reviews, favorites, notifications, and media cleanup jobs"
+    className="w-full h-auto rounded-lg"
+    loading="lazy"
+  />
+  <figcaption className="mt-2 text-center text-sm text-gray-500">
+    Marketplace data model covering listings, multi-seller fulfillment, and
+    supporting user workflows
+  </figcaption>
+</figure>
+
+The schema separates a customer's overall purchase from the individual seller
+orders required for fulfillment. Snapshot fields retain the commercial record
+even when listings or accounts later change, while reviews, favorites,
+notifications, and cleanup jobs remain independently queryable.
+
+## 🚀 Key Features
+
+- Customer, seller, and administrator authentication and authorization
+- Search, category, brand, condition, and price-range filtering
+- Listing creation, image upload, inventory, and approval workflows
+- Shopping cart and transactional multi-seller checkout
+- Seller-specific fulfillment and order status management
+- Favorites, product reviews, and user notifications
+- Profile settings, theme preferences, and safe account deletion
+- Cloudinary image lifecycle management with a retryable cleanup queue
+- Unit, integration, browser, and end-to-end test suites
+
+## 🧩 Challenges & Learnings
+
+The most important design challenge was preserving correctness across a
+multi-seller purchase. Stock changes, purchase records, seller orders, item
+snapshots, and notifications must succeed as one coherent operation. Modeling
+these rules outside route components made the workflow easier to test and
+reduced the risk of UI or persistence details leaking into core marketplace
+logic.
+
+## <br/>
+
+---
+
+<div className='mt-4'>
+
+🔗 **_Links_**
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+  <div className="flex flex-col lg:flex-row items-start lg:items-center gap-2">
+    <span className="font-semibold">🌐 Github Repository:</span>
+    <a
+      href="https://github.com/AricBryanCollab/riff-market"
+      className="text-teal-500 hover:text-teal-300 underline break-all"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      AricBryanCollab/riff-market
+    </a>
+  </div>
+</div>
+</div>
