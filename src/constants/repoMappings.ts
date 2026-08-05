@@ -2,6 +2,9 @@ export const repoMappings: Record<string, string> = {
   R_kgDOMHPckg: 'airbnb-clone',
   R_kgDONPM2zQ: 'water-analytics',
   R_kgDON9GYlA: 'dna-seq-explorer',
+  R_kgDORJCyDA:'smart-plc-control',
   ab760013357f3dae37: 'chemstash',
   ab760013357f3dae38: 'food-delivery-app',
+  ab760013357f3dae39: 'riff-market',
+  ab760013357f3dae40: 'canepanion',
 };
