@@ -1,0 +1,156 @@
+---
+title: 'SmartPLCControl'
+description:
+  'A full-stack industrial monitoring and PLC simulation platform for modeling
+  plants, streaming process values, configuring alert rules, and managing
+  role-based operational workflows.'
+highlights:
+  - 'Industrial Process Monitoring'
+  - 'PLC and Fault Simulation'
+  - 'Real-Time WebSockets'
+  - 'Role-Based Access Control'
+  - 'Bilingual User Interface'
+---
+
+## 🧠 Problem Statement
+
+Industrial monitoring systems must bring equipment state, process values,
+alarms, historical data, and operator permissions into one reliable view.
+Developing against a physical PLC adds cost and safety constraints, while a
+dashboard that is tightly coupled to one protocol is difficult to test or
+extend.
+
+**SmartPLCControl** is a wastewater-focused monitoring and simulation platform
+that models a plant before physical PLC integration is required. It provides a
+guided setup workflow for plants, process units, devices, tags, alert rules, and
+simulation scenarios. Operators can then monitor simulated process data in real
+time, reproduce fault conditions, and exercise alert workflows in a safe
+environment.
+
+<div className="flex flex-wrap justify-center md:justify-start gap-3 py-4">
+  <img src="https://img.shields.io/badge/TanStack_Start-%23FF4154?style=flat-square&logo=reactquery&logoColor=white&labelColor=%23100007" />
+  <img src="https://img.shields.io/badge/Go_Gin-%2300ADD8?style=flat-square&logo=go&logoColor=white&labelColor=%233e3d3d" />
+  <img src="https://img.shields.io/badge/PostgreSQL-%234169E1?style=flat-square&logo=postgresql&logoColor=white&labelColor=%233e3d3d" />
+  <img src="https://img.shields.io/badge/WebSocket-%23010101?style=flat-square&logo=socketdotio&logoColor=white&labelColor=%233e3d3d" />
+  <img src="https://img.shields.io/badge/i18next-%2326A69A?style=flat-square&logo=i18next&logoColor=white&labelColor=%233e3d3d" />
+</div>
+
+## 🏛️ Software Architecture and Design
+
+<figure className="my-6">
+  <img
+    src="/images/smart-plc-control-architecture.png"
+    alt="SmartPLCControl architecture showing the TanStack Start client, Go Gin API, PostgreSQL database, WebSocket updates, simulator, and future PLC protocol adapters"
+    className="w-full h-auto rounded-lg"
+    loading="lazy"
+  />
+  <figcaption className="mt-2 text-center text-sm text-gray-500">
+    Monitoring architecture from PLC data sources to the operator dashboard
+  </figcaption>
+</figure>
+
+The application separates a **React and TanStack Start client** from a **Go and
+Gin API server**. REST endpoints provide initial state and configuration, while
+WebSockets broadcast incremental simulation and tag-reading updates. PostgreSQL
+stores plants, process units, devices, tags, historical readings, alert rules,
+alerts, simulations, scenarios, users, and audit logs through GORM models.
+
+The backend is divided into feature modules with handlers, services,
+repositories, and DTOs for `plants`, `process_units`, `devices`, `tags`,
+`tag_readings`, `alert_rules`, `alerts`, `simulations`, `simulation_scenarios`,
+`users`, and `audit_logs`. Authentication uses JWTs, and role middleware
+enforces permissions for administrators, operators, and viewers on the server
+rather than relying on hidden frontend controls.
+
+### 🧭 Guided Plant Configuration
+
+The client includes a multi-step plant setup wizard for plant information,
+users, process units, process connections, devices, tags, alert rules, and
+simulations. A process arrangement board stores unit positions and port-to-port
+connections, making the configured facility easier to understand than a set of
+unrelated database forms.
+
+### 📡 Simulation and Real-Time Monitoring
+
+The simulator produces the same normalized tag concepts expected from future
+Modbus TCP or OPC UA adapters. WebSocket events can announce updated readings,
+device state changes, alerts, and simulation lifecycle transitions. Keeping the
+client behind the API ensures it never communicates directly with a physical
+controller.
+
+### 🌐 Accessible Operations
+
+The UI includes English and Traditional Chinese resources, persistent language
+selection, responsive navigation, tables, charts, and role-aware routes. This
+supports both operational use and demonstration in a Taiwanese industrial
+context.
+
+## 🗄️ Database Schema
+
+<figure className="my-6">
+  <img
+    src="/images/smart-plc-control-schema.png"
+    alt="SmartPLCControl PostgreSQL database schema for plants, process units, devices, tags, readings, alert rules, alerts, simulations, users, and audit logs"
+    className="w-full h-auto rounded-lg"
+    loading="lazy"
+  />
+  <figcaption className="mt-2 text-center text-sm text-gray-500">
+    Industrial monitoring model connecting plant structure, PLC data, alarms,
+    simulations, and audit history
+  </figcaption>
+</figure>
+
+The schema models both the physical hierarchy and its operational history.
+Plants contain process units and devices; devices expose tags; tags produce
+time-stamped readings and feed alert rules. Simulation scenarios reuse the same
+plant model, and audit logs record important user and system actions.
+
+## 🚀 Key Features
+
+- JWT authentication with `ADMIN`, `OPERATOR`, and `VIEWER` roles
+- Guided plant, process-unit, device, tag, alert, and simulation setup
+- Visual process-unit arrangement with stored connections and positions
+- PLC tag definitions and historical reading storage
+- Configurable threshold operators, severities, and alert lifecycle states
+- Start, pause, stop, and fault-scenario simulation workflows
+- Real-time WebSocket broadcasting for simulation events and process readings
+- Audit logging for important configuration and control actions
+- English and Traditional Chinese localization
+- Adapter-ready design for future Modbus TCP and OPC UA integrations
+
+## 🧩 Challenges & Learnings
+
+Industrial data must be treated as untrusted input even when it originates from
+plant equipment. This project emphasizes server-enforced authorization,
+normalized tag values, data-quality states, auditability, and a hard boundary
+between browser clients and PLC communication. Building the simulator first also
+makes alert rules and real-time UI behavior testable without connecting to
+production equipment.
+
+> **Safety note:** SmartPLCControl is intended for monitoring, simulation,
+> learning, and demonstration. It should not control production or
+> safety-critical equipment without engineering review, fail-safe design,
+> network security, operational testing, and applicable compliance work.
+
+## <br/>
+
+---
+
+<div className='mt-4'>
+
+🔗 **_Links_**
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+  <div className="flex flex-col lg:flex-row items-start lg:items-center gap-2">
+    <span className="font-semibold">🌐 Github Repository:</span>
+    <a
+      href="https://github.com/bryancastillo10/smart-plc-control"
+      className="text-teal-500 hover:text-teal-300 underline break-all"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      bryancastillo10/smart-plc-control
+    </a>
+  </div>
+</div>
+</div>
